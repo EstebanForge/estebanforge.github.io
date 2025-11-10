@@ -1,0 +1,32 @@
+/* Custom styles for actitud.xyz */
+
+/* Justify text in blog post content */
+.body {
+    text-align: justify;
+    text-align-last: left;
+}
+
+/* Ensure paragraphs within blog posts are justified */
+.body p {
+    text-align: justify;
+    text-align-last: left;
+}
+
+/* Optional: Improve readability for justified text */
+.body p {
+    line-height: 1.7;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    ms-hyphens: auto;
+}
+
+/* Keep headings left-aligned for better readability */
+.body h1,
+.body h2,
+.body h3,
+.body h4,
+.body h5,
+.body h6 {
+    text-align: left;
+}
