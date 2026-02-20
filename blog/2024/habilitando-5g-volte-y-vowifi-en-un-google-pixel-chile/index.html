@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data: 'self';img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27; 'unsafe-inline';frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com giscus.app;connect-src 'self';script-src 'self'  giscus.app  cdn.jsdelivr.net 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://actitud.xyz">
+
+    
+    <title>
+It's about attitude • Habilitando 5G, VoLTE y VoWIFI en un Google Pixel... en Chile</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://actitud.xyz/images/favicon.png"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="It's about attitude - Atom Feed" href="https://actitud.xyz/atom.xml">
+                
+            
+                
+                    <link rel="alternate" type="application/rss+xml" title="It's about attitude - RSS Feed" href="https://actitud.xyz/rss.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://actitud.xyz/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://actitud.xyz/main.css?h=6b1dda977391dad0c76e" />
+        <link rel="stylesheet" href="https://actitud.xyz/css/custom.css?h=535738bd9137b34265fb" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Personal blog about technology, life, and everything in between." />
+        <meta property="og:description" content="Personal blog about technology, life, and everything in between." />
+        <meta name="twitter:description" content="Personal blog about technology, life, and everything in between." />
+
+    
+
+    <meta property="og:title" content="Habilitando 5G, VoLTE y VoWIFI en un Google Pixel... en Chile" />
+    <meta name="twitter:title" content="Habilitando 5G, VoLTE y VoWIFI en un Google Pixel... en Chile" />
+    <meta property="og:type" content="article" />
+
+    
+    
+    
+    
+        
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+        
+            
+            <meta property="og:image" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;images&#x2F;social-media&#x2F;2024&#x2F;blog_2024_habilitando_5g_volte_y_vowifi_en_un_google_pixel_chile.jpg" />
+            <meta property="og:image:secure_url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;images&#x2F;social-media&#x2F;2024&#x2F;blog_2024_habilitando_5g_volte_y_vowifi_en_un_google_pixel_chile.jpg" />
+            <meta property="og:image:type" content="image/jpeg" />
+            
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+            
+            <meta name="twitter:image" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;images&#x2F;social-media&#x2F;2024&#x2F;blog_2024_habilitando_5g_volte_y_vowifi_en_un_google_pixel_chile.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;blog&#x2F;2024&#x2F;habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile&#x2F;" /><meta property="og:site_name" content="It&#x27;s about attitude">
+        <noscript><link rel="stylesheet" href="https://actitud.xyz/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://actitud.xyz/js/initializeTheme.min.js"></script>
+        <script defer src="https://actitud.xyz/js/themeSwitcher.min.js"></script>
+        <script defer src="https://actitud.xyz/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        </head>
+
+
+<body class="use-sans-serif">
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://actitud.xyz">It&#x27;s about attitude</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz">home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/esteban/">esteban
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;EstebanForge">github
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Habilitando 5G, VoLTE y VoWIFI en un Google Pixel... en Chile
+        </h1>
+
+        <ul class="meta"><li>By Esteban</li>
+
+            
+                <span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;actitud.xyz" class="u-url " title="Esteban">Esteban</a>
+</span>
+
+            
+                <li><span class='separator' aria-hidden='true'>•</span>2024-02-02</li><li title="4451 words"><span class='separator' aria-hidden='true'>•</span>23 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a href="https://actitud.xyz/tags/pixel/">pixel</a>,&nbsp;</li><li class="tag"><a href="https://actitud.xyz/tags/5g/">5g</a>,&nbsp;</li><li class="tag"><a href="https://actitud.xyz/tags/vowifi/">vowifi</a>,&nbsp;</li><li class="tag"><a href="https://actitud.xyz/tags/volte/">volte</a>,&nbsp;</li><li class="tag"><a href="https://actitud.xyz/tags/chile/">chile</a></li>
+        </ul>
+
+        <section class="body"><blockquote>
+<p>Advertencia:</p>
+<p>El proceso aquí descrito para habilitar 5G, VoWIFI y VoLTE, hará que tu equipo no pase el tercer nivel de integridad (<a class="external" rel="noopener external" target="_blank" href="https://developer.android.com/google/play/integrity/overview">device integrity</a>) puesto por Google en Android.</p>
+<p>Existen tres niveles: MEETS_BASIC_INTEGRITY, MEETS_DEVICE_INTEGRITY, MEETS_STRONG_INTEGRITY.</p>
+<p>Los dos primeros son los necesarios para que el 99% de los apps funcionen. Incluidos apps de bancos o juegos que molestan por un equipo rooteado.</p>
+<p>El tercer nivel (MEETS_STRONG_INTEGRITY), detecta si tu bootloader está abierto o no y, en la actualidad, no existe un método sencillo para falsear su estado. Métodos antiguos consistían en parchar el kernel del equipo para falsear la respuesta a Google. Eso está parchado hace tiempo, lamentablemente.</p>
+<p>Existe un solo método (conocido) para poder falsear la respuesta de si tu equipo tiene o no el bootloader abierto o cerrado, y eso es mediante la modificación de un archivo del sistema, para entregar una cadena de certificados correcta cuando Google pida el estado de integridad del equipo.</p>
+<p>El proceso este es en extremo complicado. No apto para principiantes. No apto para quienes no saben moverse en Linux. No apto para quienes no temen soft-brickear sus equipos en el intento. Etc.</p>
+<p>No explicaré ese procedimiento acá. Los que quieran, pueden comenzar su investigación por <a class="external" rel="noopener external" target="_blank" href="https://github.com/chiteroman/FrameworkPatch">este repo de chiteroman</a>, si desean recorrer aquel camino.</p>
+<p>¿Por qué lo menciono?</p>
+<p>Porque existen apps que están comenzando a pedir validar la tercera y más fuerte integridad, MEETS_STRONG_INTEGRITY. <a class="external" rel="noopener external" target="_blank" href="https://niantic.helpshift.com/hc/en/3-ingress/faq/4495-ingress-is-not-supported-on-this-device-configuration-error-android-only/">Niantic comenzó a exigirlo con su juego Ingress</a>. Ellos mismos desarrollan el juego Pokemon Go, que ahora, también exige Strong Integrity. Eventualmente, no solo juegos se sumarán a esta lista.</p>
+<p>Google mismo está usando la verificación de Strong Integrity para determinar si puedes usar RCS en Messages o no (<a class="external" rel="noopener external" target="_blank" href="https://www.android.com/get-the-message/">el upgrade de los SMS</a>, por si no lo conocen). Si no pasas MEETS_STRONG_INTEGRITY, no se te permitirá registrar tu número en el servicio RCS.</p>
+<p>Los bancos, más temprano que tarde, sabrán que si exigen Strong Integrity, reducen considerablemente la base de usuarios rooteados que puedan usar sus apps. No todos tienen el conocimiento ni tiempo para poder lograr el MEETS_STRONG_INTEGRITY en sus equipos. No por ahora. No en la forma en que sabemos se puede lograr hoy al menos.</p>
+<p>Eventualmente, aquel 99% de apps que funcionan sin pedir Strong Integrity, va a disminuir, y cada vez más apps comenzarán a solicitar pasar esa integridad.</p>
+<p>Por favor, considera esto antes de proceder a modificar tu equipo.</p>
+</blockquote>
+<p>Quienes adquirimos un Google Pixel (el smartphone de Google), estando fuera de los países donde Google vende estos teléfonos oficialmente, sabemos que hay ciertas características que no funcionan en todo el mundo.</p>
+<p>El soporte de Google para sus Pixel, es muy limitado a nivel mundial. <a class="external" rel="noopener external" target="_blank" href="https://pixel.withgoogle.com/5G/">Lo pueden ver por acá</a>. Mal por Google ahí.</p>
+<p>¿Por qué lo hacemos?, ¿Por qué vamos por un fono que sabemos no funcionará al 100% en nuestro país?</p>
+<p>Por imbéciles. Y por la cámara de los Pixel. Además de la experiencia de Android "puro" y simple del software de Google. Por las actualizaciones directas desde Google y constantes por muchos años. Android como debería ser.</p>
+<p>Debíamos renunciar a las llamadas Wifi, e incluso al 5G en un país (Chile) que está teniendo una expansión acelerada de la cobertura de 5G en varios proveedores nacionales.</p>
+<p>Hasta ahora...</p>
+<p>https://videopress.com/v/HHNxKkph?resizeToParent=true&amp;cover=true&amp;autoPlay=true&amp;controls=false&amp;loop=true&amp;muted=true&amp;persistVolume=false&amp;preloadContent=metadata&amp;useAverageColor=true</p>
+<p>Hace unos días, <a class="external" rel="noopener external" target="_blank" href="https://twitter.com/TCattd/status/1752112651407180023?t=0FwI6m-9mGVBTAxClRzvjA&amp;s=19">comenté en Twitter</a> (si, Twitter, Twitter, Twitter) sobre el éxito en habilitar 5G en un Pixel aquí en Chile.</p>
+<p>Les debía una guía. Así es que aquí vamos.</p>
+<h2 id="chile">¿Chile?</h2>
+<p>Lo que voy a mostrar acá, debería funcionar de igual manera para otros países donde Google no soporta 5G. No puedo estar seguro, claro.</p>
+<p>Si alguien fuera de Chile desea probar y corroborar, por favor, adelante. Dejen un comentario confirmando para ayudar a sus pares, por favor.</p>
+<h2 id="habilitar-volte-metodo-sencillo">Habilitar VoLTE, método sencillo</h2>
+<p>Antes de iniciar con la parte densa, voy a comentar sobre un método simple para lograr VoLTE en un Pixel acá en Chile, y otros países no soportados por Google.</p>
+<p>No es necesario que lo hagas, si vas a ir con el otro método que explicaré luego. Lo comento, básicamente para los que decidan no ir por el segundo método, más complejo.</p>
+<p>Este método es algo conocido por muchos para habilitar VoLTE en un Google Pixel, en cualquier país fuera del soporte oficial de Google. Este utiliza un par de aplicaciones gratuitas, y un paso a paso bastante sencillo de seguir: <a class="external" rel="noopener external" target="_blank" href="https://github.com/kyujin-cho/pixel-volte-patch/blob/main/README.en.md">pixel-volte-patch con Pixel IMS y Shizuku</a>.</p>
+<p>No voy a hablar de aquel método acá. Pero lo dejo ahí, por si alguien se desalienta con lo que viene en este post. Suele pasar. Este método sencillo, que no modifica el fono en lo absoluto (no de forma permanente), les permitirá habilitar VoLTE en su Google Pixel en un país no soportado. Nada más.</p>
+<p>¿Vamos por todo?</p>
+<p><a href="/media/2024/5g-chile-antena.jpeg"><img src="/media/2024/5g-chile-antena.jpeg?w=1024" alt="" /></a></p>
+<h2 id="5g-volte-y-vowifi-metodo-avanzado">5G, VoLTE y VoWIFI, método avanzado</h2>
+<p>Para el que sepa "algo" de este mundo (de meter mano en Android): <strong>este método requiere rootear el fono</strong>. Si esto los desmoraliza, bueno, vuelvan al método simple solo para VoLTE y... gracias por leerme hasta aquí. Buen día.</p>
+<p>Para los que se atrevan, además de felicitarlos, les puedo adelantar que, aunque van a rootear sus fonos, ningún app de Bancos o juegos, podrá detectar el root. Hasta Google Wallet (Google Pay) funciona sin inconvenientes.</p>
+<p>Este método funciona (en teoría) para todos los Google Pixel con chip Tensor de Google. O sea: Pixel 6, Pixel 6 Pro, Pixel 6A, Pixel 7, Pixel 7 Pro, Pixel 7A, Pixel 8, Pixel 8 Pro y el futuro Pixel 8A.</p>
+<h3 id="entendidos">Entendidos</h3>
+<p>Si ya tienes abierto el bootloader de tu fono, y rooteado, sabes como esconder el root de los apps bancarios y conoces el mambo, entonces salta al paso 7 de la guía: <strong>Habilitando 5G, VoLTE y VoWIFI</strong>.</p>
+<h3 id="siganme-los-nerds">Síganme los nerds</h3>
+<p>Al rootear el fono, van a perder todo lo que tienen instalado en el. Esto, porque deben abrir el bootloader (algo así como el sector de inicio) del fono, y este proceso formatea el equipo. Si o si.</p>
+<p>Respalden sus cosas. Sus fotos, si no las tienen en algún otro lado. Usen el respaldo de Google mismo para sus contactos, llamadas, mensajes, etc. Respalden WhatsApp, si es que lo usan. Etcétera. Ustedes sabrán.</p>
+<p>Este proceso (de formateo del fono) ocurrirá una sola vez.</p>
+<h3 id="advertencias">Advertencias</h3>
+<p>Esté método no es recomendado para cualquiera.</p>
+<p>Debes saber y conocer el mundo del root de Android previamente.</p>
+<p>Tendrás que conectar tu fono a tu computador una vez al mes, para aplicar los parches OTA mensuales de Google. Tema "sencillo" hoy, gracias uno de los software que utilizaremos.</p>
+<p>La responsabilidad de cualquier pérdida de datos, es tuya.</p>
+<p>La responsabilidad de la modificación del software de tu fono, es tuya. Completa y absolutamente tuya.</p>
+<p>Rooteando el fono puedes hacer muchas cosas antes imposibles. Algunas de ellas malas... sin saberlo.</p>
+<p>Habilitar las apps bancarias (o juegos) es sencillo... pero no infalible. La comunidad juega el juego del gato y ratón con Google. Puede ocurrir que Google lance un parche a su servicio Play Integrity, e invalide tu "fingerprint". En cosa de horas, normalmente, están disponibles nuevos archivos para utilizar y hacer bypass de las protecciones de Google. De todos modos, ve con tu tarjeta como respaldo en tu billetera, aún cuando uses normalmente Google Wallet. Hombre prevenido vale por dos.</p>
+<p>No te llevaré de la mano al 100%. Por ejemplo, deberás instalar Android Platform Tools por tu cuenta, dependiendo de tu sistema operativo. No voy a explicar como hacerlo para los tres disponibles (Linux, Windows, macOS). No hay tiempo. No hay plata.</p>
+<p><a href="/media/2024/image-1.png"><img src="/media/2024/image-1.png?w=300" alt="" /></a></p>
+<p>El papiro aquí expuesto, te puede aburrir.</p>
+<p>(Nuevamente) Esté método no es recomendado para cualquiera.</p>
+<h3 id="software-necesario">Software necesario</h3>
+<p>Como diría Mónica, vamos con los ingredientes:</p>
+<ol>
+<li><a class="external" rel="noopener external" target="_blank" href="https://developer.android.com/tools/releases/platform-tools">Android Platform Tools</a>. El que descarguen ahí, depende de vuestro sistema operativo.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/badabing2005/PixelFlasher/releases">PixelFlasher</a>. Igualmente, la descarga ahí dependerá de su sistema operativo.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/chiteroman/PlayIntegrityFix/releases">Pixel Integrity Fix</a> por chiteroman.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/daboynb/PlayIntegrityNEXT/releases">PlayCurl</a> por daboynd.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/Magisk-Modules-Alt-Repo/sensitive_props/releases">SafetyNet sensitive props</a> por HuskyDG.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/EstebanForge/Pixel-VoLTE-VoWIFI-5G-Enabler">Pixel VoLTE, VoWIFI &amp; 5G Enabler por</a>... mi.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://play.google.com/store/apps/details?id=com.henrikherzig.playintegritychecker">SPIC Play Integrity Checker</a>. Lo instalarás desde el fono al final.</li>
+</ol>
+<p>Requerirás un cable USB-C para conectar el Pixel a tu computador.</p>
+<p>Un té de melisa, un comprimido de Melipass o uno de Lasea.</p>
+<h2 id="abriendo-el-bootloader">Abriendo el Bootloader</h2>
+<p>Conecta tu Pixel a tu PC (Windows, Linux, macOS... da lo mismo, son todos computadoras personales) con el cable USB-C.</p>
+<p>Habilita el modo desarrollador en tu fono, <a class="external" rel="noopener external" target="_blank" href="https://developer.android.com/studio/debug/dev-options#enable">siguiendo estos pasos</a>.</p>
+<p>Dentro de las opciones de desarrollador, habilita el debug USB <a class="external" rel="noopener external" target="_blank" href="https://developer.android.com/studio/debug/dev-options#Enable-debugging">siguiendo estos pasos</a>. Tu fono mostrará una alerta, pidiendo que confirmes que tu PC pueda acceder a tu fono. Marca el recordar, y acepta.</p>
+<p>Abre PixelFlasher, tu mejor amigo de aquí en adelante, y apunta a la ruta correcta del Android Platform Tools en tu equipo. Luego presiona el botón Scan, para que el app detecte tu fono.</p>
+<p><a href="/media/2024/image-2.png"><img src="/media/2024/image-2.png?w=1024" alt="" /></a></p>
+<p>En el menú Device, selecciona Reboot &gt; Bootloader.</p>
+<p><a href="/media/2024/image-3.png"><img src="/media/2024/image-3.png?w=543" alt="" /></a></p>
+<p>Tu fono reiniciará en el Bootloader. Ahora, en el mismo menú Device, selecciona Unlock Bootloader.</p>
+<p><a href="/media/2024/image-4.png"><img src="/media/2024/image-4.png?w=331" alt="" /></a></p>
+<p>Tu fono te pedirá confirmar si realmente quieres hacer esto. Recuerda: el equipo será formateado. Confirma, utilizando las teclas de volumen para navegar en las opciones, y el botón power para confirmar la opción seleccionada.</p>
+<p>Una vez el fono se reinicie, estarás de vuelta en la pantalla de configuración de tu equipo. Ahora te toca aquella lata: configurar tu fono. Adelante. Agrega tu cuenta de Google. Tu red Wifi. Restaura los datos que desees restaurar. Apps y sus datos. Etc.</p>
+<p>Solo no configures los apps de Bancos y juegos que molesten por rootear un fono. Puedes restaurarlos, instalarlos, pero no los abras ni utilices por ahora. Para evitarte problemas, porque verán que tienes el bootloader desbloqueado, y... llorarán por eso.</p>
+<p>Adelante. Te espero...</p>
+<p><a href="/media/2024/silvestre-esperando.gif"><img src="/media/2024/silvestre-esperando.gif?w=480" alt="" /></a></p>
+<h2 id="rooteando-con-magisk">Rooteando con Magisk</h2>
+<p>En tu fono, vuelve a habilitar las opciones de desarrollador y el debug USB, tal cual como lo hiciste anteriormente.</p>
+<p>Mantén conectado el Pixel a tu PC.</p>
+<p>Vuelve a abrir PixelFlasher, dale al Scan para que detecte tu fono y selecciónalo. Ahora haz click sobre el botón Device, y selecciona OTA &gt; 14.x (la imagen dependerá de la versión nueva disponible en ese momento). Dudo que tengan un fono Verizon, pero el saber que OTA seleccionar, dependerá de ustedes. Normalmente es la versión normal, no Verizon.</p>
+<p><a href="/media/2024/image-6.png"><img src="/media/2024/image-6.png?w=1024" alt="" /></a></p>
+<p>PixelFlasher comenzará a descargar el zip de esa versión del OTA de tu Pixel. Esto depende de tu conexión y su velocidad. Paciencia.</p>
+<p>Una vez termine, la ruta debería quedar seleccionada automáticamente. Presiona el botón Process a la derecha. Esto extraerá los archivos necesarios para que PixelFlasher pueda trabajar. Paciencia.</p>
+<p><a href="/media/2024/image-7.png"><img src="/media/2024/image-7.png?w=1024" alt="" /></a></p>
+<p>Al terminar, justo debajo, verás al menos un item nuevo en la selección de boot/init_boot. Es el Bootloader del firmware del fono. Selecciónalo y presiona Patch.</p>
+<p><a href="/media/2024/image-8.png"><img src="/media/2024/image-8.png?w=1024" alt="" /></a></p>
+<p>PixelFlasher comenzará a parchar la imagen de inicio con Magisk (el root). Déjalo que termine. Paciencia.</p>
+<p>Existe la posibilidad que el proceso de parche falle si el bootloader dentro del zip del OTA es distinto al que tienes instalado. Si te ocurre, haz que PixelFlasher descargue entonces la imagen factory, seleccióna aquella y vuelve a intentar el proceso de parche con la imagen factory.</p>
+<p>Una vez termine y parche correctamente, vuelve a seleccionar el zip OTA, y continúa.</p>
+<p>Al terminar, verás que junto a la imagen de inicio anterior, se mostrará una nueva, con un ícono de un parche curita (tirita, vendita). Selecciona ese nuevo item, que es la imagen de inicio con el root (Magisk), y presiona el botón Flash Pixel Phone.</p>
+<p><a href="/media/2024/image-10.png"><img src="/media/2024/image-10.png?w=1024" alt="" /></a></p>
+<p>Ve a tomar un sorbo de agua y vuelve.</p>
+<p>Al finalizar el flasheo, tu Pixel se reiniciará.</p>
+<p>Aún con el fono conectado al PC y desbloqueado, presiona Install Magisk en la barra superior de PixelFlasher.</p>
+<p><a href="/media/2024/image-11.png"><img src="/media/2024/image-11.png?w=1024" alt="" /></a></p>
+<p>Selecciona la versión "Delta Canary" de HuskyDG, y dale al Install.</p>
+<p><a href="/media/2024/image-28.png"><img src="/media/2024/image-28.png?w=1024" alt="" /></a></p>
+<p>Esto instalará el app Kitsune Magisk (Magisk Manager) en tu Pixel. Ábrelo (en el fono).</p>
+<p>Es posible que Magisk avise que se requieren hacer cambios en el dispositivo para terminar la instalación. Acepta y déjalo que haga lo suyo. El fono se reiniciará.</p>
+<p>Nuevamente abre Magisk Manager, y abre la configuración dentro.</p>
+<p><a href="/media/2024/share_1674670333064280187.png"><img src="/media/2024/share_1674670333064280187.png?w=461" alt="" /></a></p>
+<p>Dentro busca y activa la opción de Hide Magisk Manager:</p>
+<p><a href="/media/2024/image-13.png"><img src="/media/2024/image-13.png?w=966" alt="" /></a></p>
+<p>Ponle el nombre que desees a la aplicación. Un nombre que NO sea Magisk ni nada similar. Algunos apps detectan la existencia de un app llamado "Magisk" (o root, o algún derivado), y se niegan a funcionar.</p>
+<p>Para esta guía, nuestro Magisk Manager de aquí en adelante se llamará: <strong>M&amp;M</strong>. Si Magisk te pregunta si quieres poner un ícono del nuevo app en tu launcher, dile que... como quieras. Si crees que se te olvidará el nombre que le pusiste al app... no se que haces aquí.</p>
+<p>Vuelve abrir Magisk, ahora M&amp;M. Ve a la configuración nuevamente. Habilita Systemless hosts, Zygisk, MagiskHide y Enforce SuList. Si Magisk te solicita reiniciar el fono, hazlo.</p>
+<p><a href="/media/2024/share_9110916612597576950-1.png"><img src="/media/2024/share_9110916612597576950-1.png?w=461" alt="" /></a></p>
+<p>Felicidades, ahora tienes tu Pixel rooteado. Sigamos, digo el ególatra en su burbuja.</p>
+<h2 id="escondiendo-el-root-instalando-modulos-necesarios">Escondiendo el root &amp; Instalándo módulos necesarios</h2>
+<p>La idea es que los apps de Bancos y otros que lloran por tener root, no vean que tenemos un fono rooteado. Para eso, debemos instalar ciertos módulos dentro de Magisk. Aquí tienes dos opciones:</p>
+<p>Una, instalarlos desde tu PC, con PixelFlasher.
+Dos, instalarlos desde el mismo fono, con Magisk Manager (M&amp;M).</p>
+<p>Tu decide.</p>
+<p>Los módulos a instalar son:</p>
+<ul>
+<li>Pixel-VoLTE-VoWIFI-5G-Enabler.zip</li>
+<li>playcurl.zip</li>
+<li>PlayIntegrityFix_v15.4.zip</li>
+<li>sensitive_props-v3.zip</li>
+</ul>
+<p>Estos los descargaste al inicio, si no has sido un niño travieso y te has saltado partes de la guía.</p>
+<h3 id="cargando-modulos-con-pixelflasher">Cargando módulos con PixelFlasher</h3>
+<p>Con tu fono desbloqueado y conectado al PC con el cable USB-C, abre PixelFlasher. Escanea para detectar tu fono, y selecciónalo. Ahora presiona el ícono Magisk.</p>
+<p><a href="/media/2024/image-14.png"><img src="/media/2024/image-14.png?w=1024" alt="" /></a></p>
+<p>En la ventana que se abre, presiona el botón "Install Module". Esto te dejará seleccionar un archivo zip. Ahí debes instalar los módulos que necesitamos. Una vez cargados, dale al OK para instalarlos y cerrar la ventana.</p>
+<p><a href="/media/2024/image-15.png"><img src="/media/2024/image-15.png?w=1024" alt="" /></a></p>
+<p>Reinicia tu Pixel.</p>
+<h3 id="cargando-modulos-con-magisk-manager">Cargando módulos con Magisk Manager</h3>
+<p>Acá deberás descargar o mover los archivos zip de los módulos que instalaremos, al fono. Ve tu como logras aquello. Puedes descargarlos directamente en el fono. Si lo haces, no olvides que debes eliminar los archivos zip del fono una vez que los instales. Esto, porque existen apps que hasta se atreven a buscar y detectar archivos utilizados para el rooteo, y se pueden negar a funcionar bien si los ven. Es poco frecuente, menos ahora con las versiones de Android más nuevas que limitan a qué archivos puede acceder un app, pero... puede pasar.</p>
+<p>Abre M&amp;M y selecciona la sección Modules. Dentro, presiona la opción Install from storage.</p>
+<p><a href="/media/2024/image-16.png"><img src="/media/2024/image-16.png?w=469" alt="" /></a></p>
+<p>Hazlo para cada uno de los módulos que necesitamos. Asegúrate que estén activos todos.</p>
+<p>Borra los zips desde tu fono, y reinicia tu Pixel.</p>
+<h3 id="ocultando-magisk-de-apps-criticos">Ocultando Magisk de apps críticos</h3>
+<p>La versión Delta de Magisk, viene con el clásico (para los que conocíamos Magisk desde hace años): Magisk Hide.</p>
+<p>Esta característica fue removida de Magisk oficial, puesto que el creador, topjohnwu, entró a trabajar a Google en el área de seguridad de Android. Parte de su compromiso, era dejar de trabajar en esconder el root. El continúa desarrollando el método de root de Magisk, pero ya sin la intención directa de esconderlo.</p>
+<p>Kitsune Magisk de HuskyDG, devuelve esta característica, muy útil por cierto.</p>
+<p>En el mod de Kitsune Magisk, ningún app en tu fono puede obtener root, o saber que el root existe, a menos que tu le des permiso directamente, agregándolo en el SuList. Una maravilla.</p>
+<p>Ve a las opciones de M&amp;M, y abre la configuración de SuList.</p>
+<p><a href="/media/2024/share_3179860873286021149.png"><img src="/media/2024/share_3179860873286021149.png?w=461" alt="" /></a></p>
+<p>Dentro, selecciona al menos los apps:</p>
+<p><a href="/media/2024/image-31.png"><img src="/media/2024/image-31.png?w=457" alt="" /></a></p>
+<ul>
+<li>AdAway, si lo instalaste.</li>
+<li>Fp Downloader.</li>
+<li>MRepo, si lo instalaste. Lo mencionaré luego.</li>
+</ul>
+<p>Cierra la configuración de M&amp;M.</p>
+<h3 id="instalando-apps-indispensables">Instalando apps indispensables</h3>
+<p>En tu Pixel, descarga los siguientes apps e instálalos. No los abras aún. Solo instala.</p>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://play.google.com/store/apps/details?id=com.henrikherzig.playintegritychecker">SPIC Play Integrity Checker</a></li>
+</ul>
+<h3 id="donde-esta-bebe">¿Dónde está bebé?</h3>
+<p>Felicitaciones, en este punto, el rooteo de tu fono estará escondido.</p>
+<p>Para comprobarlo, después de haber reiniciado tu Pixel, abre el app SPIC Play Integrity Checker, haz click sobre el botón "Make play integrity request" y deberías ver estas respuestas:</p>
+<p><a href="/media/2024/share_8908555230267143453.png"><img src="/media/2024/share_8908555230267143453.png?w=461" alt="" /></a></p>
+<p><a href="/media/2024/share_8052960383651955077.png"><img src="/media/2024/share_8052960383651955077.png?w=461" alt="" /></a></p>
+<p>MEETS_DEVICE_INTEGRITY y Basic Integrity como CTS Profile Match en "passed".</p>
+<h2 id="habilitando-5g-volte-y-vowifi">Habilitando 5G, VoLTE y VoWIFI</h2>
+<p>Por fin, llegamos a lo que toda latinoamérica unida estaba esperando.</p>
+<p>Ya hiciste más de la mitad de camino, por cierto. Al flashear y habilitar el módulo Pixel-VoLTE-VoWIFI-5G-Enabler.zip, tu fono... ya se puede conectar a VoLTE, VoWIFI y 5G. Si tu proveedor lo ofrece en tu plan, claro está.</p>
+<pre><code>Entendido. Si saltaste hasta acá, lo que te queda por hacer es simple. En tu fono descarga el módulo mencionado arriba (Pixel-VoLTE-VoWIFI-5G-Enabler.zip), flashéalo dentro de Magisk Manager, reinicia el fono y vuelve a acompañarnos.
+</code></pre>
+<h2 id="et-voila">Et voilà</h2>
+<p>Ya tienes 5G, VoLTE y VoWIFI en tu fono.</p>
+<p><img src="/media/2024/screenshot_20240201-0939106095855843584134479.png?w=461" alt="" /></p>
+<p><a href="/media/2024/image-25.png"><img src="/media/2024/image-25.png?w=1024" alt="" /></a></p>
+<p>Obviamente, debes ir a la configuración de Android, y habilitar VoLTE y VoWIFI, además de 5G.</p>
+<p><a href="/media/2024/share_3976947873507257122.png"><img src="/media/2024/share_3976947873507257122.png?w=461" alt="" /></a></p>
+<p><a href="/media/2024/share_3369428245017440705.png"><img src="/media/2024/share_3369428245017440705.png?w=1024" alt="" /></a></p>
+<p>No está de más decir que, si tu proveedor móvil o plan no soportan 5G, VoLTE y/o VoWIFI, por más que habilites estas características en el software del fono, no van a funcionar.</p>
+<p>Lo menciono, porque llevo meses peleando con Entel para que habiliten VoWIFI en mi línea. Meses. Buena suerte si lo logran (y pasen el dato, por favor: esteban at attitude.cl). Con WOM, eso si, VoWIFI funcionó inmediatamente.</p>
+<h3 id="sin-5g-aun">¿Sin 5G aún?</h3>
+<p>No puedo probar este módulo en todos los fonos de Google, ni en todos los proveedores en mi país, ni en todas las ciudades en mi país. Mucho menos fuera de el.</p>
+<p>Dado a las limitantes técnicas, de tiempo y recursos, es que el módulo viene como viene. Sin soporte.</p>
+<p>Si no te funciona el 5G aún, puedes probar forzar (de nuevo) el uso de las redes SA y NSA, utilizando <a class="external" rel="noopener external" target="_blank" href="https://play.google.com/store/apps/details?id=com.qtrun.QuickTest&amp;hl=en&amp;gl=US">Network Signal Guru</a>. Instálalo en tu fono, dale permisos de root (en Magisk).</p>
+<p>Dentro del app, presiona el botón superior derecho (el menú de los "3 puntos"), y luego en "Forcing Control". Ahora haz tap sobre el SIM que estás usando (SIM1 si es físico, SIM2 si es eSIM). Luego ingresa a "NR Mode Setting" y, finalmente, presiona en la opción que dice: [4]SA+NSA.</p>
+<p>Esto debería forzar, de nuevo, a que el fono use aquellas redes si están disponibles.</p>
+<p>Si te funciona así: bien. Esto es algo que tendrás que repetir (abrir el app y forzar este cambio) cada vez que reinicies el fono. Ojo con ese detalle.</p>
+<h4 id="nada-de-nada">¿Nada de nada?</h4>
+<p>Si todavía no te funciona 5G después de usar el módulo y/o el app Network Signal Guru, entonces, <a class="external" rel="noopener external" target="_blank" href="https://github.com/EstebanForge/Pixel-VoLTE-VoWIFI-5G-Enabler?tab=readme-ov-file#disclaimer">recuerda lo que debiste haber leído por acá</a>.</p>
+<p>¿Recuerdas haber leído las advertencias al inicio del artículo?</p>
+<p>Yo si. Una dice: Esté método no es recomendado para cualquiera.</p>
+<p>No puedo ayudarte en comprensión lectora, lamentablemente.</p>
+<h2 id="play-integrity-y-safety-net">Play Integrity y Safety Net</h2>
+<p>Si alguna vez falla la verificación de Play Integrity, es porque el fingerprint instalado en tu fono, fue baneado por Google. Ocurre de vez en cuando.</p>
+<p>En ese caso, lo único que debes realizar, es abrir la App que dejamos para descargar un fingerprint nuevo: <strong>Fp Downloader</strong>.</p>
+<p>Deja que hagan su trabajo (verás el mensaje de Super Usuario otorgado a una de ellas), y cuando se cierre, reinicia tu fono. Ahora deberías volver a pasar la Integridad de Google Play y podrás nuevamente usar tus apps de Bancos y otros similares que molesten por el root.</p>
+<h2 id="actualizaciones">Actualizaciones</h2>
+<p>¿Qué pasa con los parches mensuales que Google lanza para los Pixel?</p>
+<p>Simple: <a class="external" rel="noopener external" target="_blank" href="https://github.com/badabing2005/PixelFlasher">PixelFlasher</a>.</p>
+<p>Te dije que se volvería tu nuevo mejor amigo.</p>
+<p>Naturalmente conecta tu Pixel a tu PC. Abre PixelFlasher. Escanea y selecciona tu fono. Descarga el <a class="external" rel="noopener external" target="_blank" href="https://developers.google.com/android/ota">nuevo zip OTA</a> desde el mismo PixelFlasher:</p>
+<p><a href="/media/2024/image-21.png"><img src="/media/2024/image-21.png?w=1024" alt="" /></a></p>
+<p>Al terminar de descargar, clickea Process.</p>
+<p><a href="/media/2024/image-22.png"><img src="/media/2024/image-22.png?w=434" alt="" /></a></p>
+<p>Terminando de procesar, debajo, selecciona el nuevo init_boot y clickea Patch. Puedes borrar los init_boot anteriores si te confundes, por seguridad (seleccionando y clickeando Delete).</p>
+<p><a href="/media/2024/image-23.png"><img src="/media/2024/image-23.png?w=1024" alt="" /></a></p>
+<p>Una vez que termine de parchar, <strong>y esto es importante</strong>, selecciona el nuevo init_boot parchado (el que tiene el parche curita) y dale al botón Flash Pixel Phone. Ese init_boot es el que contiene Magisk, el root.</p>
+<p><a href="/media/2024/image-24.png"><img src="/media/2024/image-24.png?w=1024" alt="" /></a></p>
+<p>Al finalizar, tu fono se reiniciará actualizado. Y mantendrás tus datos, el root ocultado y la habilitación de 5G, VoLTE y VoWIFI intactas.</p>
+<p>Esto es lo que debes hacer cada mes. Nada más. Nada menos.</p>
+<h3 id="bloqueo-de-ota">Bloqueo de OTA</h3>
+<p>Como tienen rooteado el fono, aunque el Pixel descargue el OTA, no podrán flashearlo desde el fono. Siempre deben actualizar desde el PC.</p>
+<p>Si instalan <a class="external" rel="noopener external" target="_blank" href="https://adaway.org/">AdAway</a>, pueden agregar el siguiente host a su bloqueo local:</p>
+<pre><code>ota.googlezip.net
+</code></pre>
+<p>De esta forma, el Pixel no podrá descargar los OTA. No molestará con aquella notificación permanente de actualización.</p>
+<p><a href="/media/2024/share_5471575512155860510.png"><img src="/media/2024/share_5471575512155860510.png?w=461" alt="" /></a></p>
+<p>Cuando estés en casa, cerca de tu PC, puedes actualizar tu fono como te indiqué arriba :)</p>
+<h3 id="magisk-y-modulos">Magisk y Módulos</h3>
+<p>Magisk se actualiza por si solo. Cuando existe una actualización, abre la notificación. Verás algo como esto:</p>
+<p><a href="/media/2024/screenshot_20240205-071116.png"><img src="/media/2024/screenshot_20240205-071116.png?w=461" alt="" /></a></p>
+<p>Selecciona la opción recomendada, y dale al Let's Go. Al finalizar la actualización, simplemente dale al Reboot para reiniciar.</p>
+<p><a href="/media/2024/screenshot_20240205-071151.png"><img src="/media/2024/screenshot_20240205-071151.png?w=461" alt="" /></a></p>
+<p>En el caso de los módulos, algunos de ellos vienen con una URL de GitHub para ser actualizados directo desde la sección de Módulos de Magisk. Dentro se activará el botón Update del módulo, cuando existe una actualización.</p>
+<p>No todos los módulos implementan esto.</p>
+<p>Opcionalmente te puedes ayudar de MRepo o <a class="external" rel="noopener external" target="_blank" href="https://github.com/DerGoogler/MMRL">MMRL</a> para mantener tus módulos al día. MRepo es el más sencillo de instalar y dejar andando. MRepo <a class="external" rel="noopener external" target="_blank" href="https://github.com/MRepoApp/MRepo/releases">lo descargas acá</a>. Una vez instalado, debes ir a la configuración (Settings), luego a repositories, y agregar estos:</p>
+<pre><code>apt.izzysoft.de/magisk/gr.dergoogler.com/gmr/alt-repo.sanmer.app/mrepoapp.github.io/magisk-modules-alt-repo/rikj000.github.io/Magisk-Modules-Rikj000-Repo/
+</code></pre>
+<p>El app te avisará de actualizaciones en tus módulos, que puedes instalar directo desde el, para luego reiniciar (otórgale permisos de Super Usuario).</p>
+<p>No es necesario que instales MRepo si no lo deseas.</p>
+<h2 id="la-magia-de-magisk">La magia de Magisk</h2>
+<p>Por cierto, hay muchas cosas entretenidas que pueden hacer con Magisk y módulos que pueden encontrar en línea.</p>
+<p>Por ejemplo, pueden instalar AdAway (desde F-Droid) para bloquear toda la publicidad, en todo el fono. Web, apps, donde sea.</p>
+<p>Módulos que uso:</p>
+<p>Limitar la carga del fono a un 85%, para aumentar la longevidad de la batería.</p>
+<p>Habilitar respaldo en calidad original y sin límites en Google Photos, tal cual como los Google Pixel XL.</p>
+<p>Universal GMS Doze habilita que los servicios de Google se vayan a "dormir", como el resto de los apps. Se gana harto el vida de batería al día con esto.</p>
+<p>Tweaks de velocidad, performance y fluidez para el kernel, como módulo (YAKT), sin necesidad de cambiar el kernel por uno nuevo.</p>
+<p>Entre muchos otros, que no voy a cubrir acá, porque la guía no es para aquello.</p>
+<h2 id="ups-rewind">Ups! Rewind</h2>
+<p>Si por algún motivo deseas volver atrás todo este procedimiento, y quieres dejar tu Pixel de fábrica, hoy es simple.</p>
+<p>Con el modo desarrollador habilitado, conecta tu Pixel a tu PC, y abre la siguiente URL:</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://flash.android.com/">https://flash.android.com</a></p>
+<p>Sigue los pasos (que no voy a detallar), y flashea el firmware de fábrica del fono en tu equipo, además de terminar cerrando el bootloader.</p>
+<p>Me parece que <a class="external" rel="noopener external" target="_blank" href="https://pixelrepair.withgoogle.com/">https://pixelrepair.withgoogle.com</a> también sirve.</p>
+<p>Perderás todos los datos dentro del fono, otra vez. Pero quedará tal como venía de fábrica.</p>
+<p>Débil.</p>
+<h2 id="agradecimientos">Agradecimientos</h2>
+<p>A los que hicieron los softwares que acá menciono y utilizamos.</p>
+<p>A ti por llegar hasta acá. Te compadezco.</p>
+<p><img src="/media/2024/screenshot_20240202-2148595940835114504020289.png?w=461" alt="" /></p>
+<p><img src="/media/2024/screenshot_20240202-2148184054558890034844777.png?w=461" alt="" /></p>
+<p><img src="/media/2024/screenshot_20240202-2150073152664143658121818.png?w=461" alt="" /></p>
+<p><a href="/media/2024/image-26.png"><img src="/media/2024/image-26.png?w=455" alt="" /></a></p>
+<p><a href="/media/2024/screenshot_20240208-114641.jpg"><img src="/media/2024/screenshot_20240208-114641.jpg?w=461" alt="" /></a></p>
+<p><a href="/media/2024/pato-yanez-pato-yanez.gif"><img src="/media/2024/pato-yanez-pato-yanez.gif?w=498" alt="" /></a></p>
+
+        </section>
+
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="EstebanForge&#x2F;actitud-xyz-comments"
+    data-repo-id="R_kgDOOBr8yA"
+    data-category="Blog"
+    data-category-id="DIC_kwDOOBr8yM4Cq3u8"
+    
+        data-mapping="pathname"
+    
+    data-strict="0"
+    data-reactions-enabled="1"
+    
+        data-input-position="top"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://actitud.xyz/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        
+
+    </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#chile">¿Chile?</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#habilitar-volte-metodo-sencillo">Habilitar VoLTE, método sencillo</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#5g-volte-y-vowifi-metodo-avanzado">5G, VoLTE y VoWIFI, método avanzado</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#entendidos">Entendidos</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#siganme-los-nerds">Síganme los nerds</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#advertencias">Advertencias</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#software-necesario">Software necesario</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#abriendo-el-bootloader">Abriendo el Bootloader</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#rooteando-con-magisk">Rooteando con Magisk</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#escondiendo-el-root-instalando-modulos-necesarios">Escondiendo el root &amp; Instalándo módulos necesarios</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#cargando-modulos-con-pixelflasher">Cargando módulos con PixelFlasher</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#cargando-modulos-con-magisk-manager">Cargando módulos con Magisk Manager</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#ocultando-magisk-de-apps-criticos">Ocultando Magisk de apps críticos</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#instalando-apps-indispensables">Instalando apps indispensables</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#donde-esta-bebe">¿Dónde está bebé?</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#habilitando-5g-volte-y-vowifi">Habilitando 5G, VoLTE y VoWIFI</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#et-voila">Et voilà</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#sin-5g-aun">¿Sin 5G aún?</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#nada-de-nada">¿Nada de nada?</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#play-integrity-y-safety-net">Play Integrity y Safety Net</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#actualizaciones">Actualizaciones</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#bloqueo-de-ota">Bloqueo de OTA</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#magisk-y-modulos">Magisk y Módulos</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#la-magia-de-magisk">La magia de Magisk</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#ups-rewind">Ups! Rewind</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/#agradecimientos">Agradecimientos</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+            <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script><span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://actitud.xyz/js/copyCodeToClipboard.min.js"></script>
+
+<script defer src="https://actitud.xyz/js/codeBlockNameLinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="noopener" target=_blank
+
+ href="https://actitud.xyz/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://actitud.xyz/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="ZXN0ZWJhbkBhdHRpdHVkZS5jbA=="><img loading="lazy" alt="email" title="email" src="https://actitud.xyz/social_icons/email.svg">
+                            </a>
+                        </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://github.com/EstebanForge/">
+                                    <img loading="lazy" alt="github" title="github" src="https://actitud.xyz/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://twitter.com/EstebanForge">
+                                    <img loading="lazy" alt="twitter" title="twitter" src="https://actitud.xyz/social_icons/twitter.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 1999-2026 Esteban Cuevas • Unless otherwise noted, the content in this website is available under the <a class="external" rel="noopener external" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                </small>
+        </div>
+    </section>
+
+    <script src="https://actitud.xyz/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
