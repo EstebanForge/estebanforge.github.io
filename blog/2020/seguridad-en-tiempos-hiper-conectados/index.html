@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data: 'self';img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27; 'unsafe-inline';frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com giscus.app;connect-src 'self';script-src 'self'  giscus.app  cdn.jsdelivr.net 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://actitud.xyz">
+
+    
+    <title>
+It's about attitude • Seguridad en tiempos hiper conectados</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://actitud.xyz/images/favicon.png"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="It's about attitude - Atom Feed" href="https://actitud.xyz/atom.xml">
+                
+            
+                
+                    <link rel="alternate" type="application/rss+xml" title="It's about attitude - RSS Feed" href="https://actitud.xyz/rss.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://actitud.xyz/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://actitud.xyz/main.css?h=6b1dda977391dad0c76e" />
+        <link rel="stylesheet" href="https://actitud.xyz/css/custom.css?h=535738bd9137b34265fb" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Personal blog about technology, life, and everything in between." />
+        <meta property="og:description" content="Personal blog about technology, life, and everything in between." />
+        <meta name="twitter:description" content="Personal blog about technology, life, and everything in between." />
+
+    
+
+    <meta property="og:title" content="Seguridad en tiempos hiper conectados" />
+    <meta name="twitter:title" content="Seguridad en tiempos hiper conectados" />
+    <meta property="og:type" content="article" />
+
+    
+    
+    
+    
+        
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+        
+            
+            <meta property="og:image" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;media&#x2F;2020&#x2F;kaur-kristjan-cppf4w5pb1c-unsplash.jpg" />
+            <meta property="og:image:secure_url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;media&#x2F;2020&#x2F;kaur-kristjan-cppf4w5pb1c-unsplash.jpg" />
+            <meta property="og:image:type" content="image/jpeg" />
+            
+                <meta property="og:image:width" content="4897" />
+                <meta property="og:image:height" content="3265" />
+            
+            <meta name="twitter:image" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;media&#x2F;2020&#x2F;kaur-kristjan-cppf4w5pb1c-unsplash.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;blog&#x2F;2020&#x2F;seguridad-en-tiempos-hiper-conectados&#x2F;" /><meta property="og:site_name" content="It&#x27;s about attitude">
+        <noscript><link rel="stylesheet" href="https://actitud.xyz/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://actitud.xyz/js/initializeTheme.min.js"></script>
+        <script defer src="https://actitud.xyz/js/themeSwitcher.min.js"></script>
+        <script defer src="https://actitud.xyz/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        </head>
+
+
+<body class="use-sans-serif">
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://actitud.xyz">It&#x27;s about attitude</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz">home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/esteban/">esteban
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;EstebanForge">github
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Seguridad en tiempos hiper conectados
+        </h1>
+
+        <ul class="meta"><li>By Esteban</li>
+
+            
+                <span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;actitud.xyz" class="u-url " title="Esteban">Esteban</a>
+</span>
+
+            
+                <li><span class='separator' aria-hidden='true'>•</span>2020-10-01</li><li title="6282 words"><span class='separator' aria-hidden='true'>•</span>32 min read</li>
+        </ul>
+
+        <section class="body"><p>Mi especialidad no es la seguridad informática. No es mi trabajo. Pero, laborando hace un poco más 20 años en el mundo del desarrollo de software, me he convertido en una persona consciente respecto al trato de mis datos personales, y laborales, en la red, y de los peligros que esa información y su mal manejo pueden traer.</p>
+<p>Es que desde hace poco más de 20 años también, y tan solo con una pausa de unos seis meses de trabajo de oficina tradicional en medio por allá por el 2005-2006, he desempeñado mis labores profesionales de forma remota.</p>
+<p><img src="/media/2020/kaur-kristjan-cppf4w5pb1c-unsplash.jpg?w=1024" alt="" /></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://actitud.xyz/esteban/">Fortuna</a>.</p>
+<p>Creo que por esto tengo <em>un poquitín</em> más de experiencia que otros que, por la pandemia, se han visto enfrentados al trabajo remoto.</p>
+<p>Bueno si, también: por lo viejo. Más sabemos por viejos que...</p>
+<p>Todo lo que he aprendido en torno a la seguridad informática para mortales durante estos años, podría servirle a alguien más. ¿Por qué no compartir esos conocimientos?.</p>
+<p>Gracias desde ya a mi familia, que soportaron una conversación al respecto en la sobremesa, y amigos cercanos (nerds) a los que les envié mis no-breve notas que tomé luego de darle vueltas a esto por un par de días. Me dijeron que no estaba tan mal lo que escribí en esas notas, y que sería bueno el publicarlas y compartirlas. De ellos entonces es la culpa que estén leyendo esto.</p>
+<p>Por extenso que se vea, créanme, es solo un resumen de lo que deben tener en mente cuando vivan, trabajen y se diviertan digitalmente.</p>
+<p>Sin más preámbulo comparto humildemente con ustedes:</p>
+<h1 id="20-preceptos-de-seguridad-en-la-era-digital-edicion-2020">20 preceptos de seguridad en la era digital. Edición 2020.</h1>
+<h2 id="1o-nadie-esta-libre">1º: Nadie está libre.</h2>
+<p>Nadie está libre de ataques y/o accidentes-desastres informáticos. La preparación que haces no es exclusivamente para prevenirlos. Es, también, para mitigar consecuencias de cuando seamos víctimas de uno, directa o indirectamente.</p>
+<p>¿No lo crees así?</p>
+<p>Te enteras de un hackeo a una entidad bancaria donde eres cliente, o de un servicio de email del que eres parte. No tuviste que ver en ello (espero), pero serás afectado por ese ataque, sin duda.</p>
+<p>Luego de muchos años de vida útil, el disco duro de tu equipo, el único con toda tu información vital, se quema. Deja de funcionar simplemente. Pasa. Por años de vida. Por temperatura. Por mala suerte. No lo querías. No lo provocaste directamente. Pero, si no tienes esa información que guardabas ahí copiada en otro lado, ese disco duro muerto es ahora un desastre informático.</p>
+<p>Es lo primero que debes asimilar: te va a pasar algo malo en tu vida digital. Mientras antes lo aceptes, más rápido aprendes a prevenir y mitigar desastres.</p>
+<h2 id="2o-protege-tu-informacion">2º: Protege tu información.</h2>
+<p>Protege tu información personal y privada. De ti mismo, si es necesario.</p>
+<p>Muchos ataques específicos a una persona comienzan con ingeniería social. Sabiendo y recopilando datos que no deberían saber de ti, como edad, tu dirección, tus fonos, tu id social a.k.a. carnet, tus direcciones de emails, tus estudios, tu familia y sus ocupaciones, etc. es más sencillo realizar un ataque digital dirigido.</p>
+<p>Está bien compartir algunas cosas que haces en redes sociales. Si es lo que te gusta, bien por ti. Pero a nadie debería importarle cada momento de tu vida, más allá de a ti mismo, y a un puñado de cercanos muy cercanos.</p>
+<p>Piensa tres veces antes de subir información tuya a la red.</p>
+<h2 id="3o-la-impermanencia">3º: La impermanencia.</h2>
+<p>Los datos digitales no difieren de cómo funciona el resto del universo en su núcleo. También son impermanentes.</p>
+<p>Nadie te asegura que un email gratuito (como gmail, hotmail, yahoo, <a class="external" rel="noopener external" target="_blank" href="https://melacorneta.com/">melacorneta</a>, etc.) estén contigo por siempre. El proveedor puede terminar de prestar el servicio unilateralmente.</p>
+<p>Nadie te asegura que un email pagado esté contigo siempre. Igual que el gratuito, depende de un proveedor que puede terminar de prestar el servicio unilateralmente.</p>
+<p>Incluso si alojas tu propio servidor de correo, aquel servidor puede fallar. O puedes perder el dominio que alojan los emails.</p>
+<p>Ahora extiende esto a cualquier servicio digital que uses: herramienta de trabajo, red social, entretenimiento, etc. Todos ellos, por diversos motivos, pueden dejar de existir algún día y, con ello, llevarse meses u años de datos valiosos para ti.</p>
+<p>Esto nos lleva a...</p>
+<h2 id="4o-respaldar">4º: Respaldar.</h2>
+<p>Si vives de los datos que guardas y gestionas en tus equipos, deberías respaldar esos datos.</p>
+<p>Los equipos no son eternos. Se queman, se pierden, son robados, explosionan discos duros con fotos familiares sin respaldar, son bautizados por una taza de café, etc. Si solo mantienes una única copia de tus archivos importantes en el equipo que usas para trabajar o estudiar, y nada más, estás haciéndolo mal.</p>
+<p>Aprende la regla de tres (3-2-1) para los respaldos: tres respaldos en total, un respaldo primario, y dos copias extra del mismo. Usar al menos dos tipos de medios distintos para esos respaldos. Uno de esos tres, fuera del lugar físico donde están en uso esos datos normalmente. Por ejemplo, tus datos "físicos" en tu equipo, un respaldo automático local a un disco externo (o en red), y un respaldo extra en "la nube". El respaldo de la nube, cifrado si lo consideras necesario (ver: <a class="external" rel="noopener external" target="_blank" href="https://cryptomator.org/">Cryptomator</a>, <a class="external" rel="noopener external" target="_blank" href="https://www.veracrypt.fr/">VeraCrypt</a>, <a class="external" rel="noopener external" target="_blank" href="https://www.boxcryptor.com/es/">Boxcryptor</a>).</p>
+<p>Y automatízalos si es posible. Un respaldo que no se hace, no sirve.</p>
+<p>Tanto Windows 10 como macOS tienen herramientas por defecto para ello. Windows 10 cuenta con <a class="external" rel="noopener external" target="_blank" href="https://support.microsoft.com/es-cl/help/17127/windows-back-up-restore">Windows Backup and Restore</a> (Copias de Seguridad en español). macOS tiene a <a class="external" rel="noopener external" target="_blank" href="https://support.apple.com/es-cl/HT201250">Time Machine</a>. Estas utilidades hacen respaldos habituales en unidades externas y te recuerdan conectar ese disco externo para actualizar el respaldo cada ciertos días. Linux cuenta con un sin fin de herramientas para lograr algo similar.</p>
+<p>Para Windows, puedo recomendarles <a class="external" rel="noopener external" target="_blank" href="https://www.veeam.com/agent-for-windows-community-edition.html">Veeam Agent</a>. Es gratuito para uso personal, y el respaldo que hacen con el, se comporta muy, muy similar, al que se hace con Time Machine en macOS. Puede respaldar a una carpeta local, a un disco local, a un disco externo, a un disco en red, respalda periódicamente en el fondo, con historial completo de cambios (deltas), cifra el respaldo si así lo desean, puede volver atrás a X punto el OS completo, o rescatar X archivo específico de un punto anterior en el pasado, o hasta reinstalar el OS completo (con un pendrive que generan con el mismo Veeam Agent) y restaurar todo desde el respaldo, en caso de falla catastrófica, en el mismo equipo o en uno diferente incluso. De nuevo: muy, muy parecido a Time Machine en macOS.</p>
+<p>Respalda tus emails. Y automatiza el proceso si puedes.</p>
+<p>Si no, recurre a una calendarización de los respaldos que te recuerde hacerlos en forma periódica (como te acomode a ti: una vez al mes, dos veces al año, una vez al año).</p>
+<p>En el caso de Gmail, puedes usar <a class="external" rel="noopener external" target="_blank" href="http://takeout.google.com/">Takeout</a> para bajar todos tus datos, emails incluidos.</p>
+<p>Si saben como, para Gmail también existe <a class="external" rel="noopener external" target="_blank" href="http://gmvault.org/">gmvault</a> y <a class="external" rel="noopener external" target="_blank" href="https://github.com/GAM-team/got-your-back">got-your-back</a>.</p>
+<p>O pueden optar por servicios externos como <a class="external" rel="noopener external" target="_blank" href="https://www.dropmyemail.com/">DropMyEmail</a> para todo tipo de correo.</p>
+<h2 id="5o-el-dilema-de-las-contrasenas">5º: El dilema de las contraseñas.</h2>
+<p>Somos humanos. No deberíamos estar memorizando contraseñas. Nuestra memoria es frágil. Tenemos un cerebro que está a un golpe, o una enfermedad, de olvidar todo lo que contenía. Tampoco deberías estar repitiendo la misma contraseña en diversos sitios o servicios. Si uno de ellos filtra (por error o no) tu contraseña, es game-over para el resto de los servicios donde uses la misma contraseña.</p>
+<p>Utiliza un administrador-gestor de contraseñas para guardarlas y generarlas cuando necesites una nueva.</p>
+<p>Solo deberías recordar dos contraseñas: la de tu email principal (personal) y la del gestor de contraseñas.</p>
+<p>Recomendación personal de administrador de contraseñas:</p>
+<p>Si sabes como (instalar, usar, sincronizar entre equipos, respaldar la db), el combo <a class="external" rel="noopener external" target="_blank" href="https://keepassxc.org//">KeePassXC</a> y <a class="external" rel="noopener external" target="_blank" href="https://www.keepassdx.com/">KeePassDX</a> en Android, ambos open-source y gratuitos. Este mismo combo lo pueden completar con <a class="external" rel="noopener external" target="_blank" href="https://strongboxsafe.com/">Strongbox</a> en iOS.</p>
+<p>Si eres un usuario normal no-nerd y no quieres complicarte con cosas como la sincronización, entonces solo puedo recomendar <a class="external" rel="noopener external" target="_blank" href="https://bitwarden.com/">Bitwarden</a>. También es open-source, gratuito para uso personal, auditado varias veces y parte del programa HackerOne. Muy seguro.</p>
+<p>Existen otras alternativas que no puedo recomendar por su naturaleza cerrada y desconocida en el manejo de datos. Si bien ellas cuentan con textos oficiales y legales sobre su infraestructura, uso y tratamiento de datos, nunca sabrás cómo realmente funcionan por debajo. Es su palabra y nada más. Tendrás que confiar en lo que ellos dicen. De todas maneras, como dicen por ahí: es mejor usar un gestor de contraseñas, a no usar ninguno. Si ya utilizas uno, entonces continua haciéndolo, por favor.</p>
+<p>Deja que el gestor de contraseñas guarde todos tus accesos. Todos con contraseñas distintas. El gestor luego, una vez desbloqueado (cuando uses tu computador y/o fono), rellenará el usuario y password de ese sitio o aplicación, con los datos que tu le digas que use para conectarte a ese servicio.</p>
+<p>En tu navegador, usa la extensión de Bitwarden que, una vez desbloqueada, te permitirá clickear y auto-completar con tu usuario y password en cada item que tienes guardado, mientras ese item tenga la URL bien almacenada para coincidir con el dominio que está viendo.</p>
+<p>En tu móvil, Bitwarden debería sugerirte auto-completar apenas presionas un campo de password en un sitio o aplicación, con un popup. Tanto iOS y Android en sus versiones recientes soportan auto-completar para gestores de contraseñas. Configúralo.</p>
+<p>Evita usar el copiar-pegar tus contraseñas. El porta papeles de los sistemas operativos no es seguro. <a class="external" rel="noopener external" target="_blank" href="https://superuser.com/a/936725/299294">Windows</a>. <a class="external" rel="noopener external" target="_blank" href="https://arstechnica.com/gadgets/2020/06/tiktok-and-53-other-ios-apps-still-snoop-your-sensitive-clipboard-data/">iOS</a>. <a class="external" rel="noopener external" target="_blank" href="https://apple.stackexchange.com/questions/281394/how-to-secure-macoss-clipboard">macOS</a>. <a class="external" rel="noopener external" target="_blank" href="https://www.howtogeek.com/680147/psa-all-apps-can-read-your-iphone-and-android-clipboard/">Android</a>. E incluso si los desarrolladores han implementado medidas de seguridad para evitar el acceso irrestricto al porta papeles, un malware se puede camuflar de un app que pareciera seguro y, como ese app, pedirte permisos para ver el porta papeles. Muchos caerían ante eso.</p>
+<p>Privilegia las funciones de auto-completado de datos de acceso al click/tap que ofrecen los gestores de contraseñas (con la extensión de navegador y los apps móviles). Siempre.</p>
+<p>El correcto uso de un Password Manager también <a class="external" rel="noopener external" target="_blank" href="https://bitwarden.com/blog/post/how-password-managers-help-prevent-phishing/">ayuda a evitar caer en ataques del tipo Phishing</a>. Cuando un atacante copia el look de un sitio web real, pero lo sube a un servidor y dominio distinto, y donde el atacante espera que la víctima ingrese su usuario y contraseña en ese sitio falso para capturar esos datos y robarlos. Al usar un Administrador de Contraseñas, aunque la URL del Phishing sea muy similar a la URL del sitio verdadero, un Passwords Manager no ofrecerá el auto-completar el usuario y password. En ese momento debes dudar y considerar si estás realmente en el sitio correcto o no.</p>
+<p>Deja que el gestor de contraseñas genere contraseñas seguras por ti. No tienes que inventarlas. No somos buenos para randomizar. Somos predecibles, dijo el Oráculo y el Arquitecto.</p>
+<p>Si un día se hackean un servicio que tu usabas, y el servicio te dice que debes cambiar tu contraseña porque no es segura, respirarás aliviado: sabrás que no usabas esa contraseña en ningún servicio más que ese. Ni siquiera la conocías. Dará lo mismo entonces si un tercero conoce esa contraseña aleatoria usada solo en ese servicio vulnerado.</p>
+<p>Si usas Bitwarden (u alguna alternativa como LastPass, Dashlane, 1Password o EnPass), respalda una vez al mes tu bóveda localmente. Casi todos estos servicios de gestores de contraseñas tienen sistemas de exportado de tus cuentas en ellos. Guarda el contenido (un csv, excel, json o como venga) compreso en un zip con una contraseña segura... por último. Mejor: en una bóveda local como las mencionadas en el punto cuatro para respaldos en la nube.</p>
+<h4 id="como-generar-las-dos-contrasenas-que-debes-conocer-email-y-gestor-de-contrasenas"><strong>¿Cómo generar las dos contraseñas que debes conocer?</strong> (email y gestor de contraseñas).</h4>
+<p>Usando la lógica, muy bien explicada por <a class="external" rel="noopener external" target="_blank" href="https://xkcd.com/936/">XKCD</a>, de las frases largas y sin sentido. Una frase larga y sin sentido (pero con algún sentido para ti, para poder recordarla) es una mejor contraseña que una del tipo s0yh4x0r.</p>
+<p>Ejemplo (en español): <em>quiero comer metal con tontito albino</em></p>
+<p>Recuerda, debe hacerte sentido a ti nada más.</p>
+<p>Pueden probar sus ideas de contraseñas en <a class="external" rel="noopener external" target="_blank" href="https://bitwarden.com/password-strength/">un servicio como este</a> (de código abierto y seguro, no usen cualquier sitio para probar contraseñas tampoco).</p>
+<p>Si crees que tu memoria podría fallar (con la edad lo hará), escribe tus dos contraseñas de confianza (email y gestor de contraseñas) en papel, y guárdalas tan seguras como creas posible. En serio. Para eso existen cajas fuertes. O rincones de tu casa que solo tu conoces. El papel donde las escribes no debe anunciar que son contraseñas. Solo tu lo sabrás. De nuevo, nuestro cerebro está a un accidente o enfermedad de olvidar cosas relevantes como estas.</p>
+<h2 id="6o-autenticacion-de-dos-pasos-2fa">6º: Autenticación de dos pasos 2FA</h2>
+<p>¿Qué pasa si alguien captura y te roba la contraseña de un servicio crítico?. Con tu login, un desconocido normalmente podría acceder sin problemas a ese servicio.</p>
+<p>Entra la autenticación de dos pasos, 2FA.</p>
+<p>Una vez activada la autenticación de dos pasos en un servicio, cuando te conectas a el (con tu usuario y contraseña), el sitio solicitará un código temporal aleatorio, que será enviado a tu email asociado o que es generado por una aplicación específica para manejar códigos 2FA.</p>
+<p>Por tanto, si alguien roba tu acceso a un servicio donde tienes el acceso 2FA activado, aún con ese combo de login/password, esa persona no podrá entrar a ese servicio sin el código que recibirás por email o que generarás a través de una aplicación de 2FA.</p>
+<p>Al menos en tu email principal personal y en el gestor de contraseñas que elijas usar, deberías estar usando la autenticación de dos pasos siempre.</p>
+<p>Todo servicio crítico del que tu trabajo dependa, también deberías manejarlo con 2FA para esas cuentas.</p>
+<p>Apps para manejar códigos 2FA: <a class="external" rel="noopener external" target="_blank" href="https://2fas.com/">2FAS</a> (Android, iOS, Desktop), <a class="external" rel="noopener external" target="_blank" href="https://support.google.com/accounts/answer/1066447">Google Authenticator</a> (Android, iOS), <a class="external" rel="noopener external" target="_blank" href="https://authy.com/">Authy</a> (Android, iOS, Desktop), <a class="external" rel="noopener external" target="_blank" href="https://getaegis.app/">Aegis Authenticator</a> (Android), <a class="external" rel="noopener external" target="_blank" href="https://www.tofuauth.com/">Tofu Authenticator</a> (iOS), <a class="external" rel="noopener external" target="_blank" href="https://www.microsoft.com/authenticator">Microsoft Authenticator</a> (Android, iOS).</p>
+<p>Si eres nuevo en esto del 2FA, recomendado usar uno sencillo, y con posibilidad de sincronizar un segundo dispositivo fácilmente, como 2FAS. Open-source de paso. Win.</p>
+<p>¿Por?</p>
+<p>Si bien al activar 2FA en un servicio estos generalmente permiten imprimir y guardar un set de códigos de emergencia en caso que no tengas acceso a tu equipo con los códigos 2FA, set que por cierto deberías "imprimir" (copiar-pegar) y guardar en tu gestor de contraseñas (junto al login de ese servicio), no siempre es posible acceder a esos códigos de respaldo de forma inmediata.</p>
+<p>Entra un respaldo (otro respaldo): si es posible, asegúrate de contar con un segundo dispositivo móvil (algo sencillo, no tiene que ser todo gama alta) con tu app de códigos 2FA configurada 1:1 igual que tu equipo principal, pero guardado en casa, apagado, con alguna contraseña de acceso configurada (en caso de robo). Si te roban, se te pierde o "muere" tu equipo principal, podrás siempre echar mano a los mismos códigos 2FA en ese fono de respaldo en caso de emergencia, y así no perder el acceso a tus servicios críticos.</p>
+<p>2FAS es excelente para principiantes en este aspecto, permitiendo la sincronización de códigos 2FA entre dispositivos con previa confirmación en otro equipo antes configurado.</p>
+<p>Es más: en ese segundo dispositivo de respaldo que guardarás escondido por ahí y apagado, seguro, conecta también tu gestor de contraseñas. Tendrás un respaldo usable de el mismo ahí también, en caso de emergencia.</p>
+<p>Por cierto...</p>
+<p>Existe la autenticación de dos pasos vía SMS. Algunos servicios lo permiten. Evítala si te permiten usar otra forma de 2FA. Privilegia el 2FA vía email o, mejor aún, usando uno de los apps mencionados para 2FA en tu fono.</p>
+<p>¿Por qué?</p>
+<p>Los números de fono se pueden clonar o simplemente <a class="external" rel="noopener external" target="_blank" href="https://www.theverge.com/2017/9/18/16328172/sms-two-factor-authentication-hack-password-bitcoin">te pueden quitar</a>, temporalmente, tu número de fono para un ataque como estos. Siendo los números de fono vulnerables a otros ataques, como <a class="external" rel="noopener external" target="_blank" href="https://www.theverge.com/2019/8/31/20841448/jack-dorsey-twitter-hacked-account-sim-swapping">el de suplantación de identidad</a>, es mejor evitar usarlos como 2FA si es posible.</p>
+<p>Pero.</p>
+<p>El 2FA no es invulnerable. Existen ataques contra este mecanismo de seguridad. Pero son elaborados. Generalmente apuntan a personas muy, muy importantes, o que manejan información de interés en esas cuentas protegidas con 2FA.</p>
+<p>Un tipo de ataque conocido contra el 2FA es uno del tipo <a class="external" rel="noopener external" target="_blank" href="https://es.wikipedia.org/wiki/Ataque_de_intermediario">MITM</a>. Imagina que entras a un sitio y que tu navegador dice que estás en la URL correcta, que el sitio es 100% igual que el que recuerdas, tal como debería ser, ninguna alerta roja. Hasta tu gestor de contraseñas te ofrece auto-completar tu usuario y contraseña. El pero es que no estás en ese sitio o servicio en realidad. Estás en una copia 1:1 muy elaborada, y han comprometido tu hardware o la red desde donde te conectas. El atacante no solo interceptará tu contraseña, también tu código 2FA y lo usará para ingresar inmediatamente con tu cuenta al servicio en cuestión (al verdadero).</p>
+<p>Si no eres un VIP y/o no manejas información extremadamente relevante, es poco probable que seas blanco de un ataque así.</p>
+<p>Si crees que podrías serlo, tus alternativas son reforzar la seguridad con llaves físicas de seguridad, que portarás contigo en todo momento, tal cual como las llaves de tu casa. Ver: <a class="external" rel="noopener external" target="_blank" href="https://www.yubico.com/">Yubico Yubikey</a>, <a class="external" rel="noopener external" target="_blank" href="https://store.google.com/us/product/titan_security_key">Google Titan Key</a>, <a class="external" rel="noopener external" target="_blank" href="https://www.kensington.com/es-cl/p/productos/protecci%C3%B3n-de-datos/biom%C3%A9tricos/lector-de-huella-digital-kensington-verimark-que-admite-windows-hello-y-fido-u2f-para-autentica/">Kensington VeriMark FIDO</a>, <a class="external" rel="noopener external" target="_blank" href="https://thetis.io/">Tethis FIDO</a>, etc.</p>
+<h2 id="7o-sospecha-de-mensajes-extranos">7º: Sospecha de mensajes extraños.</h2>
+<p>Ten cuidado con todos los emails y mensajes que recibes. Son puerta de entrada principal de ataques actuales.</p>
+<p>Emails desconocidos, sospecha. Emails conocidos y extraños, sospecha también. Las direcciones de email se pueden falsear (<a class="external" rel="noopener external" target="_blank" href="https://www.google.com/search?q=email+spoofing">spoof</a>) y podrías estar recibiendo un correo que crees que es una persona, cuando no es así.</p>
+<p>Un contacto tuyo, tanto en un email como en un app de mensajería, podría enviarte algo y no ser realmente el quién lo hizo, si no un malware que ya contagió el equipo de esa persona. Malware que se auto-envía para poder seguir replicándose.</p>
+<p>En Windows, asegúrate de configurar el explorador de archivos para que <a class="external" rel="noopener external" target="_blank" href="https://geekland.eu/mostrar-extension-de-los-archivos-windows/">muestre las extensiones de los archivos</a> siempre. Eso debería ayudarte a levantar una alerta mental cuando veas una supuesta fotografía que se llame gatitos.jpg**.exe**. Spoiler: aquello no es una fotografía.</p>
+<p>Ante la duda de si una extensión es lo que dice ser, búscala. Busca qué es la <a class="external" rel="noopener external" target="_blank" href="https://www.google.com/search?q=extensi%C3%B3n+.exe">extensión .exe</a>, y sabrás que es un archivo ejecutable de Windows. ¿Un ejecutable?, algo que corre, que se puede instalar si quiere. No suena a una foto o video, ¿cierto?.</p>
+<h2 id="8o-cambia-tus-claves-de-acceso">8º: Cambia tus claves de acceso.</h2>
+<p>Si en tu trabajo o casa de estudios te asignaron una cuenta de algún servicio para tu uso personal (mientras eres parte de la institución), y te entregaron una contraseña directamente, cámbiala apenas la recibas.</p>
+<p>Si alguien te la envió, ya no solo la tienes tu, y debes asumir que más gente podría tenerla también.</p>
+<p>Enviar o recibir contraseñas por email, aunque sea el institucional, no es seguro.</p>
+<p>Mucho menos lo es recibirlas por un servicio de mensajería. Ni hablar. A menos que sea Signal.</p>
+<h2 id="9o-cifrado-de-datos">9º: Cifrado de datos.</h2>
+<p>¿Mencioné los robos ya?</p>
+<p>Si roban tu equipo de trabajo (móvil o de escritorio), ¿qué pasaría si un NN tiene acceso a lo que tenías dentro?.</p>
+<p>Piensa en tus trabajos, tus documentos, tus cookies en el navegador, el código de tu trabajo (en mi caso), accesos, llaves ssh, etc. Estarías dejando todo eso crítico a merced de ese desconocido.</p>
+<p>Windows 10 Pro (lamentablemente no la versión Home) tiene un cifrado de disco integrado a el, <a class="external" rel="noopener external" target="_blank" href="https://support.microsoft.com/es-cl/help/4028713/windows-10-turn-on-device-encryption">BitLocker</a>.</p>
+<p>macOS cuenta con <a class="external" rel="noopener external" target="_blank" href="https://support.apple.com/es-cl/HT204837">FileVault</a> para cifrar todo tu disco.</p>
+<p>Si estás en Linux, hay muchas opciones al respecto (y probablemente las conozcas).</p>
+<p>Android e iOS usan cifrado de almacenamiento por defecto. Ojo con los dispositivos Android con microSD y lo que guardas en esa memoria. El cifrado ahí dependerá del <a class="external" rel="noopener external" target="_blank" href="https://es.wikipedia.org/wiki/Bifurcaci%C3%B3n_(desarrollo_de_software)">fork</a> de Android que implemente el fabricante.</p>
+<p>Lógicamente tendrás que usar una contraseña segura en tu equipo cifrado. No se te ocurra, por ejemplo, usar tu fono sin ningún patrón o pin de desbloqueo. Muchos fonos hoy tienen acceso biométrico al equipo (lector de huella, de retina, etc.), deberías usarlo. Si no, le estás entregando en bandeja el acceso a toda tu vida personal crítica (bancos, contraseñas) a cualquier persona no autorizada para que abuse de esos datos como se le antoje. En bandeja. De plata. Con incrustaciones de diamantes.</p>
+<p>Cifra el almacenamiento interno de tus equipos. Si los amigos de lo ajeno te separan de tus equipos, tu digestión y tus horas de sueño te lo agradecerán.</p>
+<p>Habilita el PIN de tu SIM, si es uno físico (eSIM es otro tema). No tiene que ver directamente con el cifrado de datos, pero... si un amigo de lo ajeno un día se hace de tu fono, es probable que saquen el SIM del fono robado, y lo coloquen en otro fono temporalmente. Esto, con el fin de intentar recuperar el acceso a tus cuentas (emails, bancos, whatsapp, etc.) utilizando el SIM y pidiendo la recuperación a través del fono (SMS). Evita malos ratos, y hazlo. Ese PIN puede ser obvio para ti. No importa. Un ladrón no necesariamente conocerá tus datos personales. Pero con esa acción de habilitar el PIN de tu SIM, el bandido no podrá usar tu número de fono (SIM) en otro equipo, y evitarás que puedan acceder a cuentas bancarias y sacarte dinero, o usar WhatsApp para intentar estafar a otras personas.</p>
+<p>El PIN aquel solo lo pedirá el fono, al ser reiniciado. No debiera ser una molestia muy grande para ti.</p>
+<h2 id="10o-bloqueo-de-anuncios-y-malware">10º: Bloqueo de anuncios. Y malware.</h2>
+<p>Un vector cada vez más frecuente de ataques a equipos, es el servir malware a través de la web. Generalmente, usando publicidad. Con avisos fraudulentos o botones engañosos (los típicos "descarga aquí y ahora, llame ya!") sirven enlaces con descargas que simularán en lo posible ser parte de algún software legal (algo que esperas bajar) pero que finalmente no era más que un malware encubierto.</p>
+<p>Bloquear la publicidad en internet ayudará a mitigar considerablemente la posibilidad de encontrarse con un vector como el mencionado.</p>
+<p>Es más: estos bloqueadores de anuncios hoy en día mantienen listas de bloqueo de dominios que se sabe que distribuyen malware, directamente. Beneficio dos por uno.</p>
+<p>Recomendado en navegadores de escritorio: <a class="external" rel="noopener external" target="_blank" href="https://github.com/gorhill/uBlock#installation">uBlock Origin</a>.</p>
+<p>Para equipos móviles pueden usar alternativas a nivel de DNS/VPN como <a class="external" rel="noopener external" target="_blank" href="https://blokada.org/">Blockada</a> o <a class="external" rel="noopener external" target="_blank" href="https://github.com/julian-klode/dns66">DNS66</a>.</p>
+<p>A nivel de hogar, si saben como configurar algo así: <a class="external" rel="noopener external" target="_blank" href="https://pi-hole.net/">Pi-hole</a> o <a class="external" rel="noopener external" target="_blank" href="https://diversion.ch/">Diversion</a>. No solo bloquean publicidad. Con las listas correctas de actualización, son capaces de bloquear dominios que esparcen malware y virus, asegurando la red completa de tu casa.</p>
+<h2 id="11o-evitar-piratear">11º: Evitar piratear.</h2>
+<p>Hablando de descargas. Una forma fácil de atacar a inocentes es colocar el malware en algo que esos inocentes desean, y gratis.</p>
+<p>Cuando descargas algún software pirata (programa, juego o películas a veces), existe una alta posibilidad de que lo que estás bajando venga con un malware incorporado.</p>
+<p>A veces el programa que bajas funciona de todos modos, y quedas feliz. Ignorante y dichoso.</p>
+<p>El malware no tiene porque anunciarse. Y no lo hace. Se instala junto al programa, y queda ahí a la espera.</p>
+<p>No piratees... si no sabes lo que haces. Dicen.</p>
+<p>Prefiere lo legal. Prefiere pagar por tu software. O emplear software gratuito, de fuentes confiables y/o software open-source.</p>
+<h2 id="12o-no-al-login-social">12º: No al login social.</h2>
+<p>Punto tres, impermanencia. ¿Quedamos de acuerdo en eso?</p>
+<p>Cuando usas los típicos botones de "conéctate con" Google, Facebook, Twitter, GitHub, Apple, etc. estás suponiendo que el proveedor de ese servicio de identificación (Google, Facebook, Twitter, GitHub, Apple, etc.) siempre te dejará usar tu cuenta para ingresar a otros sitios.</p>
+<p>¿Qué ocurriría si unilateralmente te dan de baja ese email o cuenta social que usaste para crearte una decena de otras cuentas?.</p>
+<p>Por la abulia de no crear otra contraseña, que no debería tener razón de ser si haces caso y aplicas el punto cinco: gestor de contraseñas, terminas perdiendo el acceso a una cuenta que podría pesarte.</p>
+<p>Tómate unos segundos extra, y créate una cuenta de forma tradicional (usuario/email y contraseña) en todos los servicios donde se pueda. Ayúdate de tu gestor de contraseñas para guardar ese login, con su contraseña al azar, segura y desconocida para ti.</p>
+<p>Asocia tus redes sociales a esa cuenta después si así lo deseas.</p>
+<h2 id="13o-no-mezclar-lo-laboral-con-lo-personal">13º: No mezclar lo laboral con lo personal.</h2>
+<p>Tu email laboral no es correo para recibir tu cartola mensual del banco, acceder a tus redes sociales o enviarle emails a tus parientes.</p>
+<p>Viceversa. Tu email personal no es para recibir datos críticos de tu trabajo, accesos, documentos importantes, etc.</p>
+<p>Esto aplica a todo lo relacionado con lo laboral en lo digital.</p>
+<p>Si tu trabajo te provee con un equipo para trabajar, ese equipo es solo para eso. No deberías estar jugando Roblox, ni viendo Netflix, ni accediendo a tu Banco, ni viendo porno con ese equipo.</p>
+<p>No mezcles lo personal con lo laboral.</p>
+<h2 id="14o-desconfia-de-equipos-pre-configurados-usados-o-compartidos">14º: Desconfía de equipos pre-configurados, usados o compartidos.</h2>
+<p>Cada equipo que no configuraste tu desde un inicio, es posible que tenga dentro algo que no esperabas.</p>
+<p>Es muy sencillo espiar a alguien así, metiendo un software malicioso a un equipo antes de entregarlo.</p>
+<p>Si compras un equipo usado (escritorio o móvil): formatéalo antes de usarlo.</p>
+<p>Más allá: si usas la WiFi que tu proveedor de internet da, asegúrate de cambiar el nombre y la contraseña de esa WiFi apenas puedas. Existen en linea datos de acceso a los routers mas comunes del mercado de los ISP más grandes en cada país. Dejar el nombre por defecto que viene en la WiFi le da información extra a un posible atacante para poder entrar a vuestro equipo de manera remota y, en el mejor de los casos, robarte internet.</p>
+<p>No seas como mis vecinos de las WiFi HUAWEI-ENTEL-BXXXX-MODELO o VTR-879XXXXX.</p>
+<p>Los equipos compartidos caen en una problemática similar. Un equipo compartido es un equipo usado... por alguien más, aparte de ti.</p>
+<p>No podrás saber si la otra persona instaló, por accidente o a propósito, un malware en el equipo.</p>
+<p>Si no cuentas con un equipo de escritorio o laptop para ti solo, deberías únicamente hacer uso de esos servicios críticos en tu propio fono. Los fonos hoy en día son de uso personal.</p>
+<p>Si necesitas utilizar un dispositivo compartido y no tienes opción, entonces toma ciertas precauciones previas a compartir el equipo:</p>
+<p>Si puedes, haz una cuenta administrador del equipo (a nivel del OS) aparte y única. El resto de los usuarios, tu incluido, utilicen una cuenta tradicional sin poder administrativo. Esto podría prevenir la infección por ciertos malware, sobre todo si es de los que se instalan accidentalmente.</p>
+<p>Utiliza la autenticación de dos pasos, 2FA, explicada en el punto seis, en todas las cuentas que puedas. De esta forma, incluso si por un malware (accidental o no) tu acceso a un servicio crítico se filtra, ese acceso no servirá de nada sin tu dispositivo(s) de autenticación de dos pasos. Recuerda que no basta la contraseña ahí, también necesitarás proveer del código 2FA para poder conectarte, minimizando el peligro de eventuales filtraciones de tus datos de acceso.</p>
+<h2 id="15o-dispositivos-externos">15º: Dispositivos externos.</h2>
+<p>Otra forma de ataque común es entregar un malware en un dispositivo externo, como un pendrive/flashdrive o un disco duro externo (o un DVD/CD, o un diskette incluso dicen los abuelos, viejos de...).</p>
+<p>Lo clásico: un inocente usuario se contagia de un malware en su equipo. Luego, ese inocente usuario te ofrece pasarte un pendrive/flashdrive con el documento que le solicitaste. Si el malware es decente, se copiará por si solo al pendrive/flashdrive. Luego tu recibes ese dispositivo contagiado, lo conectas en tu computador, y el resto es historia conocida.</p>
+<p>Pero también existen quienes infectan dispositivos externos apropósito. ¿Por?. Para hacer daño pues, ¿para qué más somos buenos los humanos?.</p>
+<p>Si encuentras un dispositivo tirado en el suelo, o un desconocido te regala uno, y tu vas y lo conectas a tu computador así como si nada, estás pidiendo "comerte" uno de esos ataques. Lo estás recibiendo con los brazos abiertos mientras le haces un queque al atacante.</p>
+<p>No hay una forma más segura de usar un dispositivo así, encontrado o entregado sospechosamente por un NN, que dándole de martillazos hasta molerlo y luego dejando que tu perro orine sobre el.</p>
+<p>Posteriormente, si la curiosidad no te deja vivir tranquilo y de verdad quieres ver dentro de el, deberías usar un equipo "desechable" con Linux instalado.</p>
+<p>Claro, este tipo de ataques generalmente es realizado para apuntar a blancos específicos. VIP. Qué tan importante eres para otros como para convertirte en un blanco de un ataque como estos, eso lo debes sopesar tú.</p>
+<p>Probablemente si estás leyendo esto, eres tan <em>jureliento</em> como yo, y no le importas a nadie allá fuera. Solo ten presente que este tipo de ataques existe.</p>
+<h2 id="16o-ingresar-directo-a-entidades-financieras-y-sitios-vitales">16º: Ingresar directo a entidades financieras y sitios vitales.</h2>
+<p>Cuando tengas que ingresar al sitio de tu banco, alguna entidad financiera o un sitio crítico (como tu email o el gestor de contraseñas que uses), escribe directamente la dirección del sitio en el navegador. Con la extensión de dominio y todo.</p>
+<p>No uses el buscador (Google, Bing, Duck Duck Go, Altavista) asociado a tu navegador para buscar el sitio y luego entrar.</p>
+<p>Los resultados de búsqueda pueden ser manipulados por terceros. Podrías estar entrando a un elaborado <em><a class="external" rel="noopener external" target="_blank" href="https://es.wikipedia.org/wiki/Phishing">phishing</a></em>, y estar entregando tu usuario y contraseña a un tercero.</p>
+<h2 id="17o-redes-wifi-publicas-o-poco-confiables">17º: Redes WiFi públicas o poco confiables.</h2>
+<p>Existe la posibilidad de "ver" el tráfico en una red. El administrador de esa red, o una persona con conocimientos suficientes, podrían estar espiando y viendo lo que los usuarios dentro de la red están haciendo.</p>
+<p>Una WiFi pública en ese sentido es un peligro inminente. Si tienes que usar una, solo debería ser para fines de entretenimiento. Nunca para acceso a servicios críticos.</p>
+<p>Pasa también que un administrador de una red privada grande, como el de una mega-empresa, o una universidad o instituto, o un usuario con conocimientos dentro de esas mega-redes, podría estar monitoreando lo que hacen los usuarios conectados a esa mega-red.</p>
+<p>También entran acá las WiFi semi-públicas. Una red WiFi de un avión, un bus, por ejemplo. Si claro, tienen un password de por medio, pero el password es sabido por todos los otros NN que estarán junto a ti en aquel momento.</p>
+<p>Si debes utilizar una red de internet no segura, asegúrate de emplear un servicio de VPN primero. Una VPN confiable, claro (ver <a class="external" rel="noopener external" target="_blank" href="https://www.privacyguides.org/vpn/">privacyguides</a>, y <a class="external" rel="noopener external" target="_blank" href="https://www.privacytools.io/privacy-vpn/">privacytools</a>). Minimizarás el riesgo de estar metido en medio de un ataque <a class="external" rel="noopener external" target="_blank" href="https://es.wikipedia.org/wiki/Ataque_de_intermediario">MITM</a>.</p>
+<p>¿Qué red es segura?</p>
+<p>En teoría: la de tu hogar y tus datos móviles.</p>
+<p>Que pequeño el mundo es.</p>
+<p>Ah, un diminuto detalle: la red wi-fi de tu hogar será segura, siempre y cuando no haya sido comprometida. ¿Recuerdas el dilema de las contraseñas? En la red wi-fi de tu casa deberías, como mínimo, usar una contraseña generada por un gestor de contraseñas (no por ti), de 15 o más caracteres. Las wi-fi se pueden "crackear", vulnerar para acceder a ellas sin permiso y sin que te des cuenta, lo que es enormemente más sencillo (para el atacante) si la contraseña de tu wi-fi es muy fácil, "de diccionario". <em>Laviejadelosgatos</em> no es una buena contraseña desde el punto de vista de la seguridad. Es buena si se trata de sacar una sonrisa a los visitantes cuando quieren conectarse en tu hogar y, mientras esperan, notan que crias una manada de gatos. Pero no es buena desde el punto de vista de la seguridad. No sea tonto, como yo.</p>
+<h2 id="18o-software-al-dia">18º: Software al día.</h2>
+<p>Muchos de los vectores de entrada de ataques, que no sean sociales, dependen de que el blanco tenga versiones del software vulnerables, con bugs conocidos.</p>
+<p>Se minimiza en un porcentaje muy grande el riesgo a caer en un ataque, si mantienes el software que usas al día.</p>
+<p>Así de simple.</p>
+<p>Mantén tus programas/apps y tu sistema operativo actualizado, y podrás vivir un poco más tranquilo en este sentido.</p>
+<p>Windows 10 hoy en día se actualiza por si solo, a menos que a propósito desactives las actualizaciones automáticas, cosa que no deberías hacer. macOS también. Linux, generalmente es un también, ustedes saben.</p>
+<p>Mantén tu anti-virus al día. En Windows 10, Windows Defender (o como se llame hoy) es más que suficiente en este año 2020. En serio. Y se actualiza por si solo junto con Windows. Si no confías en el, alternativas buenas son: Malwarebytes, Kaspersky, Bitdefender. En sus versiones gratis o de pago si puedes. Nunca piratear un anti-virus (ver punto once).</p>
+<p>Usuarios de Android: mucho ojo con las actualizaciones. Desafortunadamente los diversos fabricantes de fonos usan <a class="external" rel="noopener external" target="_blank" href="https://es.wikipedia.org/wiki/Bifurcaci%C3%B3n_(desarrollo_de_software)">forks</a> de Android que no son actualizados tan frecuentemente como deberían. Revisen las <a class="external" rel="noopener external" target="_blank" href="https://support.google.com/android/answer/7680439?hl=en">actualizaciones de seguridad</a> en sus equipos. Deberían ser recientes. Idealmente la versión de Android también debería serlo, pero no es así. Solo tendrán una versión nueva de Android siempre, si cuentan con un teléfono Pixel de Google.</p>
+<p>Si tu fono está en una versión muy antigua de Android y el patch-level de seguridad sigue siendo muy viejo, considera apoyar a un fabricante con un <a class="external" rel="noopener external" target="_blank" href="https://www.aosmark.com/">mejor registro de actualizaciones</a>.</p>
+<p>Software al día es software, en teoría, más seguro.</p>
+<p>Para los que puedan: si tú trabajo depende de emails y mucho navegador, si no necesitas programas cómo MS Office o la Suite de Adobe para trabajar, si puedes reemplazar ese uso de oficina por Google Docs o Libre Office, y si no juegas con tu computador (Windows sigue siendo el rey en este sentido), entonces mueve tu estación de trabajo a Linux. <a class="external" rel="noopener external" target="_blank" href="https://ubuntu.com/download/desktop">Ubuntu</a> o <a class="external" rel="noopener external" target="_blank" href="https://elementary.io/">Elementary OS</a>, por ejemplo. Hoy en día es muy sencillo trabajar con distribuciones como aquellas y, al hacerlo, reduces casi a cero la posibilidad de ser víctima de un virus. Tradicionalmente ellos están hechos para atacar plataformas populares, Windows y macOS. Linux es un tema más complejo de vulnerar. Lógicamente, estando al día también. Actualizaciones, siempre.</p>
+<h2 id="19o-sentido-comun">19º: Sentido común.</h2>
+<p>El sentido común es el mejor anti-virus.</p>
+<p>Claro está, primero debes ser educado respecto a los peligros del mundo virtual. Para eso era este artículo.</p>
+<p>Ahora que le has dado una pincelada a los problemas de seguridad más frecuentes y como prevenir y mitigar sus consecuencias, practica el sentido común al hacer uso de lo digital.</p>
+<p>No hay mejor anti-virus que uno mismo, el usuario.</p>
+<p>Si no clickeas donde no debes, no bajarás un malware por accidente. Si no pirateas, no te infectarás con un malware metido en un programa ilegal. Si mantienes tu software al día, bajas las chances de ser atacado por un malware que use bugs conocidos para ingresar a tu sistema. Si revisas las extensiones de los archivos adjuntos en un mail, sabrás que no todo lo que dice ser un video o una imagen lo es realmente. Si usas un gestor de contraseñas, no sufrirás cuando se hackeen un servicio del que eras parte y donde tenías cuenta. Si respaldas habitualmente tus datos críticos, cuando te ocurra un accidente y/o ataque, podrás dormir tranquilo en la noche sabiendo que no perdiste datos críticos por siempre.</p>
+<p>Respiren hondo y usen la cabeza antes que los dedos.</p>
+<h2 id="20o-impriman-algunas-de-sus-fotos">20º: Impriman algunas de sus fotos.</h2>
+<p>Impriman en papel sus fotos familiares. Recuerdos importantes que tengan en imágenes. Algunas de esas fotos al menos, y guárdenlas en álbumes seguros.</p>
+<p>Así, cuando el apocalipsis viral acabe con el 90% de la población humana, o la mega llamarada solar que vendrá nos deje sin electrónicos y nos devuelva como civilización a la edad media, tendrán un recuerdo brevemente más duradero que el de su memoria, para rememorar y sonreír agradecidos con el universo por haberles otorgado esa oportunidad de conectarse con otros seres, antes de devolverse a las estrellas.</p>
+<h3 id="finalmente">Finalmente</h3>
+<p>Si consideran que esto que acaban de leer, puede ayudar a algún conocido de ustedes y salvarlo o alivianarle el peso de un posible futuro desastre digital, compártanlo, por favor. Para eso fue escrito. Si esto ayuda a alguien más, bienvenido sea. Gracias.</p>
+
+        </section>
+
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="EstebanForge&#x2F;actitud-xyz-comments"
+    data-repo-id="R_kgDOOBr8yA"
+    data-category="Blog"
+    data-category-id="DIC_kwDOOBr8yM4Cq3u8"
+    
+        data-mapping="pathname"
+    
+    data-strict="0"
+    data-reactions-enabled="1"
+    
+        data-input-position="top"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://actitud.xyz/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        
+
+    </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#20-preceptos-de-seguridad-en-la-era-digital-edicion-2020">20 preceptos de seguridad en la era digital. Edición 2020.</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#1o-nadie-esta-libre">1º: Nadie está libre.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#2o-protege-tu-informacion">2º: Protege tu información.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#3o-la-impermanencia">3º: La impermanencia.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#4o-respaldar">4º: Respaldar.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#5o-el-dilema-de-las-contrasenas">5º: El dilema de las contraseñas.</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#como-generar-las-dos-contrasenas-que-debes-conocer-email-y-gestor-de-contrasenas">¿Cómo generar las dos contraseñas que debes conocer? (email y gestor de contraseñas).</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#6o-autenticacion-de-dos-pasos-2fa">6º: Autenticación de dos pasos 2FA</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#7o-sospecha-de-mensajes-extranos">7º: Sospecha de mensajes extraños.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#8o-cambia-tus-claves-de-acceso">8º: Cambia tus claves de acceso.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#9o-cifrado-de-datos">9º: Cifrado de datos.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#10o-bloqueo-de-anuncios-y-malware">10º: Bloqueo de anuncios. Y malware.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#11o-evitar-piratear">11º: Evitar piratear.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#12o-no-al-login-social">12º: No al login social.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#13o-no-mezclar-lo-laboral-con-lo-personal">13º: No mezclar lo laboral con lo personal.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#14o-desconfia-de-equipos-pre-configurados-usados-o-compartidos">14º: Desconfía de equipos pre-configurados, usados o compartidos.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#15o-dispositivos-externos">15º: Dispositivos externos.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#16o-ingresar-directo-a-entidades-financieras-y-sitios-vitales">16º: Ingresar directo a entidades financieras y sitios vitales.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#17o-redes-wifi-publicas-o-poco-confiables">17º: Redes WiFi públicas o poco confiables.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#18o-software-al-dia">18º: Software al día.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#19o-sentido-comun">19º: Sentido común.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#20o-impriman-algunas-de-sus-fotos">20º: Impriman algunas de sus fotos.</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/#finalmente">Finalmente</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+            <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script><span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://actitud.xyz/js/copyCodeToClipboard.min.js"></script>
+
+<script defer src="https://actitud.xyz/js/codeBlockNameLinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="noopener" target=_blank
+
+ href="https://actitud.xyz/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://actitud.xyz/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="ZXN0ZWJhbkBhdHRpdHVkZS5jbA=="><img loading="lazy" alt="email" title="email" src="https://actitud.xyz/social_icons/email.svg">
+                            </a>
+                        </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://github.com/EstebanForge/">
+                                    <img loading="lazy" alt="github" title="github" src="https://actitud.xyz/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://twitter.com/EstebanForge">
+                                    <img loading="lazy" alt="twitter" title="twitter" src="https://actitud.xyz/social_icons/twitter.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 1999-2026 Esteban Cuevas • Unless otherwise noted, the content in this website is available under the <a class="external" rel="noopener external" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                </small>
+        </div>
+    </section>
+
+    <script src="https://actitud.xyz/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
