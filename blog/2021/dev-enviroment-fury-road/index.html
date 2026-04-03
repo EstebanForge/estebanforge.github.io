@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data: 'self';img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27; 'unsafe-inline';frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com giscus.app;connect-src 'self';script-src 'self'  giscus.app  cdn.jsdelivr.net 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://actitud.xyz">
+
+    
+    <title>
+It's about attitude • Dev Enviroment: Fury Road</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://actitud.xyz/images/favicon.png"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="It's about attitude - Atom Feed" href="https://actitud.xyz/atom.xml">
+                
+            
+                
+                    <link rel="alternate" type="application/rss+xml" title="It's about attitude - RSS Feed" href="https://actitud.xyz/rss.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://actitud.xyz/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://actitud.xyz/main.css?h=6b1dda977391dad0c76e" />
+        <link rel="stylesheet" href="https://actitud.xyz/css/custom.css?h=535738bd9137b34265fb" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Personal blog about technology, life, and everything in between." />
+        <meta property="og:description" content="Personal blog about technology, life, and everything in between." />
+        <meta name="twitter:description" content="Personal blog about technology, life, and everything in between." />
+
+    
+
+    <meta property="og:title" content="Dev Enviroment: Fury Road" />
+    <meta name="twitter:title" content="Dev Enviroment: Fury Road" />
+    <meta property="og:type" content="article" />
+
+    
+    
+    
+    
+        
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+        
+            <meta property="og:image" content="images&#x2F;social-media&#x2F;2021&#x2F;blog_2021_dev_enviroment_fury_road.jpg" />
+            <meta property="og:image:secure_url" content="images&#x2F;social-media&#x2F;2021&#x2F;blog_2021_dev_enviroment_fury_road.jpg" />
+            <meta property="og:image:type" content="image/jpeg" />
+            <meta name="twitter:image" content="images&#x2F;social-media&#x2F;2021&#x2F;blog_2021_dev_enviroment_fury_road.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;blog&#x2F;2021&#x2F;dev-enviroment-fury-road&#x2F;" /><meta property="og:site_name" content="It&#x27;s about attitude">
+        <noscript><link rel="stylesheet" href="https://actitud.xyz/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://actitud.xyz/js/initializeTheme.min.js"></script>
+        <script defer src="https://actitud.xyz/js/themeSwitcher.min.js"></script>
+        <script defer src="https://actitud.xyz/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        </head>
+
+
+<body class="use-sans-serif">
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://actitud.xyz">It&#x27;s about attitude</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz">home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/esteban/">esteban
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;EstebanForge">github
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Dev Enviroment: Fury Road
+        </h1>
+
+        <ul class="meta"><li>By Esteban</li>
+
+            
+                <span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;actitud.xyz" class="u-url " title="Esteban">Esteban</a>
+</span>
+
+            
+                <li><span class='separator' aria-hidden='true'>•</span>2021-07-03</li><li title="6204 words"><span class='separator' aria-hidden='true'>•</span>32 min read</li>
+        </ul>
+
+        <section class="body"><p>Ayer veíamos, por vez número 9000, Mad Max: Fury Road. Teniendo un "home cinema", el poder disfrutarla en 4K HDR y con audio Dolby Surround, es una experiencia aturdidora.</p>
+<p><img src="https://hd-report.com/wp-content/uploads/2014/07/mad-max-fury-road-tom-hardy-trailer-still1.jpg" alt="Warner Bros. releases 1st &#39;Mad Max: Fury Road&#39; Trailer |" /></p>
+<p>Fury Road es una historia simple. Lineal. Pero no por eso excretable. Es un viaje muy bien contado. Un camino en extremo fascinante de recorrer, de inicio a fin. Es un recorrido hacia la libertad, al prometido Edén, hacia la decepción, la aceptación, la lucha por reconstituir ese Edén pedido, y la búsqueda de la redención.</p>
+<p>Como Fury Road estoy, hoy, en mi camino como desarrollador de software. Al menos con respecto al entorno de trabajo.</p>
+<p>Desde mis inicios en la informática, en 1995-1996, usé Windows (MS-DOS igual, obvio. Ahí se jugaba). Pasé por todos ellos, hasta Windows 7, que tuve la oportunidad de probar como beta.</p>
+<p>El 2009, por sugerencia de un amigo y colega nerd que respira Linux (hasta el día de hoy), terminé desechando Windows y moviéndome con todo a Linux. Terminaron ahí 14 años de Windows.</p>
+<p>¿Sugerencia? Hostigamiento, la verdad, para que dejara "Wintendo" de lado y me hiciera macho. Harto aprendí en todo caso. Gracias Francisco.</p>
+<p>Linux es sin duda poderoso. Hoy las distribuciones como Ubuntu, les gusten o no, sacan muchos de los problemas de configuración que tenía Linux en un inicio.</p>
+<p>Linux es estable, bien probado, muy seguro. Si sabes no bajar y correr cosas encontradas por ahí, es casi en su totalidad un entorno libre de virus, malware, ransomware y toda cyber maldad.</p>
+<p>Pero no es un entorno bueno para correr programas de diseño. Necesarios para poder trabajar en equipo con diseñadores y convertir sus ideas a cosas funcionales en la web. Gimp no da el ancho. Lo siento. Y si bien wine es capaz de correr versiones antiguas de Photoshop o Illustrator casi sin problemas, el inconveniente radica en ese "casi". Problemas habrá y, con ello, pérdida de tiempo y frustraciones.</p>
+<h2 id="el-lugar-verde-con-las-muchas-madres">El lugar verde, con las muchas madres.</h2>
+<p>Luego, el 2014, empezamos a hacer apps oficialmente (Android e iOS). Bien sabrán los devs de iOS que la única forma de compilar y publicar un app es a través de Xcode. Y como estaba algo cansado en Linux, de pelear con el OS cuando algo se quebraba, o cuando no podía correr bien programas de diseño con Wine (puto Adobe), decidí moverme de lleno a macOS. Terminaron ahí 5 años de Linux.</p>
+<p>macOS es la promesa de un entorno como Linux (Unix), sin los problemas de compatibilidad de software popular (con una GUI) de Linux.</p>
+<p>Hoy, 2021, hago el quiebre nuevamente. ¿Por?</p>
+<p>macOS no tiene mucho de malo. O sea, hay detalles que sigo considerando estúpidos sobre como funciona. El infame "mac way". Los equipos por otro lado, si tienen muchas cosas malas. No quiero alargarme (ya escribí al respecto antes), pero: precios, soporte en Chile, soporte en una región en Chile (Santiago no es Chile), sobre-precio en Chile, teclados malos (arreglados ya por fortuna), componentes soldados (las ram fallan, los disco SSD se desgastan y fallan, ¿sabían?), limite de opciones de hardware que elegir, el precio... y el precio.</p>
+<p>Acá en Chile no hay muchas opciones para armar uno, como las hay en USA. Mac Online, distribuidor oficial en Chile, tiene hoy el Macbook Pro de 13" con procesador M1 de 8 núcleos, con 8gb en ram y solo 256gb de espacio en disco a 1.4 millones de pesos. 1.4 millones. Con ese dinero acá mismo puedes comprar un Laptop con procesador AMD Ryzen 7 de 5ta generación (la más nueva), con 16gb de ram, 1tb de espacio en disco (NVMe) y con video dedicado Nvidia RTX 3060. Pedazo de máquina. Y más encima sin componentes soldados, pudiendo luego ampliar la memoria RAM a 32gb, e incluso incrementar el espacio en disco con un segundo NVMe en algunos modelos.</p>
+<p>No se traen equipos Apple de mejores características oficialmente acá.</p>
+<p>Traer uno desde Amazon, por ejemplo, con procesador M1, 16gb de ram (nada más) y 1tb de espacio en disco, cuesta por sobre los 2.5 millones de pesos. 16gb de ram. 1tb. Sin video dedicado. 2.5 millones. Dato: el soporte multi monitor en los procesadores M1 es malo. No así en Macbooks con video dedicado AMD. Un downgrade del M1.</p>
+<p>O corres el riesgo de comprar a un importador informal, lo que sale más o menos al mismo precio de todos modos. Más la inseguridad de la compra informal, por 2 punto algo millones de pesos.</p>
+<p>Bestial diferencia.</p>
+<p>Por ese motivo, precio y sobre valoración, durante el 2019 armé mi Hackintosh. Que no es más que un PC de escritorio armado con piezas seleccionadas para este propósito, pero que corre macOS como OS. <a href="/blog/2019/09/03/hackintosh-2019/">Sobre este Hackintosh escribí acá</a>.</p>
+<p>Apple lanzó sus equipos (Macbooks) con procesadores M1. Al ser procesadores ARM Custom, no Intel ni AMD, quienes usamos equipos Hackintosh tenemos los días, de soporte de software y actualizaciones, contados. Eventualmente saldrá una versión de macOS que solo soporte procesadores ARM de Apple, y nunca más un procesador Intel (como pasó cuando migraron de PowerPC a Intel). Claro, puede que aún queden años para eso. No lo dudo. Pero pagar ese sobre-precio por un equipo Apple no es algo que pretenda hacer en 5 o 7 años más. Ni vivir con sus decisiones de hardware, no pudiendo tomar las mías para mi propio trabajo.</p>
+<p>Nada grave en contra del OS, macOS, de mi parte. Es el entorno completo, máquinas, opciones, costo, soporte, y ese infame "ecosistema" el detestable.</p>
+<p>Terminan hoy 7 años de macOS.</p>
+<p>Habiendo ido de Windows, a Linux, a macOS, vuelvo a tomar la ruta de vuelta a Windows... y Linux.</p>
+<p>Es que Windows con el Sub-sistema Linux WSL2, es otra cosa.</p>
+<p>El cambio no fue sencillo. La costumbre es una bestia dura de apalear y domar. Más con la edad. Esa bestia se vuelve aún más dura, tosca, antipática.</p>
+<p>Luego de dos semanas de Windows+Linux, aún le doy al ALT+C y ALT+V para intentar copiar y pegar algo. Para los que no sepan, la tecla CMD en macOS está donde se encuentra el ALT en los PC. Ya va a pasar. Uno no olvida como montar una bicicleta. Si no, unos cuantos reglazos en las manos vuelven diestro a cualquier zurdo.</p>
+<p>Tuve que buscar alternativas a varios softwares que usaba. Muchas.</p>
+<p>Me organicé y programé la transición lo mejor que pude. Hice mi tarea. Al terminar mi día laboral, seguía leyendo para este, mi proyecto lateral.</p>
+<p>Busqué primero softwares y alternativas multi-plataforma (o solo Windows) para lo que hacía con macOS. La búsqueda y lectura fue intensa y extensa. El grupo de tabs en Chrome en Android llegó fácil a los 30 en sus peores momentos. Volqué esa lista completa de posibilidades a una lista en Keep.</p>
+<p>Luego, por una semana, en paralelo con mi Hackintosh y en los ratos más lentos en el trabajo, usé un Notebook viejo que tengo guardado acá, con Windows. RAM y un SSD suficientes para probar todo lo que encontraba, a ver si me serviría en mi día a día. Así pulí mi lista de softwares dignos y necesarios.</p>
+<p>Seguido, hice que mi Hackintosh dual-booteara entre macOS y Windows. Lo que no fue una gran idea en retrospectiva. No por motivos técnicos. Más bien por porfía mental.</p>
+<p>El tener tan cerca, a un reinicio, todas mis viejas herramientas en macOS, las que ya conocía y entorno con el que sabía trabajar a ciegas, era un problema. Por una semana estuvieron en paralelo ambos sistemas, pero apenas llegaba el momento del trabajo en serio, o cosas urgentes que resolver, mis constantes errores en Windows (solo por poca costumbre) me hacían devolverme a macOS, como un adicto.</p>
+<p>Corté por lo sano.</p>
+<p>Guardé una copia de macOS en otro SSD (copia booteable gracias a Carbon Copy Cloner) por si necesitaba volver atrás de manera urgente, e instalé Windows 10 en mi Hackintosh por si solo. Adiós Hackintosh, siempre te recordaremos...</p>
+<p>No resultó todo bien durante este proceso de cambio. Ahora que estamos encerrados con mi <em>SO</em> en una misma oficina en casa, ella me escuchó putear varias veces mientras probaba mis cosas en Windows. Lo siento mi hermosa y paciente <em>SO</em>. Gracias por la paciencia.</p>
+<p><img src="https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2019/02/mad-max-fury-road-charlize-theron-secuela.jpg?resize=1080%2C608&amp;quality=80&amp;ssl=1" alt="Podría hacerse realidad la secuela de Mad Max: Fury Road | Código Espagueti" />Desesperación y exasperación. Actitud luego de la primera semana de volver a usar Windows, después de 12 años.</p>
+<p>Acá estoy hoy, escribiendo esto desde Windows. Casi sin problemas.</p>
+<p>¿Para qué les cuento todo esto?</p>
+<p>Un muy buen amigo, medio malo para el Warzone eso si, me comentó que los apps (de la lista que hice) estaban interesantes y que podría ser útil para otros el compartir el software que uso día a día para trabajar, además de ayudar a quien pueda estar en un predicamento parecido al mío, disgustado con la burbuja de Apple, y pueda servirle mi experiencia de transición de macOS a Windows en el mundo del desarrollo.</p>
+<p>¿Y saben?, tiene razón. Gracias O'car.</p>
+<p>Así es que aquí estamos, y sin más preámbulos, aquí va:</p>
+<h2 id="macos-a-windows-similes-y-alternativas">macOS a Windows: símiles y alternativas.</h2>
+<p>Sin un orden en particular, voy a ir nombrando un App/Software de macOS, su razón de ser en mi entorno de trabajo como desarrollador web, y la alternativa que utilizo actualmente en Windows.</p>
+<h3 id="sublime-text-vs-code">Sublime Text &amp; VS Code.</h3>
+<p>Igual que los navegadores, ambos editores de código son multi plataforma. No hubo dolor. <a class="external" rel="noopener external" target="_blank" href="https://code.visualstudio.com/">VS Code</a> es capaz de sincronizar la configuración y extensiones directo con una cuenta de GitHub o Microsoft, super bien. En el caso de <a class="external" rel="noopener external" target="_blank" href="https://www.sublimetext.com/">Sublime Text</a> usé <a class="external" rel="noopener external" target="_blank" href="https://packagecontrol.io/packages/PackageSync">PackageSync</a>, apuntándolo a una carpeta en Google Drive.</p>
+<p>En ambos utilizo más o menos las mismas extensiones. ¿Les interesaría saber cuales son?</p>
+<h3 id="github-desktop-fork">Github Desktop &amp; Fork.</h3>
+<p>Ambos son clientes para trabajar con repositorios git. Tanto <a class="external" rel="noopener external" target="_blank" href="https://desktop.github.com/">GitHub Desktop</a> como <a class="external" rel="noopener external" target="_blank" href="https://git-fork.com/">Fork </a>son multi-plataforma, así es que no hubo ningún problema acá.</p>
+<h3 id="affinity-photo-affinity-designer">Affinity Photo &amp; Affinity Designer.</h3>
+<p>Como adelanté, no soy diseñador. Pero por mi trabajo (desarrollo web), debo tener a mano software para poder abrir, ver y usar archivos PSD e AI. Afortunadamente existe Affinity de Serif, que cuenta con excelentes y más livianas alternativas al software de Adobe. Atrás quedaron mis días de piratear el software de Adobe. En una venta de Black Friday agarré ambos softwares de <a class="external" rel="noopener external" target="_blank" href="https://affinity.serif.com/en-us/">Affinity </a>(los que me sirven, tienen más) con un 50% de descuento. Contento.</p>
+<p>Lo bueno es que es multi-plataforma, macOS y Windows (no love for Linux, sorry).</p>
+<h3 id="insomnia-rest">Insomnia REST.</h3>
+<p>Otro más que es multi-plataforma. <a class="external" rel="noopener external" target="_blank" href="https://insomnia.rest/">Insomnia REST</a> es notable para trabajar con APIs externas y hacer pruebas. <a class="external" rel="noopener external" target="_blank" href="https://www.postman.com/">Postman</a>, multi-plataforma también, igual hace el trabajo por si acaso.</p>
+<h3 id="cryptomator">Cryptomator.</h3>
+<p>Dentro de mis múltiples respaldos de info crítica, físicos y en <em>la nube</em>, <a class="external" rel="noopener external" target="_blank" href="https://cryptomator.org/">Cryptomator </a>juega un papel importante. Es que ¿quién confiaría ciegamente en <em>la nube</em>?</p>
+<p><a href="/media/2021/image.png"><img src="/media/2021/image.png?w=1024" alt="" /></a>La Nube.</p>
+<p>Lo se, mucha gente lo hace. Yo no. Ahí es donde Cryptomator ayuda con una capa extra de protección.</p>
+<p>Multi-plataforma. Ningún inconveniente aquí.</p>
+<h3 id="daisydisk-wiztree">DaisyDisk -&gt; WizTree.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://daisydiskapp.com/">DaisyDisk </a>es una preciosa utilidad en macOS para revisar que está consumiendo tu espacio en el disco. Lo dejas escanear, y el programa te muestra una visualización de dónde está lo más pesado. Así puedes ir, desde el mismo programa, decidiendo si quieres borrar o no eso que pesa gigas y gigas y que acabas de notar.</p>
+<p>En Windows existe <a class="external" rel="noopener external" target="_blank" href="https://diskanalyzer.com/">WizTree</a>. Hace lo mismo. Y gratis. Donen si pueden, por favor.</p>
+<h3 id="local-wp-laragon">Local WP -&gt; Laragon.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://localwp.com/">Local WP</a> es un entorno multi-plataforma de desarrollo para WordPress super fácil de poner en marcha y utilizar. Ideal para esos días donde debes cazar un bug de mierda y no quieres perder tiempo en mantener tu propio servidor local, o una VPS, o un montón de imágenes de Docker, etc.</p>
+<p>Por cierto, en Windows también existe <a class="external" rel="noopener external" target="_blank" href="https://laragon.org">Laragon</a>. No lo he utilizado todavía, pero dicen que es muy bueno. Voy a jugar con el más adelante, sin duda. Aparentemente, en Windows, Laragon es más rápido que Local WP.</p>
+<h3 id="viscosity">Viscosity.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.sparklabs.com/viscosity/">Viscosity </a>es un programa multi-plataforma (Windows, macOS) super sencillo para manejar conexiones VPN a otros servidores.</p>
+<p>Habiendo tenido problemas con otras soluciones antes en macOS, terminé pagando por la licencia de Viscosity para poder trabajar en paz. Y como soporta Windows, ahora simplemente me traje mis configuraciones y todo sigue andando sin inconvenientes.</p>
+<h3 id="boom3d-y-fxsound">Boom3D y FxSound.</h3>
+<p>Ni macOS ni Windows tienen equalizadores globales, que afecten a todo el audio que sale del sistema. Valen yuyo.</p>
+<p>Para resolver esto es que uso <a class="external" rel="noopener external" target="_blank" href="https://www.globaldelight.com/boom/">Boom3D</a>. Créanme, una vez que aplican un preset de equalizado global, cualquier canción de mierda en Spotify... seguirá siendo de mierda, pero se escuchará gloriosamente gracias a la ecualización y mejoras en sonido que aplica Boom3D.</p>
+<p>Disponible para macOS y Windows.</p>
+<p>Para Windows existe una alternativa igual de buena y gratuita hoy: <a class="external" rel="noopener external" target="_blank" href="https://www.fxsound.com/">FxSound</a>. Eran de pago, se <a class="external" rel="noopener external" target="_blank" href="https://www.fxsound.com/blog/fxsound-is-now-completely-free">volvieron gratis</a>. No olviden donar si les sirvió el programa y están felices con el cambio. Los devs se los agradecerán.</p>
+<h3 id="gaskmask-hosts-file-editor">GaskMask -&gt; Hosts File Editor.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/2ndalpha/gasmask">GasMask </a>es un programa solo para macOS que permite editar rápido y fácil el archivo hosts del OS. Para Windows existe <a class="external" rel="noopener external" target="_blank" href="https://hostsfileeditor.com/">Host File Editor</a>. Problema resuelto.</p>
+<p>Si. Se que se puede ir directo a la ubicación del archivo Hosts, y editarlo hasta con Notepad. Pero, por si no les quedó claro en el párrafo de Local WP, mi tiempo prefiero gastarlo haciendo mi trabajo lo más óptimo posible. Estoy cada vez más viejo, y con menos ganas de pelear con el OS y las herramientas que uso.</p>
+<h3 id="alfred-multiples-alternativas">Alfred -&gt; Multiples Alternativas.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.alfredapp.com/">Alfred </a>es pedazo de software en macOS. Fue, luego de Path Finder, la segunda compra que hice. Es que no solo tiene un montón de características que mejoran lo que Spotlight puede hacer en macOS. Además se puede extender con "workflows" creados por terceros, que potencian aún más lo que puedes hacer con Alfred.</p>
+<p>A Alfred lo usaba como: lanzador de apps, buscador de archivos y carpetas, historial de porta papeles, calculadora, generador de contraseñas, ver procesos, matar procesos, ejecutador de "macros" (tareas repetitivas y automatizados), buscar en caniuse.com, buscar en IMDB, vaciar la papelera, cerrar programas, cerrar todos los programas, bloquear el equipo, apagar el equipo, cambiar la salida de audio (entre parlantes o audífonos), generador de textos lorem ipsum, whois de dominios, buscar en Stack Overflow, traducir palabras olvidadas, remover dispositivos USB de forma segura, administrador de snippets y expansor de keywords a snippets... etc.</p>
+<p>En serio, es brutal. Muy útil. <a class="external" rel="noopener external" target="_blank" href="https://www.alfredapp.com/">Vean </a>todo lo que hace. Y todo lo que puede hacer, <a class="external" rel="noopener external" target="_blank" href="http://www.packal.org/">extendiéndolo</a>.</p>
+<p>No he encontrado un programa tan completo como Alfred, para Windows.</p>
+<p>Hay buenas alternativas eso si. Algunas de ellas: <a class="external" rel="noopener external" target="_blank" href="http://www.wox.one/">Wox</a>, <a class="external" rel="noopener external" target="_blank" href="https://cerebroapp.com/">Cerebro</a>, <a class="external" rel="noopener external" target="_blank" href="https://keypirinha.com/">Keypirinha</a>, <a class="external" rel="noopener external" target="_blank" href="https://ueli.app/">Ueli</a>, <a class="external" rel="noopener external" target="_blank" href="https://www.fluentsearch.net/">Fluent Search</a>, <a class="external" rel="noopener external" target="_blank" href="https://flow-launcher.github.io/">Flow Launcher</a>. No me he decidido aún. Sigo en etapa de usar y probar. Por ahora estoy utilizando Flow Launcher.</p>
+<p>Para la expansión de keywords globalmente en el OS a comandos (lo uso mucho en la terminal, al tener que meterme a servidores remótamente), existe <a class="external" rel="noopener external" target="_blank" href="https://espanso.org/">Espanso</a>, multi-plataforma y gratuito. Puede hacer bastante no solo para expandir texto, si no que para automatizar tareas en conjunto a la expansión de textos.</p>
+<p>La verdad sea dicha, es difícil que encuentre un solo programa que haga todo lo que hacía Alfred para mi en macOS.</p>
+<p>Lloremos.</p>
+<h3 id="mailplane-ferdi-ferdium-y-otros">Mailplane -&gt; <del>Ferdi</del> Ferdium y otros.</h3>
+<p>He intentado usar clientes de emails de terceros. Como AirMail en macOS. Al final, siempre termino volviendo a la interfaz web de Gmail, porque... su búsqueda es sin igual.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://mailplaneapp.com/">Mailplane </a>me ayudaba a tener una ventana distinta al navegador, más liviana (sin Chrome corriendo por detrás como un app Electrón), y con algunos addons interesantes para mejorar Gmail.</p>
+<p>En Windows estoy usando <del>Ferdi</del> <a class="external" rel="noopener external" target="_blank" href="https://ferdium.org/">Ferdium</a>. Tambrién es un navegador aparte con algunas mejoras dentro de los "apps" (sitios) que carga dentro. Es multi-plataforma.</p>
+<p>Hay alternativas, como <a class="external" rel="noopener external" target="_blank" href="https://www.kiwiforgmail.com/">Kiwi</a>, <a class="external" rel="noopener external" target="_blank" href="https://tryshift.com/">Shift </a>o <a class="external" rel="noopener external" target="_blank" href="https://wavebox.io/">Wavebox</a>. Todas con sus pro.</p>
+<p>¿Por qué Ferdium? Porque usé el programa cuando recién se lanzó (se llamaba Franz, pero dejó de ser desarrollado) y lo conocía. Solo por eso. Familiaridad.</p>
+<p>Por si acaso: Ferdium, un fork de <a class="external" rel="noopener external" target="_blank" href="https://meetfranz.com/">Franz</a> (y el hoy difundo Ferdi), tiene todas las características premium de Franz, pero gratis. Y legal. Nació como respuesta al abandono de Franz por parte de los desarrolladores originales. La belleza de las licencias open-source.</p>
+<p>Además cuenta con soporte para multiples "apps" (sitios), con lo que me ahorro tener que instalar y correr otra instancia de Electron para usar apps de escritorio como WhatsApp, Trello, Slack, etc. Ferdium los aglutina todos en uno.</p>
+<p>Eventualmente probaré otras alternativas de todos modos. A ver que hay de nuevo en el mundo de los apps para emails en Windows.</p>
+<h3 id="iterm-2-hyper-o-windows-terminal">iTerm 2 -&gt; Hyper o Windows Terminal.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://iterm2.com/">iTerm </a>es bárbaro en macOS. No solo es una mejora sustancial a la Terminal por defecto que trae macOS. Es un programa nativo, liviano, lleno de características, y gratuito.</p>
+<p>Lamentablemente solo es para macOS. En Windows, y multi-plataforma, existe <a class="external" rel="noopener external" target="_blank" href="https://hyper.is/">Hyper Terminal</a>. Además, Windows ahora cuenta con una alternativa nativa excelente, de Microsoft mismo: <a class="external" rel="noopener external" target="_blank" href="https://aka.ms/terminal">Windows Terminal</a>. Hyper es bastante decente, digo, para ser "solo" un programa corriendo sobre Electrón. Muy bueno, la verdad. Suficientemente rápido. Por otro lado, Windows Terminal también está excelente. Veloz. Además, al igual que <a class="external" rel="noopener external" target="_blank" href="https://github.com/vercel/hyper">Hyper</a>, Windows Terminal es <a href="/blog/2021/03/dev-enviroment-fury-road/">open-source</a>. Bien por MS ahí.</p>
+<p>No me decido con cuál de las dos quedarme. Uso una u otra dependiendo del día. El tiempo dirá.</p>
+<h3 id="dash-docs-velocity-masscode">Dash Docs -&gt; Velocity &amp; massCode.</h3>
+<p>En macOS utilizaba <a class="external" rel="noopener external" target="_blank" href="https://kapeli.com/dash">Dash Docs</a> como documentación offline mientras desarrollaba. Lo bueno de este tipo de programas es que reducen la cantidad de veces que caes en Stack Overflow, además de expandir lo que un auto-completador de un IDE pueda mostrarte como documentación al vuelo de una función o método con el que estás trabajando.</p>
+<p>Dash también sirve para guardar snippets de código, con formato y todo. Y con un expansor global en el OS, bastaba con escribir un keyword y expandía ese keyword al snippet completo. Claro, debes recodar esos keywords.</p>
+<p>Para los documentos offline, y multi-plataforma, existe <a class="external" rel="noopener external" target="_blank" href="https://velocity.silverlakesoftware.com/">Velocity</a>. Muy bueno. También existe <a class="external" rel="noopener external" target="_blank" href="https://zealdocs.org/">Zealdocs</a>, muy completo también. Eso resuelve un problema.</p>
+<p>Para los snippets de código, y también multi-plataforma, existe <a class="external" rel="noopener external" target="_blank" href="https://masscode.io/">massCode</a>. Lepton guarda tus snippets de código en la ubicación que tu desees en tu equipo. Sincroniza esa ubicación con algo como Google Drive o Dropbox, y listo. Respaldos en la nube. Alternativa, también buena: <a class="external" rel="noopener external" target="_blank" href="https://hackjutsu.com/Lepton/">Lepton</a>.</p>
+<h3 id="teampaper-snap-sharex">Teampaper Snap -&gt; ShareX.</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://teampaper.me/snap/">Teampaper Snap</a> es una utilidad para tomar screenshots, escribir sobre ellos (texto libre, dibujos, formas, flechas, etc.) y, luego, guardarlos en tu computador, guardarlo en tu porta papeles, o subirlos y obtener una URL automáticamente para compartirla.</p>
+<p>Para Windows existe <a class="external" rel="noopener external" target="_blank" href="https://getsharex.com/">ShareX</a>, muy popular. Excelente en todo sentido. Peca de tener demasiadas opciones eso si. Solo para power users y nerds. Como anillo al dedo para mi.</p>
+<p>Para el común de los morrales, <a class="external" rel="noopener external" target="_blank" href="https://getgreenshot.org/">Greenshot</a> es más que suficiente. Hace lo mismo. Gratis.</p>
+<p>Donen si pueden, al que decidan usar, por favor.</p>
+<h3 id="rectangle-app-divvy-y-teclas-de-windows">Rectangle App -&gt; Divvy y teclas de Windows.</h3>
+<p>El manejo de ventanas en macOS es asqueroso. Al menos a la fecha de este post, lo es. Y ha sido así hace años. Por ese motivo, y afortunadamente, existen decenas de apps que intentan resolver esto en macOS.</p>
+<p>Yo terminé usando <a class="external" rel="noopener external" target="_blank" href="https://rectangleapp.com/">Rectangle</a>. Sucesor de Spectacle (ahora dado de baja). Gratuito. Permite mover ventanas con combinaciones de teclas, a diversas posiciones en una grilla, y entre monitores. Luego de unas semanas, te las aprendes todas. Luego de meses, ni siquiera piensas en ellas. Solo las usas.</p>
+<p>Windows, por buena ventura, tiene este tipo de manejo de ventanas integrado en el OS. Tecla Windows + una flecha en el teclado, y podrán mover las ventanas en diversas direcciones, y entre monitores.</p>
+<p>La grilla faltante que no tiene Windows, la resolví con <a class="external" rel="noopener external" target="_blank" href="https://mizage.com/windivvy/">Divvy</a>. Fenomenal.</p>
+<p>Windows 11 tendrá una suerte de grilla configurable de posiciones para ventanas integrada, en el botón de maximizar si no me equivoco. Habrá que ver si es suficiente para dejar de lado Divvy o no.</p>
+<h3 id="path-finder-onecommander-y-windows-explorer">Path Finder -&gt; OneCommander (y Windows Explorer)</h3>
+<p>¿Les dije que el manejo de ventanas en macOS es malo? Bueno, el explorador de archivos también lo es. Malo. Malo. Al menos versus lo que uno obtiene en Windows y Linux, macOS siempre se queda atrás.</p>
+<p>La primera compra que hice en macOS fue para resolver esto y no volverme loco. Esa compra fue la de <a class="external" rel="noopener external" target="_blank" href="https://cocoatech.com/">Path Finder</a>, un muy buen app. <a class="external" rel="noopener external" target="_blank" href="https://binarynights.com/">ForkLift </a>también, por si quieren ver alternativas. Ambos mucho más productivos y capaces que Finder por si solo.</p>
+<p>En Windows no necesitas nada extra la verdad. Casi. El explorador de Windows es super capaz por si solo. Pero hay mejores. Para un power-user.</p>
+<p>Entra <a class="external" rel="noopener external" target="_blank" href="https://www.onecommander.com/">One Commander</a>. No solo es un File Manager más que decente y repleto de opciones. Es veloz y poderoso. Es excelente. Si no les acomoda la vista en columnas, pueden esconder una y hacerlo ver como un explorador de archivos tradicional. Y tiene tabs. Tiene integración con <a class="external" rel="noopener external" target="_blank" href="https://www.codesector.com/teracopy">TeraCopy</a>. ¿Mencioné que está plagado de opciones para power-users, y que aún así sigue siendo veloz?</p>
+<p>Totalmente recomendado.</p>
+<h3 id="time-machine-veeam-agent-free">Time Machine -&gt; Veeam Agent Free.</h3>
+<p>Acá hay algo que macOS hace de forma sobresaliente y sin peros: respaldos automáticos y acumulativos, con historial completo.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://support.apple.com/en-us/HT201250">Time Machine</a> es algo que sin duda se extrañará de macOS. Es... bueno. Realmente bueno. No solo puedes recuperar archivos borrados recientemente. También puedes literalmente formatear tu equipo y pedirle a macOS que restaure tu equipo con tu copia más reciente de Time Machine. macOS procederá a dejar todo tal cual como lo tenías antes. No solo tus archivos. Aplicaciones, configuraciones, preferencias, licencias instaladas, todo. Todo.</p>
+<p>Windows tiene Backup History integrado, pero es super limitado. Solo respalda archivos y carpetas de tu ruta de usuario (C:\Users\). Aunque puedes agregar otras carpetas para que las monitoree y respalde, nunca respaldará el sistema completo, con preferencias y todo, tal como Time Machine.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.veeam.com/windows-endpoint-server-backup-free.html">Veeam Agent Free</a> es un programa que hace un trabajo muy similar a Time Machine. Conectas un disco externo (o por red, una NAS por ejemplo) a tu equipo, y le dices que lo use para los respaldos. Veeam Agent se encargará de respaldar periódicamente en el. Cifrado igual que Time Machine si lo deseas.</p>
+<p>Luego con un pendrive <a class="external" rel="noopener external" target="_blank" href="https://helpcenter.veeam.com/docs/agentforwindows/userguide/image_create.html?ver=50">Recovery Media</a> que te permite crear, puedes restaurar tu máquina tal cual como estaba en el último respaldo que hizo Veeam. También puedes usar ese respaldo para restaurarlo en otra máquina distinta. Casi tan bueno como Time Machine, y gratis.</p>
+<h3 id="stay-windowmanager">Stay -&gt; WindowManager.</h3>
+<p>El ataque del TOC.</p>
+<p>Esto es algo que hacen mal ambos ambientes, Windows y macOS: el recordar donde cresta dejaste la ventana la vez anterior, y volver a abrir un programa en esa misma posición, y en el mismo monitor. Mal, ambos.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://cordlessdog.com/stay/">Stay de Cordless Dog</a> es un pequeño programa que resuelve esto en macOS. Cuando tienes una ventana de un programa en una posición X, le dices (vía shortcut o el ícono del app) que guarde la posición de ese programa. Luego, al volver a abrir ese programa (otro día, da lo mismo si es después de un reinicio), la ventana de ese programa abrirá exactamente en el mismo lugar, posición y tamaño que tenía cuando le dijiste que recordase la posición de el. Incluso recuerda la posición entre multiples monitores. ¿Lindo, no?</p>
+<p>En Windows existe <a class="external" rel="noopener external" target="_blank" href="http://www.desksoft.com/WindowManager.htm">WindowManager</a>. El programa hace lo mismo. Recuerda posiciones y tamaños de ventanas que le has pedido que guarde, y las vuelve a poner donde tu querías cuando vuelves a abrir ese programa. También soporta multiples monitores. Genial.</p>
+<p>Windows 11 en teoría viene a resolver ese problema de manera nativa, recordando la posición de las ventanas de los programas por default. Vamos a ver si es así y si funciona bien, pronto.</p>
+<h3 id="appcleaner-bcuninstaller">AppCleaner -&gt; BCUninstaller.</h3>
+<p>Tanto Windows como macOS son un caos para manejar apps de forma nativa. Windows con sus instaladores, archivos sueltos y el registro, y macOS con su suelta el app y olvídate, cosa que nunca es así: los apps en macOS de todos modos escriben fuera de su carpeta de app, y cuando borras un app, esos archivos, esa config, esos cachés, esa basura... no se va.</p>
+<p>Para eso usaba <a class="external" rel="noopener external" target="_blank" href="https://freemacsoft.net/appcleaner/">AppCleaner </a>en macOS. Gratuito. Óptimo para ver donde deja, cada app, sus archivos basura, y removerlo todo.</p>
+<p>En Windows existen alternativas como <a class="external" rel="noopener external" target="_blank" href="https://www.revouninstaller.com/">Revo Uninstaller</a>, <a class="external" rel="noopener external" target="_blank" href="https://geekuninstaller.com/">Geek Uninstaller</a>, <a class="external" rel="noopener external" target="_blank" href="https://www.ashampoo.com/en/usd/pin/2303/system-utilities/uninstaller-10">Ashampoo Uninstaller</a>. Personalmente estoy usando <a class="external" rel="noopener external" target="_blank" href="https://www.bcuninstaller.com/">Bulk Crap Uninstaller</a>, programa gratuito y open-source.</p>
+<h3 id="safari-xcode">¿Safari?, ¿Xcode?</h3>
+<p>Aún debo compilar apps para iOS, y eso solo se puede hacer en <a class="external" rel="noopener external" target="_blank" href="https://developer.apple.com/xcode/">Xcode </a>dentro de macOS. Todavía hay que probar sitios sobre Safari, porque <em>Safari es el nuevo IE</em>.</p>
+<p>El problema: Safari y Xcode son aplicaciones exclusivas de macOS. No existen para otro entorno.</p>
+<p>¿Colosal problema?</p>
+<p><img src="/media/2021/tenor.gif?w=498" alt="" /></p>
+<p>Para nada. Existe <a class="external" rel="noopener external" target="_blank" href="https://www.virtualbox.org/">VirtualBox</a>, gratuito. Con el puedes levantar una máquina virtual con cualquier OS dentro. No es tan complicado preparar una máquina virtual con macOS de hecho. Teniendo un hardware decente, macOS virtualizado dentro de Windows corre sin dificultades para estas dos tareas en donde lo necesito.</p>
+<h3 id="varias-otras-mejoras-para-windows">Varias otras mejoras para Windows.</h3>
+<p>QuickLook es la habilidad que tiene macOS de presionar el espacio en el teclado para ver un preview del archivo que tienes seleccionado. Por ejemplo, el texto de un archivo de texto, o una imagen, o el código de un archivo .php, el video de un archivo de video, etc. Es poderoso y se puede extender. En Windows existe un clon del mismo nombre: <a class="external" rel="noopener external" target="_blank" href="https://github.com/QL-Win/QuickLook">QuickLook</a>, totalmente recomendado.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.stardock.com/products/groupy/">Groupy </a>permite agregar tabs a cualquier programa de Windows que no lo tenga. ¿Recuerdan el Explorador de Windows? Bueno, con esto ahora tiene tabs. Un manjar.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://chrisandriessen.nl/taskbarx">TaskbarX</a>. Luego de años en macOS, me acostumbré a tener los programas del dock en el centro. Windows solo los muestra a la izquierda. Esto es algo que cambiará con Windows 11, donde irán centrados. Por mientras, TaskbarX resuelve este problema elegantemente.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://docs.microsoft.com/en-us/windows/powertoys/">PowerToys </a>de Microsoft es un pedazo de complemento para Windows. Tiene muchas mejoras para Windows que no voy a detallar, pero que si trabajan desarrollando como yo, van a agradecer. Pueden ver el detalle de sus características en el sitio oficial.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://imageoptim.com/mac">ImageOptim </a>me permitía optimizar imágenes en masa en macOS, para esos themes y desarrollos donde los assets no eran auto-optimizados. En Windows, <a class="external" rel="noopener external" target="_blank" href="https://saerasoft.com/caesium/">Caesium Image Compressor</a> hace el mismo trabajo, y gratis.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://sandboxie-plus.com/">Sandboxie-Plus</a>, ideal para correr esos... cuando descargas software en tus días navegando por el caribe mientras bebes una copa de ron. Ejecuta cualquier software totalmente aislado del resto de Windows, sin dejar rastros. Para probar un ejecutable, una sola vez.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.7-zip.org/">7-Zip</a>. En macOS, Path Finder abría archivos compresos sin inconvenientes. El Explorer de Windows, no tanto. Solo los zip. Para todo el resto, existe 7-Zip.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.sumatrapdfreader.org/free-pdf-reader">Sumatra PDF</a>. De nuevo, el soporte de PDF en macOS es mejor. Preview en realidad funciona bien. En Windows, abrirlos en Edge es... malo. No gracias. Sumatra PDF, gratuito y open-source.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.videolan.org/vlc/">VLC</a>. Esto es tanto para macOS como Windows (y Linux). Uno de los mejores Media Player existentes. Gratuito. Open-source.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://handbrake.fr/">Handbrake </a>y <a class="external" rel="noopener external" target="_blank" href="https://mkvtoolnix.download/">MKVToolnix gui</a>. Para cuando debo "trabajar" con archivos de video, de esos mismos días de caribe y ron. Multi-plataformas y open-source.</p>
+<h3 id="paquetes-de-linux-o-macos-homebrew">¿Paquetes de Linux o macOS?, ¿Homebrew?</h3>
+<p>Ah. El dilema del desarrollo moderno y el precario soporte de Windows. ¿Es verdad?</p>
+<p>Si, en parte. Windows siempre ha sido una especie de ciudadano de segunda clase en el área del desarrollo de software en el que me muevo, la web. El desarrollo moderno de la web hoy incluye muchos paquetes y scripts de Node.js, entre otras herramientas que van apareciendo como pulgas en un gato callejero.</p>
+<p>El problema es que, generalmente, quienes crean estas herramientas y las mantienen, suelen usar el mismo OS en su mayoría: macOS. macOS, al ser un OS tipo Unix, comparte muchas similitudes con Linux. Por lo tanto, los paquetes que funcionan en macOS, normalmente funciona super bien en Linux también. Entonces, lo que crean estos devs, frecuentemente funciona sin inconvenientes tanto en macOS como Linux. ¿Y Windows? No muy bien, gracias.</p>
+<p>Si bien hay binarios para instalar algo como Node.js en Windows, bien sabemos muchos que lamentablemente hay que mantener muchas versiones de Node corriendo, por compatibilidad con proyectos antiguos que no se ejecutan bien con versiones más nuevas de este. Existen devs heroes que no olvidan Windows, y en el caso de Node.js, una "copia" (que de copia solo tiene el nombre) de <a class="external" rel="noopener external" target="_blank" href="https://github.com/nvm-sh/nvm">nvm </a>existe para Windows, <a class="external" rel="noopener external" target="_blank" href="https://github.com/coreybutler/nvm-windows">nvm-windows</a>, lo que permite manejar varias versiones de Node.js fácilmente.</p>
+<p>Pero eso es una sola herramienta. ¿Qué pasa con: Yarn, Composer, PHP, Gulp, Webpack, MySQL, MariaDB, Python, Git, OpenSSL, etc.? Cierto es que se pueden instalar en Windows, pero es un cacho mantenerlas y usarlas.</p>
+<p>Entra <a class="external" rel="noopener external" target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL2</a>.</p>
+<p>WSL2, Windows Subsystem for Linux (2), (en palabras muy simples) es una instancia de Linux corriendo bajo Windows. Ubuntu 20.04 LTS en mi caso. Si lo desean habilitar, <a class="external" rel="noopener external" target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">siguen las instrucciones para instalar</a>. Proceso que será simplificado en versiones venideras de Windows.</p>
+<p>Una vez hecho, pueden usar la nueva <a class="external" rel="noopener external" target="_blank" href="https://aka.ms/terminal">Terminal open-source de Windows</a> o <a class="external" rel="noopener external" target="_blank" href="https://hyper.is/">Hyper Terminal</a> e iniciar esta instancia de Linux corriendo el comando:</p>
+<pre><code>wsl
+</code></pre>
+<p>También pueden configurar ambas terminales para que automáticamente inicien en el entorno Linux. En el caso de la Terminal de Windows, se hace en las preferencias del mismo app (Default Profile). En el caso de Hyper Terminal, basta con cambiar en su archivo de configuración la <em>shell</em> por:</p>
+<pre><code>shell: &#39;C:\\Windows\\System32\\wsl.exe&#39;,
+</code></pre>
+<p>Y el <em>shellArgs</em> por:</p>
+<pre><code>shellArgs: [&#39;~&#39;],
+</code></pre>
+<p>Guardan, cierran y vuelven a abrir Hyper. Iniciará en modo Linux por defecto.</p>
+<p>Es Linux. Pueden instalar paquetes como si estuviesen en Linux mismo. En Ubuntu (base Debian) tienen apt-get. Así es que pueden volverse locos:</p>
+<pre><code>sudo apt-get install php mariadb-server
+</code></pre>
+<p>Etc.</p>
+<p>¿Homebrew? Para quien no lo conoce, <a class="external" rel="noopener external" target="_blank" href="https://brew.sh/">Homebrew </a>es un excelente gestor de paquetes en macOS. Este OS no cuenta con un gestor de paquetes nativo. Windows tampoco tenía, recién estrenan oficialmente <a class="external" rel="noopener external" target="_blank" href="https://github.com/microsoft/winget-cli">WinGet</a>. Homebrew resuelve esto para macOS.</p>
+<p>Resulta que muchos paquetes que se usan en desarrollo web, son distribuidos a través de Homebrew. No es sorpresa, de nuevo, considerando que los creadores de estas herramientas, para trabajar, suelen utilizar macOS. Vean una conferencia de desarrolladores de algún framework popular como Laravel, Vue, React o incluso WordPress. La inmensa mayoría de los asistentes y quienes presentan, estarán usando algún modelo de Macbook.</p>
+<p>Conscientes de esto y de la presión del resto del mundo del desarrollo que no vive en la burbuja de Apple, Homebrew hizo que su sistema de paquetes funcione perfectamente en Linux. Con el mismo comando pueden instalar Homebrew tanto en macOS como Linux ahora también.</p>
+<p>Super.</p>
+<p>De nuevo, luego de instalar Homebrew dentro de su entorno WSL2, pueden volverse locos:</p>
+<pre><code>brew install nvm git php74 python3 composer
+</code></pre>
+<p>Etc.</p>
+<p>¿Cómo trabajar con todo lo disponible en Linux, pero con tus archivos en Windows?</p>
+<p>Fácil. WSL2 expone tus unidades de Windows (C y otras que puedas tener) en la ruta /mnt/ de Linux. /mnt/c/ para la unidad C, por ejemplo.</p>
+<p>Solo debes hacer un:</p>
+<pre><code>cd /mnt/c/Users/esteban/
+</code></pre>
+<p>...y te encontrarás en tu carpeta de usuario en Windows (si es que te llamas "Esteban"), listo para ir a cualquier directorio donde tengas tus proyectos, y trabajar en ellos.</p>
+<p>Si no quieres hacer ese CD cada vez que abres tu Terminal, simplemente edita tu archivo .bashrc en el home de tu usuario en WSL2:</p>
+<pre><code>nano ~/.bashrc
+</code></pre>
+<p>Al final de tu archivo bashrc, agregas:</p>
+<pre><code>cd /mnt/c/Users/esteban/Dev/
+</code></pre>
+<p>Apuntando obviamente a la ruta donde quieres que inicie tu sesión. Si es tu carpeta de usuario, una sub-carpeta, otra ruta dentro de C, otro disco D y una ruta dentro de el, etc. Donde quieras. Donde tengas tus proyectos. Tu decide.</p>
+<p>Ahora con WLS2 tienes una distribución de Linux completa bajo Windows.</p>
+<p>Por fin puedes lanzarte vía SSH a un servidor, sin las clásicas complicaciones de Windows. No necesitas un app de tercero, como Putty, para parchar esa carencia de Windows. Ahora tienes una distro de Linux íntegra en tus manos. Con todo.</p>
+<h2 id="la-citadela">La Citadela.</h2>
+<p>Acá estoy, luego de haber recorrido mi propio Fury Road, de vuelta a Windows. Y Linux. Donde el agua corre por borbotones y el pasto es más verde... dicen.</p>
+<p><img src="https://i.pinimg.com/originals/ed/3f/2c/ed3f2c85137afc45e7aeab1501efdd1b.jpg" alt="9 The Citadel-Ideen in 2021 | mad max fury road, mad max, gaia" /></p>
+<p>Personalmente no extraño en lo absoluto el set de herramientas que utilizaba en macOS ahora, con este combo Windows+Linux. Nada.</p>
+<p>Nada. Excepto Alfred. Alfred, ¿Por qué tuve que conocerte?</p>
+<p>El look de Windows 10 no es algo tan feo hoy en día. Mejorará con Windows 11 aparentemente. Ya veremos. Si no, siempre existen alternativas externas para mejorar el look de Windows <a class="external" rel="noopener external" target="_blank" href="https://www.deviantart.com/kdr3w/art/Matte-758699852">radicalmente</a>. No es algo que me apremie hoy. Puntos ahí para Apple por las librerías unificadas de desarrollo en macOS, como SwiftUI, que permite a los devs centrarse en desarrollar funcionalidades, mientras que la apariencia del app se adaptará automáticamente a cualquier cambio que Apple decida hacer sobre macOS en el futuro (como el que ya hicieron con la transición de macOS 10 a macOS 11).</p>
+<p>La seguridad hoy no es un problema. No para mi al menos. Espero. De aquello <a href="/blog/2020/10/01/seguridad-en-tiempos-hiper-conectados/">escribí hace un tiempo</a>. Les recomiendo la lectura si desean subir un poco sus cyber habilidades de seguridad. Son tiempos en los que estas destrezas cada vez son más útiles. De todos modos el auto cuidado digital es algo que igual hay que aprender a usar en macOS. Hoy no es un entorno libre de virus y amenazas. Es menos popular para los atacantes, si, pero no exento de peligros. Ese trono teórico, continúa en manos de Linux.</p>
+<p>Es cierto que Windows era inferior en el área de desarrollo de software en la que me muevo, la web. Era un lio si querías sumarte al desarrollo con herramientas modernas. No siempre podías usar el chiche nuevo recién lanzado. <em>The new kid on the block</em>.</p>
+<p>Era así.</p>
+<p>Eso ya no más, gracias a WSL2. La gente de Microsoft hizo un trabajo admirable con esta mejora en Windows. Gracias por eso.</p>
+<p>Finalmente, es cosa de costumbre.</p>
+<p>Teniendo ahora acceso a las mismas herramientas, no hay excusa. No la hay. Fuera de tu propio ego y auto-estima, claro. O las características de accesibilidad en macOS (son buenas, muy buenas).</p>
+<p><em>Immortan Joe</em> no me puede contar cuentos sobre cual OS es mejor. Ninguno lo es. Ni Windows, ni macOS, ni Linux. Conozco sus pro y contras. Puedo lidiar con ellos, con confianza, gracias a los años de experiencias y disgustos vividos con cada uno de ellos.</p>
+<p>¿Volver a macOS o Linux?. Quizás. A futuro. Quién sabe. Todo depende de lo que siga haciendo laboralmente con mi equipo. De los precios de los equipos. De que (en el caso de macOS) mejoren sus equipos (para igualar o mejorar a la variedad con Windows) y que alguien traiga ese stock a Chile a un precio que no sea demente. Etc. El punto es que, conociendo y manejando sin problemas los tres grandes sabores de opciones en OS de escritorio, ahora me puedo dar ese lujo.</p>
+<p>Hoy, 2021, (para mis necesidades) el combo Windows+Linux está fenomenal. <em>Shiny and Chrome</em>.</p>
+<p><img src="https://i.pinimg.com/originals/1f/9a/6c/1f9a6cf9b9301d4e2a7d5d566661dfdc.gif" alt="Pin on Post Popiclyps Lust" /></p>
+<p>Por cierto, en Windows se pueden jugar todos los juegos AAA disponibles en el mercado. Lero lero Linux y macOS. Si tienes un <em>War Rig</em> capaz, claro.</p>
+
+        </section>
+
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="EstebanForge&#x2F;actitud-xyz-comments"
+    data-repo-id="R_kgDOOBr8yA"
+    data-category="Blog"
+    data-category-id="DIC_kwDOOBr8yM4Cq3u8"
+    
+        data-mapping="pathname"
+    
+    data-strict="0"
+    data-reactions-enabled="1"
+    
+        data-input-position="top"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://actitud.xyz/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        
+
+    </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#el-lugar-verde-con-las-muchas-madres">El lugar verde, con las muchas madres.</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#macos-a-windows-similes-y-alternativas">macOS a Windows: símiles y alternativas.</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#sublime-text-vs-code">Sublime Text &amp; VS Code.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#github-desktop-fork">Github Desktop &amp; Fork.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#affinity-photo-affinity-designer">Affinity Photo &amp; Affinity Designer.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#insomnia-rest">Insomnia REST.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#cryptomator">Cryptomator.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#daisydisk-wiztree">DaisyDisk -&gt; WizTree.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#local-wp-laragon">Local WP -&gt; Laragon.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#viscosity">Viscosity.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#boom3d-y-fxsound">Boom3D y FxSound.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#gaskmask-hosts-file-editor">GaskMask -&gt; Hosts File Editor.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#alfred-multiples-alternativas">Alfred -&gt; Multiples Alternativas.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#mailplane-ferdi-ferdium-y-otros">Mailplane -&gt; Ferdi Ferdium y otros.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#iterm-2-hyper-o-windows-terminal">iTerm 2 -&gt; Hyper o Windows Terminal.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#dash-docs-velocity-masscode">Dash Docs -&gt; Velocity &amp; massCode.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#teampaper-snap-sharex">Teampaper Snap -&gt; ShareX.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#rectangle-app-divvy-y-teclas-de-windows">Rectangle App -&gt; Divvy y teclas de Windows.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#path-finder-onecommander-y-windows-explorer">Path Finder -&gt; OneCommander (y Windows Explorer)</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#time-machine-veeam-agent-free">Time Machine -&gt; Veeam Agent Free.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#stay-windowmanager">Stay -&gt; WindowManager.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#appcleaner-bcuninstaller">AppCleaner -&gt; BCUninstaller.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#safari-xcode">¿Safari?, ¿Xcode?</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#varias-otras-mejoras-para-windows">Varias otras mejoras para Windows.</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#paquetes-de-linux-o-macos-homebrew">¿Paquetes de Linux o macOS?, ¿Homebrew?</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/#la-citadela">La Citadela.</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+            <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script><span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://actitud.xyz/js/copyCodeToClipboard.min.js"></script>
+
+<script defer src="https://actitud.xyz/js/codeBlockNameLinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="noopener" target=_blank
+
+ href="https://actitud.xyz/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://actitud.xyz/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="ZXN0ZWJhbkBhdHRpdHVkZS5jbA=="><img loading="lazy" alt="email" title="email" src="https://actitud.xyz/social_icons/email.svg">
+                            </a>
+                        </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://github.com/EstebanForge/">
+                                    <img loading="lazy" alt="github" title="github" src="https://actitud.xyz/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://twitter.com/EstebanForge">
+                                    <img loading="lazy" alt="twitter" title="twitter" src="https://actitud.xyz/social_icons/twitter.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 1999-2026 Esteban Cuevas • Unless otherwise noted, the content in this website is available under the <a class="external" rel="noopener external" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                </small>
+        </div>
+    </section>
+
+    <script src="https://actitud.xyz/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
