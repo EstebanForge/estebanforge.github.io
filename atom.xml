@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://actitud.xyz/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;actitud.xyz</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme>dark</tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>It&#x27;s about attitude</tabi:current_section>
+    </tabi:metadata><title>It's about attitude</title>
+        <subtitle>Personal blog about technology, life, and everything in between.</subtitle>
+    <link href="https://actitud.xyz/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://actitud.xyz" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-02-20T16:00:00-03:00</updated>
+    <id>https://actitud.xyz/atom.xml</id><entry xml:lang="en">
+        <title>In memoriam: Anakin</title>
+        <published>2026-02-20T16:00:00-03:00</published>
+        <updated>2026-02-20T16:00:00-03:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2026/in-memoriam-anakin/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2026/in-memoriam-anakin/</id>
+        <summary type="html">Uno con la fuerza.</summary>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Rocket</title>
+        <published>2026-01-05T14:00:00-03:00</published>
+        <updated>2026-01-05T14:00:00-03:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2026/in-memoriam-rocket/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2026/in-memoriam-rocket/</id>
+        <summary type="html">A tribute to Rocket, our beloved cat who shared ten wonderful years with us.</summary>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Os</title>
+        <published>2025-11-09T11:15:00-03:00</published>
+        <updated>2025-11-09T11:15:00-03:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2025/in-memoriam-os/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2025/in-memoriam-os/</id>
+        </entry><entry xml:lang="en">
+        <title>Habilitando 5G, VoLTE y VoWIFI en un Google Pixel... en Chile</title>
+        <published>2024-02-02T21:46:51+00:00</published>
+        <updated>2024-02-02T21:46:51+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2024/habilitando-5g-volte-y-vowifi-en-un-google-pixel-chile/</id>
+        </entry><entry xml:lang="en">
+        <title>PSA: Fortalece tu Bitwarden, parte II</title>
+        <published>2023-02-20T21:03:18+00:00</published>
+        <updated>2023-02-20T21:03:18+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2023/psa-fortalece-tu-bitwarden-parte-ii/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2023/psa-fortalece-tu-bitwarden-parte-ii/</id>
+        </entry><entry xml:lang="en">
+        <title>PSA: fortalece tu cuenta de Bitwarden</title>
+        <published>2023-01-24T18:51:18+00:00</published>
+        <updated>2023-01-24T18:51:18+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2023/psa-fortalece-tu-cuenta-de-bitwarden/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2023/psa-fortalece-tu-cuenta-de-bitwarden/</id>
+        </entry><entry xml:lang="en">
+        <title>YouTube ReVanced is in da house!</title>
+        <published>2022-09-15T18:02:02+00:00</published>
+        <updated>2022-09-15T18:02:02+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2022/youtube-revanced-2022/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2022/youtube-revanced-2022/</id>
+        </entry><entry xml:lang="en">
+        <title>Dev Enviroment: EEAAO</title>
+        <published>2022-09-14T19:37:52+00:00</published>
+        <updated>2022-09-14T19:37:52+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2022/dev-enviroment-eeaao/</id>
+        </entry><entry xml:lang="en">
+        <title>WebTube, un YouTube Vanced más simple de instalar.</title>
+        <published>2022-08-05T23:12:27+00:00</published>
+        <updated>2022-08-05T23:12:27+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2022/webtube-un-youtube-vanced-mas-simple-de-instalar/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2022/webtube-un-youtube-vanced-mas-simple-de-instalar/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Luke</title>
+        <published>2022-05-13T16:12:14+00:00</published>
+        <updated>2022-05-13T16:12:14+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2022/in-memoriam-luke/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2022/in-memoriam-luke/</id>
+        </entry><entry xml:lang="en">
+        <title>Como hacer tu propio YouTube Vanced casero &#x2F; How to build your own home-made YouTube Vanced</title>
+        <published>2022-04-07T16:04:33+00:00</published>
+        <updated>2022-04-07T16:04:33+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2022/como-hacer-tu-propio-youtube-vanced-casero-how-to-build-your-own-home-made-youtube-vanced/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2022/como-hacer-tu-propio-youtube-vanced-casero-how-to-build-your-own-home-made-youtube-vanced/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Joe</title>
+        <published>2021-11-16T02:03:35+00:00</published>
+        <updated>2021-11-16T02:03:35+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2021/in-memoriam-joe/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2021/in-memoriam-joe/</id>
+        </entry><entry xml:lang="en">
+        <title>Dev Enviroment: Fury Road</title>
+        <published>2021-07-03T17:25:00+00:00</published>
+        <updated>2021-07-03T17:25:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2021/dev-enviroment-fury-road/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2021/dev-enviroment-fury-road/</id>
+        </entry><entry xml:lang="en">
+        <title>Seguridad en tiempos hiper conectados</title>
+        <published>2020-10-01T20:19:36+00:00</published>
+        <updated>2020-10-01T20:19:36+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2020/seguridad-en-tiempos-hiper-conectados/</id>
+        </entry><entry xml:lang="en">
+        <title>A 20 años del Poder del Ocio</title>
+        <published>2019-12-24T14:07:16+00:00</published>
+        <updated>2019-12-24T14:07:16+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2019/a-20-anos-del-poder-del-ocio/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2019/a-20-anos-del-poder-del-ocio/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Cheetara</title>
+        <published>2019-10-31T00:59:02+00:00</published>
+        <updated>2019-10-31T00:59:02+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2019/in-memoriam-cheetara/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2019/in-memoriam-cheetara/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Whoopi</title>
+        <published>2019-10-21T15:35:48+00:00</published>
+        <updated>2019-10-21T15:35:48+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2019/in-memoriam-whoopi/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2019/in-memoriam-whoopi/</id>
+        </entry><entry xml:lang="en">
+        <title>Hackintosh, 2019</title>
+        <published>2019-09-03T21:44:21+00:00</published>
+        <updated>2019-09-03T21:44:21+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2019/hackintosh-2019/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2019/hackintosh-2019/</id>
+        </entry><entry xml:lang="en">
+        <title>20 años</title>
+        <published>2019-04-08T23:26:36+00:00</published>
+        <updated>2019-04-08T23:26:36+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2019/20-anos/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2019/20-anos/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Kast</title>
+        <published>2019-03-09T20:41:55+00:00</published>
+        <updated>2019-03-09T20:41:55+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2019/in-memoriam-kast/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2019/in-memoriam-kast/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Chiqui</title>
+        <published>2018-12-04T23:23:35+00:00</published>
+        <updated>2018-12-04T23:23:35+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2018/in-memoriam-chiqui/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2018/in-memoriam-chiqui/</id>
+        </entry><entry xml:lang="en">
+        <title>La carga de un nombre común... arroba gmail.com</title>
+        <published>2018-03-07T18:23:38+00:00</published>
+        <updated>2018-03-07T18:23:38+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2018/la-carga-de-un-nombre-comun-arroba-gmail-com/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2018/la-carga-de-un-nombre-comun-arroba-gmail-com/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Diana</title>
+        <published>2017-12-03T18:46:40+00:00</published>
+        <updated>2017-12-03T18:46:40+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2017/in-memoriam-diana/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2017/in-memoriam-diana/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Bagheera</title>
+        <published>2017-11-12T18:45:12+00:00</published>
+        <updated>2017-11-12T18:45:12+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2017/in-memoriam-bagheera/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2017/in-memoriam-bagheera/</id>
+        </entry><entry xml:lang="en">
+        <title>Regalo</title>
+        <published>2017-05-02T18:43:12+00:00</published>
+        <updated>2017-05-02T18:43:12+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2017/regalo/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2017/regalo/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Mittens</title>
+        <published>2017-04-21T18:41:25+00:00</published>
+        <updated>2017-04-21T18:41:25+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2017/in-memoriam-mittens/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2017/in-memoriam-mittens/</id>
+        </entry><entry xml:lang="en">
+        <title>Contraseñas y seguridad (y que pasa después de morir)</title>
+        <published>2017-03-03T22:21:20+00:00</published>
+        <updated>2017-03-03T22:21:20+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2017/contrasenas-y-seguridad-y-que-pasa-despues-de-morir/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2017/contrasenas-y-seguridad-y-que-pasa-despues-de-morir/</id>
+        </entry><entry xml:lang="en">
+        <title>Como bloquear publicidad (y malware) en el hogar (capítulo dos)</title>
+        <published>2017-02-10T20:01:25+00:00</published>
+        <updated>2017-02-10T20:01:25+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2017/como-bloquear-publicidad-y-malware-en-el-hogar-capitulo-dos/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2017/como-bloquear-publicidad-y-malware-en-el-hogar-capitulo-dos/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Ñom</title>
+        <published>2016-12-09T18:39:31+00:00</published>
+        <updated>2016-12-09T18:39:31+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2016/in-memoriam-nom/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2016/in-memoriam-nom/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Gatadriel</title>
+        <published>2016-09-01T18:38:00+00:00</published>
+        <updated>2016-09-01T18:38:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2016/in-memoriam-gatadriel/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2016/in-memoriam-gatadriel/</id>
+        </entry><entry xml:lang="en">
+        <title>El Dhammapada</title>
+        <published>2016-08-01T13:53:27+00:00</published>
+        <updated>2016-08-01T13:53:27+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2016/el-dhammapada/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2016/el-dhammapada/</id>
+        </entry><entry xml:lang="en">
+        <title>Bloqueo de publicidad (y malware) para cualquier dispositivo en vuestro hogar</title>
+        <published>2016-01-08T18:57:55+00:00</published>
+        <updated>2016-01-08T18:57:55+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2016/bloqueo-de-publicidad-y-malware-para-cualquier-dispositivo-en-vuestro-hogar/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2016/bloqueo-de-publicidad-y-malware-para-cualquier-dispositivo-en-vuestro-hogar/</id>
+        </entry><entry xml:lang="en">
+        <title>In memoriam: Nerro</title>
+        <published>2015-10-26T18:35:50+00:00</published>
+        <updated>2015-10-26T18:35:50+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/in-memoriam-nerro/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/in-memoriam-nerro/</id>
+        </entry><entry xml:lang="en">
+        <title>La comida del medio: un año después</title>
+        <published>2015-10-22T12:00:07+00:00</published>
+        <updated>2015-10-22T12:00:07+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/el-camino-del-medio-un-anho-despues/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/el-camino-del-medio-un-anho-despues/</id>
+        </entry><entry xml:lang="en">
+        <title>¡Ahhh... Un Manjar!</title>
+        <published>2015-09-09T16:32:24+00:00</published>
+        <updated>2015-09-09T16:32:24+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/ahhh-un-manjar/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/ahhh-un-manjar/</id>
+        </entry><entry xml:lang="en">
+        <title>«Cuantas más leyes y regulaciones dictan los gobiernos, más salteadores y ladrones existen.»</title>
+        <published>2015-08-17T23:01:51+00:00</published>
+        <updated>2015-08-17T23:01:51+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/cuantas-mas-leyes-y-regulaciones-dictan-los-gobiernos-mas-salteadores-y-ladrones-existen/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/cuantas-mas-leyes-y-regulaciones-dictan-los-gobiernos-mas-salteadores-y-ladrones-existen/</id>
+        </entry><entry xml:lang="en">
+        <title>Mara a los ocho años</title>
+        <published>2015-07-09T17:55:06+00:00</published>
+        <updated>2015-07-09T17:55:06+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/mara-a-los-ocho-anos/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/mara-a-los-ocho-anos/</id>
+        </entry><entry xml:lang="en">
+        <title>Meditación: guía para principiantes</title>
+        <published>2015-07-06T18:23:48+00:00</published>
+        <updated>2015-07-06T18:23:48+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/meditacion-guia-para-principiantes/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/meditacion-guia-para-principiantes/</id>
+        </entry><entry xml:lang="en">
+        <title>255 días después</title>
+        <published>2015-07-06T13:44:13+00:00</published>
+        <updated>2015-07-06T13:44:13+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/255-dias-despues/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/255-dias-despues/</id>
+        </entry><entry xml:lang="en">
+        <title>La comida del medio</title>
+        <published>2015-04-07T20:54:21+00:00</published>
+        <updated>2015-04-07T20:54:21+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/la-comida-del-medio/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/la-comida-del-medio/</id>
+        </entry><entry xml:lang="en">
+        <title>Actualizar Moto G XT1032 convertido a GPE, a Android 5.1</title>
+        <published>2015-04-04T15:34:40+00:00</published>
+        <updated>2015-04-04T15:34:40+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/actualizar-moto-g-xt1032-convertido-a-gpe-a-android-5-1/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/actualizar-moto-g-xt1032-convertido-a-gpe-a-android-5-1/</id>
+        </entry><entry xml:lang="en">
+        <title>No logrado</title>
+        <published>2015-03-26T21:26:07+00:00</published>
+        <updated>2015-03-26T21:26:07+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2015/no-logrado/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2015/no-logrado/</id>
+        </entry><entry xml:lang="en">
+        <title>Fatiga tecnológica</title>
+        <published>2014-11-21T20:39:45+00:00</published>
+        <updated>2014-11-21T20:39:45+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2014/fatiga-tecnologica/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2014/fatiga-tecnologica/</id>
+        </entry><entry xml:lang="en">
+        <title>Tracking directo con Correos de Chile en eBay y Aliexpress</title>
+        <published>2014-08-28T12:29:03+00:00</published>
+        <updated>2014-08-28T12:29:03+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2014/tracking-directo-con-correos-de-chile-en-ebay-y-aliexpress/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2014/tracking-directo-con-correos-de-chile-en-ebay-y-aliexpress/</id>
+        </entry><entry xml:lang="en">
+        <title>Renunciar</title>
+        <published>2014-02-15T14:54:39+00:00</published>
+        <updated>2014-02-15T14:54:39+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2014/renunciar/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2014/renunciar/</id>
+        </entry><entry xml:lang="en">
+        <title>El honor más alto que tengo para ofrecer este día, te lo vengo a entregar</title>
+        <published>2014-02-07T20:31:24+00:00</published>
+        <updated>2014-02-07T20:31:24+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2014/el-honor-mas-alto-que-tengo-para-ofrecer-este-dia-te-lo-vengo-a-entregar/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2014/el-honor-mas-alto-que-tengo-para-ofrecer-este-dia-te-lo-vengo-a-entregar/</id>
+        </entry><entry xml:lang="en">
+        <title>&quot;Porque mis hijos no tienen smartphone&quot;</title>
+        <published>2013-11-28T20:26:03+00:00</published>
+        <updated>2013-11-28T20:26:03+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2013/porque-mis-hijos-no-tienen-smartphone/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2013/porque-mis-hijos-no-tienen-smartphone/</id>
+        </entry><entry xml:lang="en">
+        <title>Encontré a un político robando (¿tremenda novedad?)</title>
+        <published>2013-10-03T20:19:27+00:00</published>
+        <updated>2013-10-03T20:19:27+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2013/encontre-a-un-politico-robando-tremenda-novedad/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2013/encontre-a-un-politico-robando-tremenda-novedad/</id>
+        </entry><entry xml:lang="en">
+        <title>Como respaldar correos desde Gmail</title>
+        <published>2013-09-05T19:52:25+00:00</published>
+        <updated>2013-09-05T19:52:25+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2013/como-respaldar-correos-desde-gmail/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2013/como-respaldar-correos-desde-gmail/</id>
+        </entry><entry xml:lang="en">
+        <title>El camino del medio</title>
+        <published>2013-07-25T15:52:02+00:00</published>
+        <updated>2013-07-25T15:52:02+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2013/el-camino-del-medio/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2013/el-camino-del-medio/</id>
+        </entry><entry xml:lang="en">
+        <title>#angelhack #ahscl personal recap and what you didn&#x27;t saw</title>
+        <published>2013-06-03T20:12:17+00:00</published>
+        <updated>2013-06-03T20:12:17+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2013/angelhack-ahscl-personal-recap-and-what-you-didnt-saw/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2013/angelhack-ahscl-personal-recap-and-what-you-didnt-saw/</id>
+        </entry><entry xml:lang="en">
+        <title>Refugio</title>
+        <published>2013-01-24T14:50:02+00:00</published>
+        <updated>2013-01-24T14:50:02+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2013/refugio/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2013/refugio/</id>
+        </entry><entry xml:lang="en">
+        <title>¿Qué gana un profesor?</title>
+        <published>2012-10-03T20:03:32+00:00</published>
+        <updated>2012-10-03T20:03:32+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2012/que-gana-un-profesor/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2012/que-gana-un-profesor/</id>
+        </entry><entry xml:lang="en">
+        <title>All live, never on a floppy disk</title>
+        <published>2012-09-06T20:00:10+00:00</published>
+        <updated>2012-09-06T20:00:10+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2012/all-live-never-on-a-floppy-disk/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2012/all-live-never-on-a-floppy-disk/</id>
+        </entry><entry xml:lang="en">
+        <title>Seguridad en la Internet Social</title>
+        <published>2012-08-07T19:49:06+00:00</published>
+        <updated>2012-08-07T19:49:06+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2012/seguridad-en-la-internet-social/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2012/seguridad-en-la-internet-social/</id>
+        </entry><entry xml:lang="en">
+        <title>Bosón de Higgs</title>
+        <published>2012-07-05T19:35:07+00:00</published>
+        <updated>2012-07-05T19:35:07+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2012/boson-de-higgs/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2012/boson-de-higgs/</id>
+        </entry><entry xml:lang="en">
+        <title>¿Cuánto vale un bug de seguridad?</title>
+        <published>2012-06-18T19:29:27+00:00</published>
+        <updated>2012-06-18T19:29:27+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2012/cuanto-vale-un-bug-de-seguridad/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2012/cuanto-vale-un-bug-de-seguridad/</id>
+        </entry><entry xml:lang="en">
+        <title>Lateralidad</title>
+        <published>2012-05-12T15:44:36+00:00</published>
+        <updated>2012-05-12T15:44:36+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2012/lateralidad/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2012/lateralidad/</id>
+        </entry><entry xml:lang="en">
+        <title>Singles’s cheap &amp;amp; easy kitchen, segunda parte</title>
+        <published>2011-02-07T05:47:00+00:00</published>
+        <updated>2011-02-07T05:47:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2011/singless-cheap-easy-kitchen-ii-parte/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2011/singless-cheap-easy-kitchen-ii-parte/</id>
+        </entry><entry xml:lang="en">
+        <title>Energia en movimiento</title>
+        <published>2010-06-10T16:59:00+00:00</published>
+        <updated>2010-06-10T16:59:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/energia-en-movimiento/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/energia-en-movimiento/</id>
+        </entry><entry xml:lang="en">
+        <title>Intrigas sociales</title>
+        <published>2010-06-05T23:30:00+00:00</published>
+        <updated>2010-06-05T23:30:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/intrigas-sociales/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/intrigas-sociales/</id>
+        </entry><entry xml:lang="en">
+        <title>La culpa</title>
+        <published>2010-06-04T02:18:00+00:00</published>
+        <updated>2010-06-04T02:18:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/la-culpa/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/la-culpa/</id>
+        </entry><entry xml:lang="en">
+        <title>Mis Dulces 16... millones de Posts</title>
+        <published>2010-06-01T13:02:00+00:00</published>
+        <updated>2010-06-01T13:02:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/mis-dulces-16-millones-de-posts/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/mis-dulces-16-millones-de-posts/</id>
+        </entry><entry xml:lang="en">
+        <title>Los detalles son la clave</title>
+        <published>2010-05-29T18:57:00+00:00</published>
+        <updated>2010-05-29T18:57:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/los-detalles-son-la-clave/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/los-detalles-son-la-clave/</id>
+        </entry><entry xml:lang="en">
+        <title>Adios vBulletin</title>
+        <published>2010-05-29T04:49:00+00:00</published>
+        <updated>2010-05-29T04:49:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/adios-vbulletin/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/adios-vbulletin/</id>
+        </entry><entry xml:lang="en">
+        <title>Secreto encanto del Beso</title>
+        <published>2010-05-29T03:09:00+00:00</published>
+        <updated>2010-05-29T03:09:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/secreto-encanto-del-beso/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/secreto-encanto-del-beso/</id>
+        </entry><entry xml:lang="en">
+        <title>Sin urgencia</title>
+        <published>2010-05-26T02:20:00+00:00</published>
+        <updated>2010-05-26T02:20:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/sin-urgencia/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/sin-urgencia/</id>
+        </entry><entry xml:lang="en">
+        <title>Google Font API: letras lindas para la Web... fácil</title>
+        <published>2010-05-19T20:46:00+00:00</published>
+        <updated>2010-05-19T20:46:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/google-font-api-letras-lindas-para-la-web-facil/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/google-font-api-letras-lindas-para-la-web-facil/</id>
+        </entry><entry xml:lang="en">
+        <title>Feliz dia &quot;Sanadoras&quot;</title>
+        <published>2010-05-12T11:13:00+00:00</published>
+        <updated>2010-05-12T11:13:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/feliz-dia-sanadoras/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/feliz-dia-sanadoras/</id>
+        </entry><entry xml:lang="en">
+        <title>Maternidad</title>
+        <published>2010-05-09T16:07:00+00:00</published>
+        <updated>2010-05-09T16:07:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/maternidad/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/maternidad/</id>
+        </entry><entry xml:lang="en">
+        <title>Destinos</title>
+        <published>2010-05-06T16:06:00+00:00</published>
+        <updated>2010-05-06T16:06:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/destinos/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/destinos/</id>
+        </entry><entry xml:lang="en">
+        <title>Irrumpiendo vuestra propia Privacidad</title>
+        <published>2010-05-05T19:45:00+00:00</published>
+        <updated>2010-05-05T19:45:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/irrumpiendo-vuestra-propia-privacidad/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/irrumpiendo-vuestra-propia-privacidad/</id>
+        </entry><entry xml:lang="en">
+        <title>Sexo seguro</title>
+        <published>2010-05-03T16:44:00+00:00</published>
+        <updated>2010-05-03T16:44:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/sexo-seguro/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/sexo-seguro/</id>
+        </entry><entry xml:lang="en">
+        <title>Vida Adrenalinicamente sorpresiva</title>
+        <published>2010-05-02T06:00:00+00:00</published>
+        <updated>2010-05-02T06:00:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/vida-adrenalinicamente-sorpresiva/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/vida-adrenalinicamente-sorpresiva/</id>
+        </entry><entry xml:lang="en">
+        <title>Musicalísimo</title>
+        <published>2010-04-26T01:39:00+00:00</published>
+        <updated>2010-04-26T01:39:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/musicalisimo/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/musicalisimo/</id>
+        </entry><entry xml:lang="en">
+        <title>Compartiendo Internet en casa</title>
+        <published>2010-04-24T00:47:00+00:00</published>
+        <updated>2010-04-24T00:47:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/compartiendo-internet-en-casa/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/compartiendo-internet-en-casa/</id>
+        </entry><entry xml:lang="en">
+        <title>Sobre notas y acordes</title>
+        <published>2010-04-10T02:06:00+00:00</published>
+        <updated>2010-04-10T02:06:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/sobre-notas-y-acordes/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/sobre-notas-y-acordes/</id>
+        </entry><entry xml:lang="en">
+        <title>No quiero ser Influyente</title>
+        <published>2010-04-09T19:13:00+00:00</published>
+        <updated>2010-04-09T19:13:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/no-quiero-ser-influyente/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/no-quiero-ser-influyente/</id>
+        </entry><entry xml:lang="en">
+        <title>Perro Imán</title>
+        <published>2010-04-09T03:34:00+00:00</published>
+        <updated>2010-04-09T03:34:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/perro-iman/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/perro-iman/</id>
+        </entry><entry xml:lang="en">
+        <title>Vademecum sexual</title>
+        <published>2010-04-07T00:00:00+00:00</published>
+        <updated>2010-04-07T00:00:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/vademecum-sexual/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/vademecum-sexual/</id>
+        </entry><entry xml:lang="en">
+        <title>Muerte y hacienda</title>
+        <published>2010-04-04T14:37:00+00:00</published>
+        <updated>2010-04-04T14:37:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/muerte-y-hacienda/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/muerte-y-hacienda/</id>
+        </entry><entry xml:lang="en">
+        <title>Prodigiosus Gratia</title>
+        <published>2010-04-02T03:09:00+00:00</published>
+        <updated>2010-04-02T03:09:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/prodigiosus-gratia/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/prodigiosus-gratia/</id>
+        </entry><entry xml:lang="en">
+        <title>Papiroflexia</title>
+        <published>2010-04-01T19:12:00+00:00</published>
+        <updated>2010-04-01T19:12:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/papiroflexia/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/papiroflexia/</id>
+        </entry><entry xml:lang="en">
+        <title>Sobre la inmortalidad del cangrejo</title>
+        <published>2010-04-01T02:46:00+00:00</published>
+        <updated>2010-04-01T02:46:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/sobre-la-inmortalidad-del-cangrejo/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/sobre-la-inmortalidad-del-cangrejo/</id>
+        </entry><entry xml:lang="en">
+        <title>Atestado de ideas</title>
+        <published>2010-03-31T22:58:00+00:00</published>
+        <updated>2010-03-31T22:58:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2010/atestado-de-ideas/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2010/atestado-de-ideas/</id>
+        </entry><entry xml:lang="en">
+        <title>Las Crónicas de ElAntro: la PAA, la brujennty y el hueveo (A.K.A. Una década de Greatest Shits)</title>
+        <published>2009-11-24T14:09:00+00:00</published>
+        <updated>2009-11-24T14:09:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/las-cronicas-de-elantro-la-paa-la-brujennty-y-el-hueveo-a-k-a-una-decada-de-greatest-shits/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/las-cronicas-de-elantro-la-paa-la-brujennty-y-el-hueveo-a-k-a-una-decada-de-greatest-shits/</id>
+        </entry><entry xml:lang="en">
+        <title>The bucket list</title>
+        <published>2009-11-09T23:50:00+00:00</published>
+        <updated>2009-11-09T23:50:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/the-bucket-list/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/the-bucket-list/</id>
+        </entry><entry xml:lang="en">
+        <title>Erase una vez ElAntro</title>
+        <published>2009-11-05T14:06:00+00:00</published>
+        <updated>2009-11-05T14:06:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/erase-una-vez-elantro/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/erase-una-vez-elantro/</id>
+        </entry><entry xml:lang="en">
+        <title>Barrotes de aire</title>
+        <published>2009-08-16T00:54:00+00:00</published>
+        <updated>2009-08-16T00:54:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/barrotes-de-aire/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/barrotes-de-aire/</id>
+        </entry><entry xml:lang="en">
+        <title>El &quot;minuto weon&quot;</title>
+        <published>2009-07-12T01:06:00+00:00</published>
+        <updated>2009-07-12T01:06:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/el-minuto-weon/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/el-minuto-weon/</id>
+        </entry><entry xml:lang="en">
+        <title>UP!</title>
+        <published>2009-06-06T01:14:00+00:00</published>
+        <updated>2009-06-06T01:14:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/up/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/up/</id>
+        </entry><entry xml:lang="en">
+        <title>¿ÉXITO, me dice?</title>
+        <published>2009-02-07T00:27:00+00:00</published>
+        <updated>2009-02-07T00:27:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/exito-me-dice/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/exito-me-dice/</id>
+        </entry><entry xml:lang="en">
+        <title>Donación de Organos II Parte</title>
+        <published>2009-01-23T02:06:00+00:00</published>
+        <updated>2009-01-23T02:06:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/donacion-de-organos-ii-parte/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/donacion-de-organos-ii-parte/</id>
+        </entry><entry xml:lang="en">
+        <title>Acerca del Wennty: La justicia no es ciega. Cierre del caso</title>
+        <published>2009-01-21T13:22:00+00:00</published>
+        <updated>2009-01-21T13:22:00+00:00</updated>
+        <author>
+            <name>Esteban</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/acerca-del-wennty-la-justicia-no-es-ciega-cierre-del-caso/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/acerca-del-wennty-la-justicia-no-es-ciega-cierre-del-caso/</id>
+        </entry><entry xml:lang="en">
+        <title>Donación de Órganos: mi humilde teoría.</title>
+        <published>2009-01-19T02:00:00+00:00</published>
+        <updated>2009-01-19T02:00:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/donacion-de-organos-mi-humilde-teoria/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/donacion-de-organos-mi-humilde-teoria/</id>
+        </entry><entry xml:lang="en">
+        <title>Yes Man</title>
+        <published>2009-01-18T01:54:00+00:00</published>
+        <updated>2009-01-18T01:54:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/yes-man/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/yes-man/</id>
+        </entry><entry xml:lang="en">
+        <title>The Curious Case of Benjamin Button</title>
+        <published>2009-01-12T01:49:00+00:00</published>
+        <updated>2009-01-12T01:49:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2009/the-curious-case-of-benjamin-button/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2009/the-curious-case-of-benjamin-button/</id>
+        </entry><entry xml:lang="en">
+        <title>Como buscar atencion medica y no morir en el intento</title>
+        <published>2008-09-18T02:33:00+00:00</published>
+        <updated>2008-09-18T02:33:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2008/como-buscar-atencion-medica-y-no-morir-en-el-intento/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2008/como-buscar-atencion-medica-y-no-morir-en-el-intento/</id>
+        </entry><entry xml:lang="en">
+        <title>Amor en Tiempos del Colera</title>
+        <published>2008-04-07T02:00:00+00:00</published>
+        <updated>2008-04-07T02:00:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2008/amor-en-tiempos-del-colera/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2008/amor-en-tiempos-del-colera/</id>
+        </entry><entry xml:lang="en">
+        <title>Wamby</title>
+        <published>2008-03-28T00:53:00+00:00</published>
+        <updated>2008-03-28T00:53:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2008/wamby/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2008/wamby/</id>
+        </entry><entry xml:lang="en">
+        <title>P.S: I Love You (2007)</title>
+        <published>2008-03-04T00:47:00+00:00</published>
+        <updated>2008-03-04T00:47:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2008/p-s-i-love-you-2007/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2008/p-s-i-love-you-2007/</id>
+        </entry><entry xml:lang="en">
+        <title>No Country For Old Men (2007)</title>
+        <published>2008-03-04T00:44:00+00:00</published>
+        <updated>2008-03-04T00:44:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2008/no-country-for-old-men-2007/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2008/no-country-for-old-men-2007/</id>
+        </entry><entry xml:lang="en">
+        <title>The Kingdom (2007)</title>
+        <published>2008-03-04T00:43:00+00:00</published>
+        <updated>2008-03-04T00:43:00+00:00</updated>
+        <author>
+            <name>Claudia</name>
+        </author>
+        <link rel="alternate" href="https://actitud.xyz/blog/2008/the-kingdom-2007/" type="text/html"/>
+        <id>https://actitud.xyz/blog/2008/the-kingdom-2007/</id>
+        </entry>
+</feed>

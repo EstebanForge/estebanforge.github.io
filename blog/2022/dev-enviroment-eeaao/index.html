@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src &#x27;self&#x27; data: 'self';img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;media-src &#x27;self&#x27;;style-src &#x27;self&#x27; 'unsafe-inline';frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com giscus.app;connect-src 'self';script-src 'self'  giscus.app  cdn.jsdelivr.net 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://actitud.xyz">
+
+    
+    <title>
+It's about attitude • Dev Enviroment: EEAAO</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://actitud.xyz/images/favicon.png"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="It's about attitude - Atom Feed" href="https://actitud.xyz/atom.xml">
+                
+            
+                
+                    <link rel="alternate" type="application/rss+xml" title="It's about attitude - RSS Feed" href="https://actitud.xyz/rss.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://actitud.xyz/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://actitud.xyz/main.css?h=6b1dda977391dad0c76e" />
+        <link rel="stylesheet" href="https://actitud.xyz/css/custom.css?h=535738bd9137b34265fb" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Personal blog about technology, life, and everything in between." />
+        <meta property="og:description" content="Personal blog about technology, life, and everything in between." />
+        <meta name="twitter:description" content="Personal blog about technology, life, and everything in between." />
+
+    
+
+    <meta property="og:title" content="Dev Enviroment: EEAAO" />
+    <meta name="twitter:title" content="Dev Enviroment: EEAAO" />
+    <meta property="og:type" content="article" />
+
+    
+    
+    
+    
+        
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+        
+            
+            <meta property="og:image" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;images&#x2F;social-media&#x2F;2022&#x2F;blog_2022_dev_enviroment_eeaao.jpg" />
+            <meta property="og:image:secure_url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;images&#x2F;social-media&#x2F;2022&#x2F;blog_2022_dev_enviroment_eeaao.jpg" />
+            <meta property="og:image:type" content="image/jpeg" />
+            
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+            
+            <meta name="twitter:image" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;images&#x2F;social-media&#x2F;2022&#x2F;blog_2022_dev_enviroment_eeaao.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+    
+
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;actitud.xyz&#x2F;blog&#x2F;2022&#x2F;dev-enviroment-eeaao&#x2F;" /><meta property="og:site_name" content="It&#x27;s about attitude">
+        <noscript><link rel="stylesheet" href="https://actitud.xyz/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://actitud.xyz/js/initializeTheme.min.js"></script>
+        <script defer src="https://actitud.xyz/js/themeSwitcher.min.js"></script>
+        <script defer src="https://actitud.xyz/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        </head>
+
+
+<body class="use-sans-serif">
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://actitud.xyz">It&#x27;s about attitude</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz">home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/esteban/">esteban
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://actitud.xyz/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https:&#x2F;&#x2F;github.com&#x2F;EstebanForge">github
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+
+
+
+<main>
+    <article>
+        <h1 class="article-title">
+            Dev Enviroment: EEAAO
+        </h1>
+
+        <ul class="meta"><li>By Esteban</li>
+
+            
+                <span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;actitud.xyz" class="u-url " title="Esteban">Esteban</a>
+</span>
+
+            
+                <li><span class='separator' aria-hidden='true'>•</span>2022-09-14</li><li title="2943 words"><span class='separator' aria-hidden='true'>•</span>15 min read</li>
+        </ul>
+
+        <section class="body"><p>Les he comentado (acá, en alguna entrada perdida en este blog) que comencé mi oficio de informático, usando Windows (3.11 / 95). Les comenté, luego, que por gracia del simpático bullying de mi jefe, pasé a usar Linux por varios años. Les comenté que, por el problema de los apps de diseño (con los que debo lidiar, por mi trabajo), pasé a moverme a macOS (<a href="/blog/2019/09/03/hackintosh-2019/">Hackintosh incluido</a>). Les comenté que <a href="/blog/2021/07/03/dev-enviroment-fury-road/">me moví de vuelta a Windows</a>, completando el círculo. Les comenté que, gracias a la experiencia obtenida en poco más de 25 años, no me cerraba a volver a ninguno de los tres OS de escritorio ahora.</p>
+<p>Bueno, así estoy hoy: entre macOS, Windows y WSL/Linux. Al mismo tiempo.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.imdb.com/title/tt6710474/">Everything Everywhere All at Once</a>. Fenomenal película, por cierto. Fenomenal. Es que, luego de <a href="/blog/2021/07/03/dev-enviroment-fury-road/">Fury Road</a>, debía seguir con buen cine, ¿no?</p>
+<p><a href="/media/2022/everything-everywhere-all-at-once-hd_2828x1591-1.jpg"><img src="/media/2022/everything-everywhere-all-at-once-hd_2828x1591-1.jpg?w=1024" alt="" /></a></p>
+<p>¿Para qué escribo esto?</p>
+<p>Porque ahora que me moví a este limbo de usar <em>todo y todos al mismo tiempo</em>, y utilizo Windows, WSL/Linux y macOS, me di cuenta que no he detallado acá qué cosas uso en macOS. Solo en Windows nada más, en aquel otro artículo.</p>
+<p>Si te interesa saber qué uso en Windows, sírvase pasar por el <a href="/blog/2021/07/03/dev-enviroment-fury-road/">Camino de la Furia</a>, por favor.</p>
+<p>Vamos con macOS ahora.</p>
+<h2 id="homebrew">Homebrew</h2>
+<p>Viniendo de Linux, al pasar a macOS sufrí un montón por tener que volver a instalar apps a lo Windows. O con un instalador (pkg). O con la forma algo tonta y simplona de macOS, la de arrastrar el ícono del app, a la carpeta de Aplicaciones (a prueba de). macOS no tiene un gestor de paquetes nativo, propio del OS.</p>
+<p>Es que en Linux, los gestores de paquetes y software se dan por hecho. Si no los conoces, no sabes lo que te pierdes.</p>
+<p>Con un solo comando, puedes instalar casi de todo. Esa es la premisa.</p>
+<p>Hasta Windows inauguró un gestor de paquetes propio con Windows 11, <a class="external" rel="noopener external" target="_blank" href="https://github.com/microsoft/winget-cli">winget</a>. Último macOS, último de indecente.</p>
+<p>Entra <a class="external" rel="noopener external" target="_blank" href="https://brew.sh/">Homebrew</a>. Un gestor de paquetes para macOS que suple esa carencia del OS, versus Linux en general.</p>
+<p>Una vez instalado Homebrew, ¿necesitas instalar MySQL?:</p>
+<pre><code>brew install mysql
+</code></pre>
+<p>¿Quieres instalar PHP?</p>
+<pre><code>brew install php
+</code></pre>
+<p>¿Quieres instalar Google Chrome?</p>
+<pre><code>brew install --cask google-chrome
+</code></pre>
+<p>¿Quieres instalar VSCode?</p>
+<pre><code>brew install --cask visual-studio-code
+</code></pre>
+<p>Etc. Y puedes instalar todo junto, en un solo comando, si así lo deseas.</p>
+<p>¿Quieres actualizar el software instalado con Homebrew?</p>
+<pre><code>brew update &amp;&amp; brew upgrade
+</code></pre>
+<p>¿Ven que sencillo y conveniente es?</p>
+<p>No podría vivir tranquilo sin Homebrew en macOS.</p>
+<h2 id="path-finder-y-forklift">Path Finder (y Forklift)</h2>
+<p>Al igual que en Windows 11, el Explorador de Archivos por defecto de macOS, Finder, vale... hongo.</p>
+<p>En Windows les comenté que lo resolví con <a href="/blog/2021/07/03/dev-enviroment-fury-road/">One Commander</a>. En macOS, esto se resuelve con <a class="external" rel="noopener external" target="_blank" href="https://www.cocoatech.io/">Path Finder</a>. Path Finder hacer muchas, muchas cosas, y todas bien. Extiende lo natural de Finder, con cosas que en Linux (de donde venía antes de macOS) son normales.</p>
+<p>Trae de vuelta, por ejemplo, el "cortar" cosas, para luego pegarlas. macOS no te deja. En Finder, debes copiar algo, y luego "moverlo". Concepto de mierda, con el que los que llevan 20 años con macOS están acostumbrados. El 80% restante del mundo, no.</p>
+<p>Son hartas cosas las que hace Path Finder en realidad. Desde lo comentado, a poder personalizar shortcuts (para que el Enter ingrese a una carpeta, y no la renombre), a poder comprimir y descomprimir archivos por si solo (hasta 7zip o rar), el poder renombrar un montón de archivos en masa, conectarse a servidores, el poder unir el contenido de dos carpetas al copiar-pegar (a lo Windows o Linux) y no simplemente ofrecer reemplazar el destino por completo con todo lo nuevo y perder lo anterior, etc. Vean el sitio de Path Finder para averiguar más al respecto.</p>
+<p>Una alternativa, también digna (y más barata, un solo pago), es <a class="external" rel="noopener external" target="_blank" href="https://binarynights.com/">Fork Lift</a>. Similar a Path Finder, hace de todo también. Además de tener mejor soporte de conexión a distintos tipos de servidores externos. Mejor oferta en ese apartado.</p>
+<p>Mención honorable: <a class="external" rel="noopener external" target="_blank" href="https://mac.eltima.com/file-manager.html">Commander One</a>. Bueno también.</p>
+<h2 id="orion-browser">Orion (Browser)</h2>
+<p>Utilizo normalmente <a class="external" rel="noopener external" target="_blank" href="https://www.google.com/chrome/">Chrome</a>. El consumo de recursos y batería extra, vs Safari, no es problema si ya estoy enchufado a la corriente de todos modos.</p>
+<p>También tengo <a class="external" rel="noopener external" target="_blank" href="https://firefox.com/">Firefox</a> instalado, como browser secundario. Para probar desarrollos web en el y asegurar compatibilidad. Necesario.</p>
+<p>Pero cuando tengo que mover el equipo y no usarlo en modo escritorio, entra <a class="external" rel="noopener external" target="_blank" href="https://browser.kagi.com/">Orion</a>. Este es un navegador, clon de Safari, mismo motor (Webkit) que Safari, pero con una particularidad: soporta extensiones de Chrome.</p>
+<p>Safari será todo lo seguro que dice ser, rápido y super bueno manejando recursos en macOS (esto es verdad), pero... está extremadamente limitado en extensiones vs Chrome / Firefox / Edge / Brave.</p>
+<p>Con Orion, eso ya no es problema.</p>
+<h2 id="vs-code-sublime-text">VS Code / Sublime Text</h2>
+<p>De programar vivo. Por lo que necesito un editor donde pueda machacar teclas y cobrar por ello a fin de mes.</p>
+<p>Salto entre <a class="external" rel="noopener external" target="_blank" href="https://www.sublimetext.com/">Sublime Text</a> y <a class="external" rel="noopener external" target="_blank" href="https://code.visualstudio.com/">VS Code</a>, dependiendo de qué cosa estoy trabajando. Ambos tienen sus pro y contras.</p>
+<p>Sublime Text es veloz. Muy veloz. VS Code tiene un ecosistema de extensiones cada vez más grande. Muy útil.</p>
+<p>Ambos son una muy buena elección.</p>
+<p>Tema para otro artículo serán las extensiones que utilizo tanto en Sublime Text como en VS Code. Si es que a alguien le interesa.</p>
+<h2 id="iterm2">iTerm2</h2>
+<p>macOS tiene una terminal nativa por defecto instalada en su OS. Se llama, oh sorpresa: "terminal". Y funciona ah. Cumple el trabajo. Pero es fea.</p>
+<p>Para resolver eso está <a class="external" rel="noopener external" target="_blank" href="https://iterm2.com/">iTerm2</a>.</p>
+<p>Tiene muchas características excelentes. Que no recuerdo usar. Pero soporta personalización sin igual. Por acá uso <a class="external" rel="noopener external" target="_blank" href="https://github.com/wesbos/Cobalt2-iterm">Cobalt2</a> en ella.</p>
+<p>Existen otras buenas opciones, que no uso por costumbre casi. Alacritty, bueno. Warp, bueno, pero será de pago y requiere conectarse con una cuenta. Hyper Terminal, bueno, pero es Electron, y prefiero dejar Electron para otras cosas. No la terminal.</p>
+<h2 id="oh-my-zsh">Oh My Zsh</h2>
+<p>Hablando de terminal, ahora que macOS usa ZSH por defecto en vez de Bash (por la licencia), <a class="external" rel="noopener external" target="_blank" href="https://ohmyz.sh/">Oh My Zsh</a> mejora muchos aspectos del uso de ZSH en general.</p>
+<p>Cuenta con plugins (extensiones) que permiten que ZSH haga otras cosas muy útiles.</p>
+<p>Los que utilizo acá:</p>
+<pre><code>	git
+	git-prompt
+	aliases
+	sublime
+	vscode
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+	zsh-completions
+</code></pre>
+<p>De tarea les dejo el buscar que hace cada uno de ellos.</p>
+<h2 id="local-wp">Local WP</h2>
+<p>¿Les dije que machaco teclas para vivir? Bueno, lo que hago en ese mundo, normalmente lo hago sobre WordPress.</p>
+<p><a href="/media/2022/stewie-shower-sad.gif"><img src="/media/2022/stewie-shower-sad.gif?w=500" alt="" /></a></p>
+<p>Si pone el pan sobre la mesa, bienvenido sea. <a class="external" rel="noopener external" target="_blank" href="https://github.com/EstebanForge/Fuerte-WP">Se puede desarrollar lindo</a> sobre el, por cierto. Menos queja, y más trabajos de calidad. <a class="external" rel="noopener external" target="_blank" href="https://wordpress.org/plugins/fuerte-wp/">A dar el ejemplo</a>, y subirle el pelo.</p>
+<p>Para poder trabajar localmente con WordPress, utilizo <a class="external" rel="noopener external" target="_blank" href="https://localwp.com/">Local WP</a>. Un servidor veloz, orientado a este mundo de WordPress, para trabajar sin tener que complicarme en levantar por separado Apache/Nginx, MySQL/MariaDB, PHP, ajustar virtual hosts, certificados SSL, etc.</p>
+<h2 id="github-desktop">GitHub Desktop</h2>
+<p>Git <a class="external" rel="noopener external" target="_blank" href="https://ohshitgit.com/">es complicado</a>. Incluso para los más veteranos.</p>
+<p>Cuando tu trabajo no es gestionar repositorios git, tienes que poder avanzar rápido. Para que git no sea una molestia, uso <a class="external" rel="noopener external" target="_blank" href="https://desktop.github.com/">GitHub Desktop</a>. Funciona para el 90% de los casos en que lo necesito.</p>
+<p>Para el resto, se usa directo desde las mismas integraciones de Sublime Text y VS Code. Cero problema.</p>
+<h2 id="affinity-designer-y-affinity-photo">Affinity Designer y Affinity Photo</h2>
+<p>En ocasiones debo abrir diseños de terceros, que necesito convertir a una web. Ya sea Illustrator o Photoshop, estos dos apps de <a class="external" rel="noopener external" target="_blank" href="https://affinity.serif.com/">Affinity Serif</a> pueden abrir archivos creados con esos dos programas, sin problema. Y, a diferencia de la suite Adobe, estos dos programas son veloces, muy veloces. Y competentes también, por cierto.</p>
+<p>De un solo pago, no requieren suscripción como Adobe. Suelen venderlos en oferta, con un 50% de descuento cada uno, todos los Black Friday. Estén atentos, y aprovechen.</p>
+<h2 id="alfred">Alfred</h2>
+<p><a href="/media/2022/zac-durant-_6hzpu9hyfg-unsplash.jpg"><img src="/media/2022/zac-durant-_6hzpu9hyfg-unsplash.jpg?w=640" alt="" /></a></p>
+<p>Alabado sea <a class="external" rel="noopener external" target="_blank" href="https://www.alfredapp.com/">Alfred</a>. Si bien macOS viene con Spotlight para hacer CMD+Espacio y buscar dentro de tu equipo, no saben lo infinitamente superior que es Alfred gracias a sus características (de pago) y Workflows.</p>
+<p>Buscar apps. Buscar contactos. Buscar archivos dentro de todo el equipo. Acciones universales. Navegar a URLs con parámetros incluidos. Historial del Clipboard. Snippets de código. Expansión de Snippets abreviados. Calculadora. Diccionario. Controlar la música en reproducción. Comandos de sistema (reiniciar, apagar, bloquear pantalla, etc.). Comandos de terminal. Previsualizar archivos...</p>
+<p>Más todo lo que puedes hacer con extensiones, Workflows, de terceros. Cosas como:</p>
+<p>Cambiar input/output de audio. Copiar un código 2FA automático desde apps como Authy. Ver y navegar tu bóveda de Bitwarden. Revisar caniuse.com. Encodear-decodificar strings de texto. Buscar referencia a funciones de WordPress. Acortar URLs. Buscar películas en IMDB. Ver tu IP pública y copiarla. Matar procesos del sistema. Lanzar el emulador de iOS sin abrir Xcode. Generar textos Lorem Ipsum automáticos. Buscar en los items de la barra de menú de un app, sin clickear. Generar passwords seguros. Buscar en Stack Overflow directamente. Gatillar respaldos. Traducir textos. Whois a dominios, y un etc. tan grande como la comunidad misma.</p>
+<p>Es que <a class="external" rel="noopener external" target="_blank" href="https://www.alfredapp.com/workflows/">Workflows</a> hay montones. <a class="external" rel="noopener external" target="_blank" href="https://www.packal.org/">Montones</a>.</p>
+<p>Pero, necesita que paguen para poder acceder a todo eso.</p>
+<p>Hoy existe <a class="external" rel="noopener external" target="_blank" href="https://www.raycast.com/">Raycast</a>, que viene a competir con Alfred en todo sentido. Es gratis. Tiene extensiones. No tantas como Alfred aún, pero va creciendo. Lo que no me gusta, es que corre una instancia de Node.js por debajo, para manejar los plugins (las extensiones). Los recursos, los recursos.</p>
+<p>Alfred, por otra parte, usa Python 3 para sus extensiones. Es mucho más liviano en recursos que Raycast por lo mismo.</p>
+<h2 id="ferdium">Ferdium</h2>
+<p>No me gusta abrir Gmail en el navegador habitual que uso. Maña no más. Pero tampoco me gusta llenarme de apps, para cada servicio que uso. Por ejemplo, WhatsApp.</p>
+<p>Entra <a class="external" rel="noopener external" target="_blank" href="https://ferdium.org/">Ferdium</a>. Antes Ferdi. Antes Franz. Con Ferdium tienes un navegador específico para servicios "tradicionales", con ciertas mejoras.</p>
+<p>En Ferdium tengo cargados: dos Gmail (cada uno de ellos aparte), WhatsApp, Trello, Outlook y un Discord que uso de vez en cuando.</p>
+<p>Ferdium puede mandar a hibernar un servicio que no uses después de X minutos, para ahorrar consumo de ram.</p>
+<p>Ferdium juega bien con las notificaciones de los servicios.</p>
+<p>Es cómodo.</p>
+<h2 id="otros-apps-varios">Otros Apps varios</h2>
+<p>Sin mucho detalle al respecto, acá van otros apps que utilizo en macOS, relativamente seguido.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://sequel-ace.com/">Sequel Ace</a>, para trabajar con bases de datos. Si tienen dinero para gastar en una suscripción, <a class="external" rel="noopener external" target="_blank" href="https://tableplus.com/">TablePlus</a> es una buena opción también.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://insomnia.rest/">Insomnia REST</a>, para trabajar conectándome y probar el consumo de APIs REST. Alternativa, <a class="external" rel="noopener external" target="_blank" href="https://www.postman.com/">Postman</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://masscode.io/">massCode</a>, para guardar snippets de código de uso recurrente. Útil para programar cosas que generalmente sabes que reiteras una y otra vez.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://filezilla-project.org/">FileZilla</a>, cliente FTP. Porque de vez en cuando aún debo lidiar con hosting compartidos, sin acceso SSH.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://imageoptim.com/mac">ImageOptim</a>, optimizador de imágenes para la web. Ahorra espacio, y comprime imágenes (con o sin pérdida de calidad, como uno quiera configurarlo).</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/dwarvesf/hidden">Hidden Bar</a>, para esconder esos montones de íconos de la barra superior, que no dan opción.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://middleclick.app/">Middle</a>, para poder hacer click con el "botón del medio", al usar el trackpad. Estúpidamente, macOS no puede hacerlo (como Windows o Linux). Usando Middle, pueden clickear con tres dedos en el trackpad, y harán un click del medio.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://better-mouse.com/">Better Mouse</a>, para poder configurar los botones extra del mouse, sin usar apps pesadas (a ti te digo, Logitech), y de paso poder tener smooth scroll con cualquier mouse y en todos los apps.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://eqmac.app/">eqMac</a>, para poder usar un equalizador global en el OS. Mejora mucho la reproducción de música en Spotify, por ejemplo. Alternativa buena, de pago, <a class="external" rel="noopener external" target="_blank" href="https://www.globaldelight.com/boom/">Boom3D</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://cordlessdog.com/stay/">Stay</a>, que permite guardar la posición de las ventanas, para que estas aparezcan siempre en la misma ubicación. Incluso si cambian entre multi-monitor y solo uno (el del laptop), Stay es capaz de recordar esas configuraciones.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://shottr.cc/">Shottr</a>, para poder tomar pantallazos, anotar encima de ellos, subirlos y enviarlos rápidamente y donde sea. Alternative buena, de pago, <a class="external" rel="noopener external" target="_blank" href="https://dropshare.app/">Dropshare</a>. Otra buena alternativa, <a class="external" rel="noopener external" target="_blank" href="https://teampaper.me/snap/">Teampaper Snap</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://rectangleapp.com/">Rectangle</a>, para poder mover ventanas a distintas posiciones, y entre monitores, sin tener que usar el mouse. Ahorra mucho tiempo. Y dinero, disminuyendo el riesgo a hacer problemas de tunel carpiano, por el abuso del mouse. Su versión pro, incluye el "snap" de ventanas, a lo Windows (por si quieren usar el mouse).</p>
+<p><a class="external" rel="noopener external" target="_blank" href="http://www.telestream.net/screenflow/overview.htm">ScreenFlow</a> para grabar videos cuando necesito mostrar un paso a paso detallado de un proceso. Es caro. Pero se consigue por ahí...</p>
+<p><a href="/media/2022/image-1.png"><img src="/media/2022/image-1.png?w=960" alt="" /></a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://freemacsoft.net/appcleaner/">AppCleaner</a>. Porque mandar a la basura el ícono de un App, no borra toda la basura que los mismos programas dejan en carpetas ocultas o de sistema. AppCleaner se encarga de limpiar todo eso, y desinstalar correctamente un app.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://mac.getutm.app/">UTM</a>. Para poder virtualizar Windows. Aunque hace poco rehabilité un i5 suficientemente bueno, con un SSD, para lo que necesito usar desde Windows, y el escritorio remoto de Windows es muy veloz, de vez en cuando tener una máquina virtual con Windows también ayuda.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://daisydiskapp.com/">DaisyDisk</a>, para saber dónde está todo el espacio ocupado en el disco. Qué es lo más pesado, dónde está, y ver si puedo o no eliminarlo.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.sparklabs.com/viscosity/">Viscosity</a>, un cliente OpenVPN para macOS. Necesario, si usan OpenVPN.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.araxis.com/merge/index.en">Araxis Merge</a>, para comparar archivos de texto/código, o directorios completos. De pago. Pero se consigue igual que ScreenFlow. Wink Wink.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://colorslurp.com/">ColorSlurp</a>, para poder obtener el código de un color en pantalla.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://mkvtoolnix.download/">MKV Toolnix GUI</a>, para poder arreglar esos MKV y sus subtítulos antes de archivar esas horas de entretenimiento en formato MKV.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://transmissionbt.com/">Transmission BT</a>, para descargar esos MKV y disfrutarlos en familia.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://theunarchiver.com/">The Unarchiver</a>, para descomprimir de todo en macOS. Alternativa, <a class="external" rel="noopener external" target="_blank" href="https://www.keka.io/en/">Keka</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://ntfsformac.tuxera.com/">Tuxera NTFS para Mac</a>, porque macOS solo lee discos en formato NTFS, no escribe. Alternativa gratuita, <a class="external" rel="noopener external" target="_blank" href="https://mounty.app/">Mounty</a>. Advertencia: usa el driver de lectura de macOS, y lo habilita para escribir. Pero es el mismo driver de Apple. Y Apple no recomienda su uso para escritura. Por algo. Usar bajo vuestro propio riesgo. Si quieren ir a la segura: Tuxera NTFS.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/marktext/marktext/">Marktext</a>, para editar archivos en formato markdown. Alternativa, <a class="external" rel="noopener external" target="_blank" href="https://macdown.uranusjr.com/">Macdown</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://coteditor.com/">CotEditor</a>. El "block de notas" de macOS, TextExit, deja mucho que desear. CotEditor es igual de liviano, pero superior. Muy útil cuando no necesitas abrir tu editor de código o IDE para algo pequeño.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://keepingyouawake.app/">KeepingYouAwake</a>, para cuando necesitas dejar el equipo andando, sin que se duerma. Alternativa, <a class="external" rel="noopener external" target="_blank" href="https://apps.apple.com/us/app/amphetamine/id937984704?mt=12">Amphetamine</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://iina.io/">IINA</a>, un reproductor de video moderno para macOS. Alternativa, el todo poderoso <a class="external" rel="noopener external" target="_blank" href="https://www.videolan.org/vlc/">VLC</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://pictogramapp.com/">Pictogram</a>, para cuando un app tiene un ícono muy, muy feo, y no lo cambian en meses u años (te estoy mirando, Filezilla). Permite cambiar rápidamente el ícono de un app. Además de mantener el cambio de ícono del app, incluso si el app se auto-actualiza. Recomendado. Pueden sacar íconos decentes para sus apps, en <a class="external" rel="noopener external" target="_blank" href="https://macosicons.com/">macOSicons</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://noteifyapp.com/command-tab-plus/">Command-Tab Plus</a>, para mejorar el simple pero precario (vs Windows o Linux) CMD+Tab (Alt+Tab en Windows y Linux). Alternativas, <a class="external" rel="noopener external" target="_blank" href="https://alt-tab-macos.netlify.app/">AltTab</a>, <a class="external" rel="noopener external" target="_blank" href="https://manytricks.com/witch/">Witch</a>, <a class="external" rel="noopener external" target="_blank" href="https://contexts.co/">Contexts</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.titanium-software.fr/en/onyx.html">Onyx</a>, para... muchas cosas. Si no sabe qué hace, probablemente no lo necesitas. No lo uses, si no sabes lo que haces.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.google.com/drive/download/">Google Drive (Desktop)</a>, para... respaldar docs importantes. <a href="/blog/2020/10/01/seguridad-en-tiempos-hiper-conectados/">Respaldar es importante</a>. Incluso si usas Time Machine, otro respaldo extra y fuera de tu espacio físico habitual, no está de más.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://cryptomator.org/">Cryptomator</a>, para cifrar lo que guardarás en la nube, antes que sea subido. Para que Google (Drive) no pueda ver tu historial de cuentas pagadas, o lo que sea que guardes en el y que consideres de carácter privado, para no permitir que tu proveedor de almacenamiento en la nube haga un perfil aún más acabado de ti.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://bitwarden.com/">Bitwarden</a>, para gestionar contraseñas. No usar el mismo password, y ni siquiera conocerlos, es <a href="/blog/2020/10/01/seguridad-en-tiempos-hiper-conectados/">en extremo importante</a>. En serio. Si aún intentas recordar contraseñas, o las anotas en un papel, o usas las mismas tres o cuatro siempre, estás haciendo algo mal.</p>
+<p>Finalmente, pero no menos importante...</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://spotify.com/">Spotify</a>. Porque un día laboral sin escuchar <a class="external" rel="noopener external" target="_blank" href="https://www.youtube.com/watch?v=7umFCrHfuzE"><strong>musiquita</strong></a>, no es un buen día laboral.</p>
+<h2 id="no-existe-un-os-perfecto">No existe un OS perfecto</h2>
+<p><a href="/media/2022/eeaao-googly-eye.jpg"><img src="/media/2022/eeaao-googly-eye.jpg?w=766" alt="" /></a></p>
+<p>Usa lo que funcione bien para ti. En todo sentido. El resto: da lo mismo.</p>
+<p>Espero le sirva a alguien. ¿A mí?, de lunes a viernes.</p>
+
+        </section>
+
+        
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="EstebanForge&#x2F;actitud-xyz-comments"
+    data-repo-id="R_kgDOOBr8yA"
+    data-category="Blog"
+    data-category-id="DIC_kwDOOBr8yM4Cq3u8"
+    
+        data-mapping="pathname"
+    
+    data-strict="0"
+    data-reactions-enabled="1"
+    
+        data-input-position="top"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://actitud.xyz/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        
+
+    </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#homebrew">Homebrew</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#path-finder-y-forklift">Path Finder (y Forklift)</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#orion-browser">Orion (Browser)</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#vs-code-sublime-text">VS Code &#x2F; Sublime Text</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#iterm2">iTerm2</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#oh-my-zsh">Oh My Zsh</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#local-wp">Local WP</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#github-desktop">GitHub Desktop</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#affinity-designer-y-affinity-photo">Affinity Designer y Affinity Photo</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#alfred">Alfred</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#ferdium">Ferdium</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#otros-apps-varios">Otros Apps varios</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://actitud.xyz/blog/2022/dev-enviroment-eeaao/#no-existe-un-os-perfecto">No existe un OS perfecto</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        
+            <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script><span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://actitud.xyz/js/copyCodeToClipboard.min.js"></script>
+
+<script defer src="https://actitud.xyz/js/codeBlockNameLinks.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="noopener" target=_blank
+
+ href="https://actitud.xyz/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://actitud.xyz/social_icons/rss.svg">
+                        </a>
+                    </li><li class="js"><a class="nav-links no-hover-padding social" href="#" data-encoded-email="ZXN0ZWJhbkBhdHRpdHVkZS5jbA=="><img loading="lazy" alt="email" title="email" src="https://actitud.xyz/social_icons/email.svg">
+                            </a>
+                        </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://github.com/EstebanForge/">
+                                    <img loading="lazy" alt="github" title="github" src="https://actitud.xyz/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel="noopener me" target=_blank
+
+ href="https://twitter.com/EstebanForge">
+                                    <img loading="lazy" alt="twitter" title="twitter" src="https://actitud.xyz/social_icons/twitter.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 1999-2026 Esteban Cuevas • Unless otherwise noted, the content in this website is available under the <a class="external" rel="noopener external" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                </small>
+        </div>
+    </section>
+
+    <script src="https://actitud.xyz/js/decodeMail.min.js" async></script><div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
