@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen Clínico</title>
+    
+    <!-- Fonts: Outfit for sans, JetBrains Mono for numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        zinc: {
+                            50: 'var(--bright-snow)',
+                            100: '#f1f1f1',
+                            200: 'var(--cool-steel)',
+                            300: '#d4d4d8',
+                            400: '#a1a1aa',
+                            500: 'var(--blue-slate)',
+                            600: '#52525b',
+                            700: '#3f3f46',
+                            800: '#27272a',
+                            900: 'var(--jet-black)',
+                            950: '#09090b',
+                        },
+                        accent: {
+                            DEFAULT: 'var(--cool-sky)',
+                            hover: 'var(--sky-blue)',
+                            light: 'var(--light-cyan)',
+                        },
+                        danger: 'var(--rose-kiss)',
+                        warning: 'var(--royal-gold)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            /* Palette 1: Cyan / Steel */
+            --light-cyan: #e0fbfc;
+            --light-blue: #c2dfe3;
+            --cool-steel: #9db4c0;
+            --blue-slate: #5c6b73;
+            --jet-black: #253237;
+
+            /* Palette 2: Sky / Rose / Gold */
+            --cool-sky: #5aa9e6;
+            --sky-blue: #7fc8f8;
+            --bright-snow: #f9f9f9;
+            --royal-gold: #ffe45e;
+            --rose-kiss: #ff6392;
+
+            /* Palette 3: Greens / Grays */
+            --light-gray: #eeeeee;
+            --soft-green: #6fcf97;
+            --teal-green: #2fa084;
+            --dark-teal: #1f6f5f;
+
+            /* Semantic Mapping */
+            --bg-page: var(--light-gray);
+            --bg-card: var(--bright-snow);
+            --text-main: var(--jet-black);
+            --text-muted: var(--blue-slate);
+            --accent-primary: var(--cool-sky);
+            --accent-secondary: var(--sky-blue);
+            --color-danger: var(--rose-kiss);
+            --color-warning: var(--royal-gold);
+            --border-soft: var(--cool-steel);
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .category-group:not(:last-child) {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        /* Chart Tooltip Customization */
+        #chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            color: var(--jet-black);
+            padding: 12px;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-soft);
+        }
+        
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Password Gate -->
+    <div id="passwordGate" class="fixed inset-0 z-[200] bg-zinc-900 flex items-center justify-center p-6 hidden">
+        <div class="w-full max-w-md bg-white rounded-[2.5rem] p-10 shadow-2xl animate-fade-in-up">
+            <div class="flex justify-center mb-8">
+                <div class="w-16 h-16 rounded-2xl bg-zinc-50 flex items-center justify-center">
+                    <i class="ph ph-lock-key text-3xl text-zinc-400"></i>
+                </div>
+            </div>
+            <h2 class="text-2xl font-bold text-zinc-900 text-center mb-2">Acceso Protegido</h2>
+            <p class="text-zinc-500 text-center mb-8 text-sm">Ingrese su clave para visualizar el historial médico.</p>
+            
+            <div class="space-y-4">
+                <input type="password" id="passwordInput" placeholder="Contraseña" 
+                       class="w-full bg-zinc-50 border border-zinc-100 rounded-2xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all">
+                <p id="passwordError" class="text-rose-500 text-xs font-medium px-2 hidden">Contraseña incorrecta. Inténtelo de nuevo.</p>
+                <button onclick="_c()" class="w-full bg-zinc-900 text-white rounded-2xl py-4 font-bold hover:bg-accent transition-all shadow-lg shadow-zinc-200">
+                    Desbloquear Panel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-[1400px] mx-auto px-6 py-8">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 animate-fade-in-up">
+            <div>
+                <button onclick="window.location.reload()" class="text-left hover:opacity-80 transition-opacity">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-3" data-i18n="title">Clinical Overview</h1>
+                </button>
+            </div>
+            <button onclick="_x()" class="group flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-zinc-100 text-zinc-400 hover:text-rose-500 hover:border-rose-100 transition-all shadow-sm">
+                <i class="ph ph-sign-out text-lg"></i>
+                <span class="text-xs font-bold uppercase tracking-wider">Cerrar Sesión</span>
+            </button>
+        </header>
+
+        <div id="alertSection" style="display: none;" class="mb-12 animate-fade-in-up">
+            <div class="flex items-center justify-between mb-4 h-7 px-2">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-400">Alertas de Biomarcadores (Últimos 7 meses)</h2>
+                <button onclick="clearFilters()" id="clearFiltersBtnAlerts"
+                        class="text-[11px] font-medium px-2.5 py-1 rounded-md border border-zinc-100 bg-white text-zinc-400 hover:border-rose-500 hover:text-rose-500 transition-all hidden" data-i18n="clearFilters">Limpiar filtros</button>
+            </div>
+            <div id="alertContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 flex-1">
+            
+            <!-- Sidebar: Parameters -->
+            <aside class="lg:col-span-3 space-y-10 animate-fade-in-up stagger-1">
+                <div>
+                    <div class="flex items-center justify-between mb-4 h-7">
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-400" data-i18n="selectParams">Biomarcadores</h2>
+                        <button onclick="clearFilters()" id="clearFiltersBtn" 
+                                class="text-[11px] font-medium px-2.5 py-1 rounded-md border border-zinc-100 bg-white text-zinc-400 hover:border-rose-500 hover:text-rose-500 transition-all hidden" data-i18n="clearFilters">Limpiar filtros</button>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="mb-4">
+                        <div class="relative group">
+                            <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-accent transition-colors"></i>
+                            <input type="text" id="biomarkerSearch" placeholder="Buscar biomarcador..." 
+                                   class="w-full bg-white border border-zinc-100 rounded-xl py-2.5 pl-10 pr-4 text-xs focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm">
+                        </div>
+                    </div>
+
+                    <div id="categories-container" class="space-y-8 max-h-[70vh] overflow-y-auto pr-2">
+                        <!-- Dynamic Categories -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Panel -->
+            <main class="lg:col-span-9 flex flex-col gap-8">
+
+                <!-- Empty State -->
+                <div id="emptyState" class="animate-fade-in-up stagger-2 bg-white rounded-[2.5rem] p-12 shadow-sm border border-zinc-100 flex flex-col items-center justify-center text-center min-h-[400px]">
+                    <i class="ph ph-chart-line-up text-6xl text-zinc-200 mb-6"></i>
+                    <h3 class="text-xl font-bold text-zinc-900 mb-2" data-i18n="emptyTitle">Sin Métricas Seleccionadas</h3>
+                    <p class="text-zinc-400 max-w-[40ch] text-sm" data-i18n="pleaseSelect">Seleccione uno o más biomarcadores para visualizar sus tendencias históricas.</p>
+                </div>
+
+                <!-- Chart -->
+                <div id="chartSection" style="display: none;" class="animate-fade-in-up stagger-2 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-zinc-100">
+                    <div class="h-[50vh] min-h-[400px] w-full relative">
+                        <canvas id="medicalChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div id="timelineSection" style="display: none;" class="animate-fade-in-up stagger-3 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-zinc-100">
+                    <h3 class="text-lg font-bold text-zinc-900 mb-8" data-i18n="historyTimeline">Historial Cronológico</h3>
+                    <div id="timelineContent" class="space-y-10"></div>
+                </div>
+
+                <!-- Data Table -->
+                <div id="tableSection" style="display: none;" class="animate-fade-in-up stagger-4 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-zinc-100 overflow-hidden">
+                    <h3 class="text-lg font-bold text-zinc-900 mb-8" data-i18n="selectedValues">Línea de Tiempo Detallada</h3>
+                    <div class="overflow-x-auto">
+                        <table id="dataTable" class="w-full text-sm font-mono whitespace-nowrap"></table>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <!-- Descriptive findings and Imaging below the main grid -->
+        <div class="mt-12 space-y-12">
+            <!-- Clinical Notes Timeline -->
+            <div id="notesSection" class="animate-fade-in-up stagger-4 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-zinc-100">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold tracking-tight text-zinc-900" data-i18n="clinicalNotes">Historial de Hallazgos Descriptivos</h2>
+                    <div class="w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center text-accent shadow-sm">
+                        <i class="ph ph-notebook text-2xl"></i>
+                    </div>
+                </div>
+                <div id="notesTimeline" class="space-y-6">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+
+            <!-- Imaging Reports Section -->
+            <div id="imagingSection" class="animate-fade-in-up stagger-5 bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm border border-zinc-100">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold tracking-tight text-zinc-900" data-i18n="imagingReports">Informes de Imagenología</h2>
+                    <div class="w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center text-accent shadow-sm">
+                        <i class="ph ph-unite text-2xl"></i>
+                    </div>
+                </div>
+                <div id="imagingTimeline" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-10 py-10 border-t border-zinc-100">
+        <div class="max-w-[1400px] mx-auto px-6 flex flex-col items-center">
+            <!-- 
+            <div class="inline-flex items-center bg-white border border-zinc-100 rounded-full p-1 shadow-sm mb-4">
+                <button onclick="setLanguage('en')" id="en-btn" class="px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200">EN</button>
+                <button onclick="setLanguage('es')" id="es-btn" class="px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200">ES</button>
+            </div>
+            -->
+            <p class="text-zinc-400 text-[10px] font-bold uppercase tracking-widest">Medical History Visualizer v1.0</p>
+        </div>
+    </footer>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="fixed inset-0 z-[300] hidden flex items-center justify-center p-4 md:p-10">
+        <div class="absolute inset-0 bg-zinc-900/40 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-3xl max-h-full rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col animate-fade-in-up">
+            <div class="flex items-center justify-between p-8 border-b border-zinc-50">
+                <div>
+                    <h2 id="modalTitle" class="text-2xl font-bold text-zinc-900 leading-tight"></h2>
+                    <p id="modalDate" class="text-xs font-bold text-accent uppercase tracking-widest mt-2"></p>
+                </div>
+                <button onclick="closeModal()" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-zinc-50 text-zinc-400 hover:text-zinc-900 transition-colors">
+                    <i class="ph ph-x text-2xl"></i>
+                </button>
+            </div>
+            <div id="modalContent" class="p-10 overflow-y-auto text-base leading-relaxed text-zinc-600 whitespace-pre-wrap prose prose-zinc max-w-none"></div>
+        </div>
+    </div>
+
+    <script>
+        const _k = [104,101,97,108,116,104,69,120,97,109,65,117,116,104].map(c=>String.fromCharCode(c)).join('');
+        const _p = [112,97,114,97,99,101,116,97,109,111,108].map(c=>String.fromCharCode(c)).join('');
+        const _t = 864e5;
+
+        function _v() {
+            const r = localStorage.getItem(_k);
+            if (!r) return false;
+            try { return Date.now() - parseInt(r,10) < _t; } catch { return false; }
+        }
+
+        function _c() {
+            const i = document.getElementById('passwordInput');
+            if (i.value === _p) {
+                localStorage.setItem(_k, Date.now().toString());
+                document.getElementById('passwordGate').classList.add('hidden');
+            } else {
+                document.getElementById('passwordError').classList.remove('hidden');
+                i.value = ''; i.focus();
+            }
+        }
+
+        function _x() {
+            localStorage.removeItem(_k);
+            document.getElementById('passwordGate').classList.remove('hidden');
+            document.getElementById('passwordInput').value = '';
+        }
+
+        const embeddedCsvData = `
+,Range,2022-10-13,2023-07-03,2024-06-10,2024-06-18,2024-10-14,2025-05-12,2025-05-22,2025-07-30,2025-11-21,2025-12-05,2026-04-09,2026-05-11
+% Baciliformes,[ 0 - 5 ],,0,,0,,,,,,,,
+% Baciliformes (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Basofilos,[ 0 - 1 ],,1,,0,,1,,,,,,1
+% Basofilos (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Blastos,≤0,,0,,0,,,,,,,,
+% Blastos (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Eosinófilos,[ 2 - 4 ],,1,,1,,0,,,,,,0
+% Eosinófilos (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Juveniles,≤0,,0,,0,,,,,,,,
+% Juveniles (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Linfocitos,[ 25 - 35 ],,36,,34,,33,,,,,,31
+% Linfocitos (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Mielocitos,≤0,,0,,0,,,,,,,,
+% Mielocitos (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Monocitos,[ 4 - 8 ],,6,,5,,7,,,,,,6
+% Monocitos (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Neutrofilos Segmentados,[ 50 - 68 ],,56,,61,,59,,,,,,62
+% Neutrofilos Segmentados (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% Promielocito,≤0,,0,,0,,,,,,,,
+% Promielocito (Método),,,Lectura al microscopio,,Lectura al microscopio,,,,,,,,
+% de Protrombina,70.0 - 100.0,,,,,,100.0,,,,,,100.0
+Ac. Antitiperoxidasa (TPO),0.0 - 13.8,,,,,,,,0.7,,,,
+Ac. Antitiperoxidasa (TPO) (Método),,,,,,,,,Quimioluminiscencia,,,,
+Acido Urico / Uricemia,3.4 - 7.0,,4.8,5.5,,,5.1,,,6.0,,5.1,
+Acido Urico / Uricemia (Método),,,Uricasa colorimétrico,Uricasa colorimétrico,,,Espectrofotometría COBAS C311,,,Uricasa colorimétrico,,Uricasa colorimétrico,
+Albúmina,3.5 - 5.2,,,,,,4.8,,,,,,
+Albúmina (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+Anticuerpos Anti Receptor de TSH,,,,,,,,,1.90,,,,
+Anticuerpos Anti Receptor de TSH (Método),,,,,,,,,Enzimoinmunoanalisis (EIA),,,,
+Anticuerpos Antitiroglobulinas,0.0 - 4.5,,,,,,,,1.3,,,,
+Anticuerpos Antitiroglobulinas (Método),,,,,,,,,Quimioluminiscencia,,,,
+Aspecto,,,,TRANSPARENTE,,,,,,TRANSPARENTE,,TRANSPARENTE,
+Bacterias,Escasas,,,ESCASAS,,,,,,MUY ESCASAS,,MUY ESCASAS,Escasas
+Bilirrubina (Orina),Negativo,,,neg,,,,,,neg,,neg,Negativo
+Bilirrubina Directa,0.00 - 0.20,,,,,,0.24,,,,,,0.17
+Bilirrubina Directa (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+Bilirrubina Indirecta,0.00 - 0.80,,,,,,0.44,,,,,,0.37
+Bilirrubina Indirecta (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+Bilirrubina Total,0.00 - 1.20,,,,,,0.68,,,,,,0.54
+Bilirrubina Total (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+CHCM,31.0 - 37.0,,34.7,,33.0,,34.8,,,33.7,,34.0,35.6
+CHCM (Método),,,Ecuación matemática,,Ecuación matemática,,Ecuación matemática,,,Ecuación matemática,,Ecuación matemática,
+CREATININEMIA (Método),,,,,,,,,,,,,Espectrofotometría COBAS C311
+Calcemia,8.6 - 10.0,,,,,,9.4,,,,,,
+Calcemia (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+Caracteristicas de Eritrocitos,Caracteristicas de Leucocitos,,Normales al frotis,,Normales al frotis,,NORMALES AL FROTIS,,,,,,NORMALES AL FROTIS
+Caracteristicas de Eritrocitos (Método),,,Normales al frotis,,Normales al frotis,,NORMALES AL FROTIS,,,,,,NORMALES AL FROTIS
+Caracteristicas de Leucocitos,,,Normales al frotis,,Normales al frotis,,NORMALES AL FROTIS,,,,,,NORMALES AL FROTIS
+Caracteristicas de Plaquetas,,,Normales al frotis,,Normales al frotis,,NORMALES AL FROTIS,,,,,,NORMALES AL FROTIS
+Cilindros,,,,,,,,,,NO SE OBSERVA,,NO SE OBSERVA,
+Cloro,98 - 110,,,106,,,101,,,104,,105,
+Cloro (Método),,,,Potenciometría indirecta,,,ISE COBAS C311,,,Potenciometría indirecta,,Potenciometría indirecta,
+Colesterol,50 - 200,,156,172,,,197,,,175,,182,167
+Colesterol (Método),,,Colesterol oxidasa estereasa peroxidasa,Colesterol oxidasa estereasa peroxidasa,,,Espectrofotometría COBAS C311,,,Colesterol oxidasa estereasa peroxidasa,,Colesterol oxidasa estereasa peroxidasa,Espectrofotometría COBAS C311
+Color,,,,AMBAR,,,,,,AMARILLO,,AMARILLO,AMARILLO
+Creatinina,0.50 - 1.20,,1.07,1.00,,,1.09,,,1.03,,0.99,0.92
+Creatinina (Método),,,Picrato alcalino cinético,Picrato alcalino cinético,,,Espectrofotometría COBAS C311,,,Picrato alcalino cinético,,Picrato alcalino cinético,Espectrofotometría COBAS C311
+Creatininuria aislada,40.0 - 278.0,,249.3,213.8,,,,,,138.0,,124.0,
+Creatininuria aislada (Método),,,Enzimático punto final,Enzimático punto final,,,,,,Enzimático punto final,,Enzimático punto final,
+Cristales,,,,Oxalato de calcio escasos,,,,,,NO SE OBSERVA,,NO SE OBSERVA,
+Cuerpos Cetónicos,Negativo,,,neg,,,,,,neg,,neg,Negativo
+Células Epiteliales,Escasas,,,ESCASAS,,,,,,MUY ESCASAS,,MUY ESCASAS,Escasas
+Densidad,1.000 - 1.030,,,1.023,,,,,,1.014,,1.013,1.025
+Densidad (Método),,,,Cinta de reacción automatizada,,,,,,Cinta de reacción automatizada,,Cinta de reacción automatizada,Cinta de reacción automatizada
+Eosinófilos (#),0.10 - 0.50,,,,,,0.00,,,,,,0.03
+Eritroblastos,,,0,,0,,,,,,,,
+Eritrocitos,4.60 - 5.80,,5.51,0 A 1,5.61,,5.46,,,5.59,,5.62,5.32
+Eritrocitos (Método),,,Impedancia,Lectura al microscopio,Impedancia,,Impedancia,,,Impedancia,,Impedancia,
+Eritrocitos (Sedimento),0.00 - 2.00,,,,,,,,,0 A 3,,0 A 3,2-3 x Campo
+Eritrocitos (Sedimento) (Método),,,,,,,,,,Lectura al microscopio,,Lectura al microscopio,
+Eritrocitos - Hemoglobina,0 - 5,,,neg,,,,,,neg,,neg,10
+Eritrocitos - Hemoglobina (Método),,,,Cinta de reacción automatizada,,,,,,Cinta de reacción automatizada,,Cinta de reacción automatizada,
+Fosfatasas Alcalinas,40 - 129,,,,,,70,,,,,,74
+Fosfatasas Alcalinas (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+Fosfemia,2.5 - 4.5,,,,,,3.3,,,,,,
+Fosfemia (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+GGT,8.0 - 50.0,,,,,,47.0,,,,,,31.0
+GGT (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+Glicemia,60 - 100,85,100,85,,,88,,,94,,93,96
+Glicemia (Método),,Hexoquinasa,Hexoquinasa,Hexoquinasa,,,Espectrofotometría COBAS C311,,,Hexoquinasa,,Hexoquinasa,Hexoquinasa (Plasma Fluoruro)
+Globulinas,1.8 - 5.3,,,,,,2.6,,,,,,
+Globulinas (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+Glucosa (Orina) (Método),,,,Cinta de reacción automatizada,,,,,,Cinta de reacción automatizada,,Cinta de reacción automatizada,
+Glucosa (Orina),Negativo,,,NORMAL,,,,,,NORMAL,,NORMAL,Negativo
+HCM,26.0 - 34.0,,30.7,,30.2,,30.2,,,30.2,,30.3,30.8
+HCM (Método),,,Ecuación matemática,,Ecuación matemática,,Ecuación matemática,,,Ecuación matemática,,Ecuación matemática,
+HDL - Colesterol,35.0 - 65.0,,46.2,49.1,,,42.0,,,39.9,,44.9,45.0
+HDL - Colesterol (Método),,,CHER CHOD (Abell-Kendall),CHER CHOD (Abell-Kendall),,,Espectrofotometría COBAS C311,,,CHER CHOD (Abell-Kendall),,CHER CHOD (Abell-Kendall),Espectrofotometría COBAS C311
+Hematocrito,41.0 - 53.0,,48.8,,51.2,,47.4,,,50.1,,50.0,46.1
+Hematocrito (Método),,,Impedancia,,Impedancia,,Impedancia,,,,,,
+Hemoglobina,14.0 - 18.0,,16.9,,16.9,,16.5,,,16.9,,17.0,16.4
+Hemoglobina (Método),,,Hemoglobina SLS,,Hemoglobina SLS,,Hemoglobina SLS,,,Hemoglobina SLS,,Hemoglobina SLS,
+Hemoglobina Glicosilada (HbA1c),4.2 - 6.5,,,5.0,,,5.6,,,,,,
+Hemoglobina Glicosilada (HbA1c) (Método),,,,Cromatografía líquida de alta presión,,,HPLC,,,,,,
+Hemorragia Oculta,Negativo,,,,,,,,,,,,NEGATIVO
+Hemorragia Oculta (Muestras),,,,,,,,,,,,,3
+Hemorragia Oculta (Método),,,,,,,,,,,,,Inmunocromatografía
+Hemorragia Oculta (Tipo de muestra),,,,,,,,,,,,,Deposición
+Hormona Tiroestimulante (TSH),0.27 - 4.2,,,7.45,,3.99,6.69,,3.20,4.11,,2.58,1.78
+Hormona Tiroestimulante (TSH) (Método),,,,Electroquimioluminiscencia,,ECLIA,Quimioluminiscencia XPT Centaur,,,Electroquimioluminiscencia,,Electroquimioluminiscencia,Quimioluminiscencia XPT Centaur
+INR,,,,,,,1.00,,,,,,1.00
+Indice de Riesgo,0.0 - 5.0,,3.4,3.5,,,,,,4.4,,4.1,
+Indice de Riesgo (Método),,,Ecuación matemática,Ecuación matemática,,,,,,Ecuación matemática,,Ecuación matemática,
+LDH,135 - 215,,,,,,195,,,,,,
+LDH (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+LDL Colesterol,50 - 120,,93.9,107.9,,,140,,,120.8,,124.2,111
+LDL Colesterol (Método),,,Ecuación matemática,Ecuación matemática,,,Espectrofotometría COBAS C311,,,Ecuación matemática,,Ecuación matemática,Espectrofotometría COBAS C311
+Leucocitos,4.0 - 9.0,,6.6,0 A 1,7.1,,6.1,,,neg,,neg,7.0
+Leucocitos (Método),,,Citometría de flujo y fluorescencia,Lectura al microscopio,Citometría de flujo y fluorescencia,,Citometría de flujo / fluorescencia,,,Cinta de reacción automatizada,,Cinta de reacción automatizada,
+Leucocitos (Orina),Negativo,,,,,,,,,,,,Negativo
+Leucocitos (Sedimento),1.00 - 5.00,,,,,,,,,0 A 3,,0 A 3,0-2 x Campo
+Leucocitos (Sedimento) (Método),,,,,,,,,,Lectura al microscopio,,Lectura al microscopio,
+Linfocitos (#),1.00 - 4.80,,,,,,2.01,,,,,,2.17
+Microalbuminuria aislada,0.00 - 2.00,,0.38,0.75,,,,,,0.03,,0.02,
+Microalbuminuria aislada (Método),,,Inmunoturbidimétrico,Inmunoturbidimétrico,,,,,,Inmunoturbidimétrico,,Inmunoturbidimétrico,
+Monocitos (#),0.01 - 0.08,,,,,,0.43,,,,,,0.45
+Mucus,,,,NO SE OBSERVA,,,,,,NO SE OBSERVA,,NO SE OBSERVA,No se observa
+Neutrófilos (#),1.80 - 7.70,,,,,,3.60,,,,,,4.30
+Nitritos,Negativo,,,neg,,,,,,neg,,neg,Negativo
+Nitritos (Método),,,,Cinta de reacción automatizada,,,,,,,,,
+Nitrógeno Ureíco (BUN),6.0 - 20.0,,9.6,10.7,,,13.1,,,11.2,,10.5,14.6
+Nitrógeno Ureíco (BUN) (Método),,,Ureasa UV,Ureasa UV,,,Espectrofotometría COBAS C311,,,Ureasa UV,,Ureasa UV,Espectrofotometría COBAS C311
+PSA Libre,0.00 - 0.93,,,,,,,,,,0.26,,
+PSA Libre (Método),,,,,,,,,,,Quimioluminiscencia XPT Centaur,,
+PSA Relación Libre/Total,0.10 - 1.00,,,,,,,,,,0.29,,
+PSA Relación Libre/Total (Método),,,,,,,,,,,Quimioluminiscencia XPT Centaur,,
+PSA Total,0.00 - 4.00,,,,,,,,,,0.90,,
+PSA Total (Método),,,,,,,,,,,Quimioluminiscencia XPT Centaur,,
+Potasio,3.70 - 5.50,,,4.57,,,4.5,,,4.39,,4.69,
+Potasio (Método),,,,Potenciometría indirecta,,,ISE COBAS C311,,,Potenciometría indirecta,,Potenciometría indirecta,
+Proteina C Reactiva,0.0 - 5.0,,,,,,,,,,,,1.7
+Proteina C Reactiva (Método),,,,,,,,,,,,,Espectrofotometría COBAS C311
+Proteinas,0 - 30,,,neg,,,,,,neg,,neg,
+Proteinas (Orina),Negativo,,,,,,,,,,,,25
+Proteinas Totales,6.6 - 8.7,,,,,,7.4,,,,,,
+Proteinas Totales (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+RWD CV,11.0 - 15.0,,,,,,12.7,,,,,,13.0
+Razón MAU/Creatinuria (RAC),0.0 - 30.0,,1.5,3.5,,,,,,0.3,,0.2,
+Recuento Plaquetario,[ 140 - 440 ],,321,,328,,233,,,328,,360,262
+Recuento Plaquetario (Método),,,Impedancia,,Impedancia,,Impedancia,,,Impedancia,,Impedancia,
+Riñón Derecho (cm),,,,,,,,10.9,,,,,
+Riñón Derecho (cm) (Método),,,,,,,,Doppler,,,,,
+Riñón Izquierdo (cm),,,,,,,,10.4,,,,,
+Riñón Izquierdo (cm) (Método),,,,,,,,Doppler,,,,,
+Sodio,136 - 146,,,144,,,137,,,140,,145,
+Sodio (Método),,,,Potenciometría indirecta,,,ISE COBAS C311,,,Potenciometría indirecta,,Potenciometría indirecta,
+Tiempo de Control,,,,,,,10.5,,,,,,10.5
+Tiempo de Protrombina,,,,,,,10.5,,,,,,10.5
+Tiroxina (T4),4.50 - 10.90,,,,,,,,7.70,,,,
+Tiroxina Libre (T4),0.93 - 1.7,,,1.16,,1.07,,,,,,,
+Tiroxina Libre (T4) (Método),,,,Electroquimioluminiscencia,,ECLIA,,,,,,,
+Transaminasa GOT (AST),0 - 50,,,,,,30,,,,,,25
+Transaminasa GOT (AST) (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+Transaminasa GPT (ALT),1 - 41,,,,,,43,,,,,,35
+Transaminasa GPT (ALT) (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+Trigliceridos,50 - 200,,81,74,,,73,,,72,,64,53
+Trigliceridos (Método),,,Enzimático punto final,Enzimático punto final,,,Espectrofotometría COBAS C311,,,Enzimático punto final,,Enzimático punto final,Espectrofotometría COBAS C311
+Triyodotironina (T3),86.00 - 187.00,,,,,,,,113.07,,,,
+Urea / Uremia,13.0 - 40.0,,20.6,22.9,,,28.0,,,24.0,,22.5,31.2
+Urea / Uremia (Método),,,Ureasa UV,Ureasa UV,,,Espectrofotometría COBAS C311,,,Ureasa UV,,Ureasa UV,Espectrofotometría COBAS C311
+Urobilinógeno,Normal,,,NORMAL,,,,,,1,,1,Normal
+VCM,80.0 - 100.0,,88.6,,91.2,,86.8,,,89.7,,89.0,86.7
+VCM (Método),,,Impedancia,,Impedancia,,Impedancia,,,,,,
+VFG Estimada (MDRD4-IDMS),90 - 120,,76.5,82.3,,,78.9,,,78.8,,97,95.4
+VFG Estimada (MDRD4-IDMS) (Método),,,Ecuación (MDRD4 IDMS) 173m2 ml min,Ecuación (MDRD4 IDMS) 173m2 ml min,,,MDRD-4 IDMS,,,Ecuación (MDRD4 IDMS) 173m2 ml min,,Cálculo CKD-EPI 2021,MDRD-4 IDMS (Espectrometría de masas con dilución isotópica)
+VHS,[ 2 - 10 ],,4,,2,,2,,,,,,1
+VHS (Método),,,Sedimentación y lectura fotoeléctrica,,Sedimentación y lectura fotoeléctrica,,,,,,,,
+VLDL - Colesterol,6 - 34,,,,,,15,,,,,,11
+VLDL - Colesterol (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,Espectrofotometría COBAS C311
+VPM,,,,,,,8.7,,,,,,8.7
+pH,4.8 - 7.4,,,6.0,,,,,,6.0,,6.0,6.0
+pH (Método),,,,Cinta de reacción automatizada,,,,,,Cinta de reacción automatizada,,Cinta de reacción automatizada,
+Índice Albúmina / Globulina,1.5 - 3.1,,,,,,1.8,,,,,,
+Índice Albúmina / Globulina (Método),,,,,,,Espectrofotometría COBAS C311,,,,,,
+Índice Resistivo,,,,,,,,< 0.6,,,,,
+Índice Resistivo (Método),,,,,,,,Doppler,,,,,
+        `;
+
+        const translations = {
+            en: {
+                title: 'Clinical Overview',
+                subtitle: 'Comprehensive tracking of your metabolic, renal, and hematological markers over time.',
+                status: 'Local Data Active',
+                selectParams: 'Biomarkers',
+                clearFilters: 'Clear filters',
+                emptyTitle: 'No Metrics Selected',
+                pleaseSelect: 'Select one or more biomarkers from the sidebar to visualize your historical trends.',
+                selectedValues: 'Detailed Timeline',
+                historyTimeline: 'Historical Timeline',
+                parameter: 'Parameter',
+                date: 'Date',
+                categories: {
+                    'Parámetros básicos': 'Basic Parameters',
+                    'Perfil lipídico': 'Lipid Profile',
+                    'Función renal': 'Kidney Function',
+                    'Función tiroidea': 'Thyroid Function',
+                    'Hemograma': 'Blood Count',
+                    'Electrolitos': 'Electrolytes',
+                    'Perfil hepático': 'Liver Profile',
+                    'Coagulación': 'Coagulation',
+                    'Análisis de Orina': 'Urinalysis',
+                    'Otros': 'Others'
+                },
+                'imagingReports': 'Imaging Reports',
+                'viewReport': 'View Report',
+                'clinicalNotes': 'Descriptive Findings History'
+            },
+            es: {
+                title: 'Resumen Clínico',
+                subtitle: 'Seguimiento exhaustivo de sus marcadores metabólicos, renales y hematológicos.',
+                status: 'Datos Locales Activos',
+                selectParams: 'Biomarcadores',
+                clearFilters: 'Limpiar filtros',
+                emptyTitle: 'Sin Métricas Seleccionadas',
+                pleaseSelect: 'Seleccione uno o más biomarcadores para visualizar sus tendencias históricas.',
+                selectedValues: 'Línea de Tiempo Detallada',
+                historyTimeline: 'Historial Cronológico',
+                parameter: 'Parámetro',
+                date: 'Fecha',
+                categories: {
+                    'Parámetros básicos': 'Parámetros básicos',
+                    'Perfil lipídico': 'Perfil lipídico',
+                    'Función renal': 'Función renal',
+                    'Función tiroidea': 'Función tiroidea',
+                    'Hemograma': 'Hemograma',
+                    'Electrolitos': 'Electrolitos',
+                    'Perfil hepático': 'Perfil hepático',
+                    'Coagulación': 'Coagulación',
+                    'Análisis de Orina': 'Análisis de Orina',
+                    'Otros': 'Otros'
+                },
+                'imagingReports': 'Informes de Imagenología',
+                'viewReport': 'Ver Informe',
+                'clinicalNotes': 'Historial de Hallazgos Descriptivos'
+            }
+        };
+
+        const descriptiveParams = [
+            "Caracteristicas de Eritrocitos", "Caracteristicas de Leucocitos", "Caracteristicas de Plaquetas",
+            "Color", "Aspecto", "Bacterias", "Cristales", "Cilindros", "Mucus", "Nitritos", "Glucosa (Orina)",
+            "Bilirrubina (Orina)", "Proteinas (Orina)", "Leucocitos (Orina)", "SANGRE - ERITROCITOS", "UROBILINOGENO",
+            "Hemorragia Oculta", "Hemorragia Oculta (Muestras)", "Hemorragia Oculta (Tipo de muestra)", "Urobilinógeno"
+        ];
+
+        function renderClinicalNotes() {
+            const container = document.getElementById('notesTimeline');
+            container.innerHTML = '';
+            
+            // Sort dates descending
+            const sortedDates = [...dates].sort((a,b) => new Date(b) - new Date(a));
+            
+            sortedDates.forEach(date => {
+                const dayData = medicalData.find(d => d.date === date);
+                if (!dayData) return;
+
+                const findings = [];
+                
+                // 1. Check for descriptive lab parameters
+                descriptiveParams.forEach(p => {
+                    const val = dayData[p];
+                    if (val !== undefined && val !== null && val !== '' && String(val).toLowerCase() !== 'nan') {
+                        findings.push({ label: p, value: val });
+                    }
+                });
+
+                // 2. Check for imaging reports on this date
+                const imaging = imagingReports.filter(r => r.date === date);
+                
+                if (findings.length === 0 && imaging.length === 0) return;
+
+                const card = document.createElement('div');
+                card.className = "bg-zinc-50/50 border border-zinc-100 rounded-3xl p-6 shadow-sm animate-fade-in-up";
+                
+                let findingsHtml = findings.map(f => `
+                    <div class="flex items-start justify-between py-2 border-b border-zinc-100 last:border-0">
+                        <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-tight">${f.label}</span>
+                        <span class="text-xs font-medium text-zinc-900 text-right max-w-[60%]">${f.value}</span>
+                    </div>
+                `).join('');
+
+                let imagingHtml = imaging.map(img => `
+                    <div class="mt-4 p-4 bg-white border border-zinc-100 rounded-2xl flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="ph ph-unite text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-zinc-900">${img.title}</h4>
+                                <p class="text-[10px] text-zinc-400">${img.subtitle}</p>
+                            </div>
+                        </div>
+                        <button onclick="openModal(${imagingReports.indexOf(img)})" class="text-[10px] font-bold text-accent hover:text-zinc-900 transition-colors">
+                            VER DETALLE
+                        </button>
+                    </div>
+                `).join('');
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <i class="ph ph-calendar text-accent text-lg"></i>
+                            <span class="text-sm font-bold text-zinc-900 font-mono">${date}</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest bg-white px-2 py-1 rounded-md border border-zinc-100">NOTA CLÍNICA</span>
+                    </div>
+                    <div class="space-y-1">
+                        ${findingsHtml || '<p class="text-[11px] text-zinc-400 italic text-center py-2">Sin hallazgos de laboratorio descriptivos.</p>'}
+                    </div>
+                    ${imagingHtml}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        const imagingReports = [
+            {
+                date: "2026-05-11",
+                title: "ECOTOMOGRAFÍA ABDOMINAL",
+                subtitle: "Portal Web",
+                content: `**Antecedente clínico:** dolor abdominal en estudio.
+
+### HALLAZGOS:
+* **Hígado:** De morfología normal. Presenta aumento difuso de su ecogenicidad, lo que determina pérdida de la definición de las estructuras vasculares, secundario a esteatosis. En estas condiciones no se observan lesiones focales en su espesor.
+* **Vesícula biliar:** En repleción, de paredes finas, sin imágenes endoluminales.
+* **Vía biliar:** Intra y extrahepática de calibre conservado.
+* **Bazo y Páncreas:** Porciones visibles sin alteraciones.
+* **Riñones:** Ambos son de tamaño y morfología normal. Presentan adecuado espesor cortical y buena diferenciación entre parénquima y seno renal. No hay dilatación pielocaliciaria ni imágenes sugerentes de cálculos.
+* **Aorta abdominal:** Trayecto visible de calibre conservado.
+* **Otros:** No hay líquido libre intraabdominal.
+
+### IMPRESIÓN:
+Moderada esteatosis hepática difusa.`
+            },
+            {
+                date: "2025-05-22",
+                title: "DOPPLER RENAL",
+                subtitle: "Radiomed Talca",
+                content: `**Antecedentes clínicos:** HTA.
+
+### Hallazgos:
+* Riñones de forma, tamaño y grosor parenquimatoso normal. Adecuada diferenciación entre el seno y el parénquima renal.
+* No hay hidronefrosis ni signos de nefrolitiasis.
+* El riñón derecho mide 10,9 cm en su eje longitudinal mayor y el izquierdo 10,4 cm en el mismo eje.
+* Las curvas intraparenquimatosas de ambos riñones son de baja resistencia. Los índices resistivos no superan 0,6.
+* Las arterias y venas renales a nivel del hilio renal son de morfología y velocidades normales.
+* No es posible evaluar las arterias renales en su origen por marcado meteorismo.
+
+### Impresión:
+Examen sin hallazgos de significado patológico específico.`
+            },
+            {
+                date: "2025-05-22",
+                title: "ECOGRAFÍA DE ABDOMEN",
+                subtitle: "Radiomed Talca",
+                content: `**Antecedentes clínicos:** HTA.
+
+### Hallazgos:
+* Hígado de forma y tamaño normal. Muestra aumento difuso de su ecogenicidad. No hay lesiones focales sólidas evidentes.
+* Vesícula biliar distendida, de pared fina, sin cálculos. No hay dilatación de la vía biliar intra ni extrahepática.
+* Riñones de forma, tamaño y grosor parenquimatoso normal.
+* Bazo y páncreas de morfología y ecogenicidad habitual.
+* Aorta abdominal de calibre conservado.
+* Vejiga en repleción, de contenido homogéneo.
+* No hay ascitis.
+
+### IMPRESIÓN:
+Signos de esteatosis hepática difusa.`
+            }
+        ];
+
+        let currentLang = 'es';
+        let chart = null;
+        let selectedParams = [];
+        let medicalData = [];
+        let dates = [];
+        let parameters = [];
+        const csvReferenceRanges = {};
+
+        const referenceRanges = {
+            'Glicemia': { min: 70, max: 100, unit: 'mg/dL' },
+            'Nitrógeno Ureíco (BUN)': { min: 6.0, max: 20.0, unit: '' },
+            'Urea / Uremia': { min: 13.0, max: 40.0, unit: '' },
+            'Creatinina': { min: 0.70, max: 1.20, unit: 'mg/dL' },
+            'VFG Estimada (MDRD4-IDMS)': { min: 90, max: 120, unit: 'mL/min' },
+            'Acido Urico / Uricemia': { min: 3.4, max: 7.0, unit: '' },
+            'Colesterol': { min: 50, max: 200, unit: 'mg/dL' },
+            'HDL - Colesterol': { min: 35.0, max: 70.0, unit: 'mg/dL' },
+            'LDL Colesterol': { min: 50, max: 120, unit: 'mg/dL' },
+            'VLDL - Colesterol': { min: 6, max: 34, unit: '' },
+            'Trigliceridos': { min: 0, max: 150, unit: 'mg/dL' },
+            'Indice de Riesgo': { min: 0.0, max: 5.0, unit: '' },
+            'Hormona Tiroestimulante (TSH)': { min: 0.55, max: 4.78, unit: 'uUI/mL' },
+            'Tiroxina Libre (T4)': { min: 1.00, max: 1.60, unit: '' },
+            'Hemoglobina Glicosilada (HbA1c)': { min: 4.0, max: 6.0, unit: '' },
+            'Sodio': { min: 136, max: 146, unit: 'mEq/L' },
+            'Potasio': { min: 3.70, max: 5.50, unit: 'mEq/L' },
+            'Cloro': { min: 98, max: 110, unit: 'mEq/L' },
+            'Fosfatasas Alcalinas': { min: 40, max: 129, unit: '' },
+            'LDH': { min: 135, max: 215, unit: '' },
+            'Proteinas Totales': { min: 6.6, max: 8.7, unit: '' },
+            'Albúmina': { min: 3.5, max: 5.2, unit: '' },
+            'Índice Albúmina / Globulina': { min: 1.5, max: 3.1, unit: '' },
+            'Globulinas': { min: 1.8, max: 5.3, unit: '' },
+            'Calcemia': { min: 8.6, max: 10.0, unit: '' },
+            'Fosfemia': { min: 2.5, max: 4.5, unit: '' },
+            '% de Protrombina': { min: 70.0, max: 100.0, unit: '' },
+            'INR': { min: 0.8, max: 1.2, unit: '' },
+            'Hematocrito': { min: 41.0, max: 53.0, unit: '%' },
+            'Hemoglobina': { min: 13.5, max: 17.5, unit: 'g/dL' },
+            'Eritrocitos': { min: 4.50, max: 5.30, unit: '' },
+            'VCM': { min: 80.0, max: 100.0, unit: '' },
+            'CHCM': { min: 31.0, max: 37.0, unit: '' },
+            'HCM': { min: 26.0, max: 34.0, unit: '' },
+            'Leucocitos': { min: 4.5, max: 11.0, unit: '' },
+            'Recuento Plaquetario': { min: 139, max: 403, unit: '' },
+            'VHS': { min: 1, max: 14, unit: '' },
+            '% Eosinófilos': { min: 2, max: 4, unit: '' },
+            '% Basofilos': { min: 0, max: 1, unit: '' },
+            '% Neutrofilos Segmentados': { min: 50, max: 70, unit: '' },
+            '% Linfocitos': { min: 25, max: 40, unit: '' },
+            '% Monocitos': { min: 4, max: 12, unit: '' },
+            'Bilirrubina Total': { min: 0.00, max: 1.20, unit: 'mg/dL' },
+            'Bilirrubina Indirecta': { min: 0.00, max: 0.80, unit: '' },
+            'Creatininuria aislada': { min: 40.0, max: 278.0, unit: '' },
+            'Microalbuminuria aislada': { min: 0.00, max: 2.00, unit: '' },
+            'Razón MAU/Creatinuria (RAC)': { min: 0.0, max: 30.0, unit: '' },
+            'Microalbuminuria': { min: 0.00, max: 2.00, unit: '' },
+            'Creatininuria': { min: 40.0, max: 278.0, unit: '' },
+            'Ph Orina': { min: 5.0, max: 6.5, unit: '' },
+            'Densidad Orina': { min: 1.000, max: 1.030, unit: '' },
+            'Bilirrubina Directa': { min: 0.00, max: 0.20, unit: '' },
+            'Transaminasa GOT (AST)': { min: 0, max: 50, unit: 'U/L' },
+            'Transaminasa GPT (ALT)': { min: 1, max: 41, unit: 'U/L' },
+            'GGT': { min: 8.0, max: 50.0, unit: 'U/L' },
+            'Fosfatasa Alcalina': { min: 40, max: 129, unit: 'U/L' },
+            'Proteina C Reactiva': { min: 0.0, max: 5.0, unit: 'mg/L' },
+            'Proteinas (Orina)': { min: 'Negativo', max: 'Negativo', unit: '' },
+            'Proteinas': { min: 0, max: 30, unit: 'mg/dL' },
+            'Leucocitos (Sedimento)': { min: 0, max: 5, unit: 'x campo' },
+            'Eritrocitos (Sedimento)': { min: 0, max: 3, unit: 'x campo' },
+            'Hemorragia Oculta': { min: 'Negativo', max: 'Negativo', unit: '' },
+        };
+
+        const paramCategories = {
+            "Parámetros básicos": ["Glicemia", "Creatinina", "Colesterol", "Trigliceridos"],
+            "Perfil lipídico": ["Colesterol", "HDL - Colesterol", "LDL Colesterol", "VLDL - Colesterol", "Trigliceridos", "Indice de Riesgo"],
+            "Función renal": ["Creatinina", "VFG Estimada (MDRD4-IDMS)", "Nitrógeno Ureíco (BUN)", "Urea / Uremia", "Acido Urico / Uricemia", "Microalbuminuria aislada", "Creatininuria aislada", "Razón MAU/Creatinuria (RAC)"],
+            "Función tiroidea": ["Hormona Tiroestimulante (TSH)", "Tiroxina Libre (T4)"],
+            "Hemograma": ["Hematocrito", "Hemoglobina", "Eritrocitos", "Leucocitos", "Recuento Plaquetario", "VCM", "CHCM", "HCM", "VHS", "% Eosinófilos", "Eosinófilos (#)", "Monocitos (#)"],
+            "Perfil hepático": ["Bilirrubina Total", "Bilirrubina Directa", "Bilirrubina Indirecta", "Transaminasa GOT (AST)", "Transaminasa GPT (ALT)", "GGT", "Fosfatasas Alcalinas"],
+            "Coagulación": ["% de Protrombina", "INR"],
+            "Electrolitos": ["Sodio", "Potasio", "Cloro", "Calcemia", "Fosfemia"],
+            "Análisis de Orina": ["Eritrocitos (Sedimento)", "Eritrocitos - Hemoglobina", "Proteinas (Orina)"],
+            "Otros": ["Proteina C Reactiva", "Hemoglobina Glicosilada (HbA1c)", "Hemorragia Oculta"],
+        };
+
+        const lineColors = ['#5aa9e6', '#ff6392', '#5c6b73', '#ffe45e', '#9db4c0', '#7fc8f8'];
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = translations[lang][key];
+            });
+            
+            const enBtn = document.getElementById('en-btn');
+            const esBtn = document.getElementById('es-btn');
+            const active = 'bg-zinc-900 text-white shadow-sm';
+            const inactive = 'text-zinc-400 hover:text-zinc-900';
+
+            if (enBtn && esBtn) {
+                if (lang === 'en') {
+                    enBtn.className = 'px-4 py-1.5 rounded-full text-xs font-medium transition-all ' + active;
+                    esBtn.className = 'px-4 py-1.5 rounded-full text-xs font-medium transition-all ' + inactive;
+                } else {
+                    enBtn.className = 'px-4 py-1.5 rounded-full text-xs font-medium transition-all ' + inactive;
+                    esBtn.className = 'px-4 py-1.5 rounded-full text-xs font-medium transition-all ' + active;
+                }
+            }
+            
+            setupParameterButtons(); updateAlerts();
+            if (chart) { chart.update(); }
+            if (selectedParams.length > 0) { updateTable(); updateTimeline(); }
+            renderImagingTimeline();
+        }
+
+        function getTranslatedCategory(category) {
+            return translations[currentLang].categories[category] || category;
+        }
+
+        function renderImagingTimeline() {
+            const container = document.getElementById('imagingTimeline');
+            container.innerHTML = '';
+            
+            imagingReports.forEach((report, index) => {
+                const entry = document.createElement('div');
+                entry.className = "group flex items-center justify-between p-5 rounded-2xl border border-zinc-100 hover:border-accent/30 hover:bg-accent/[0.02] transition-all duration-300 bg-zinc-50/50";
+                entry.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <div class="flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-white border border-zinc-100 group-hover:border-accent/20 text-zinc-400 group-hover:text-accent transition-all shadow-sm">
+                            <i class="ph ph-file-text text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-wider">${report.date}</p>
+                            <h4 class="text-sm font-bold text-zinc-900">${report.title}</h4>
+                            <p class="text-[11px] text-zinc-400">${report.subtitle}</p>
+                        </div>
+                    </div>
+                    <button onclick="openModal(${index})" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 text-white text-[11px] font-bold hover:bg-accent transition-all shadow-md shadow-zinc-200">
+                        <i class="ph ph-eye text-sm"></i>
+                        <span data-i18n="viewReport">Ver Informe</span>
+                    </button>
+                `;
+                container.appendChild(entry);
+            });
+        }
+
+        function openModal(index) {
+            const report = imagingReports[index];
+            document.getElementById('modalTitle').textContent = report.title;
+            document.getElementById('modalDate').textContent = report.date;
+            
+            let content = report.content
+                .replace(/### (.*?)\n/g, '<h3 class="text-lg font-bold text-zinc-900 mt-8 mb-4 border-b border-zinc-100 pb-2">$1</h3>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-zinc-900 font-bold">$1</strong>')
+                .replace(/\n\*/g, '<br>•')
+                .replace(/\n/g, '<br>');
+            
+            document.getElementById('modalContent').innerHTML = content;
+            document.getElementById('reportModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('reportModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function processCsvString(csvString) {
+            const parseResult = Papa.parse(csvString, {
+                header: false,
+                skipEmptyLines: true,
+                dynamicTyping: true,
+                transform: (value) => (typeof value === 'string' ? value.trim() : value)
+            });
+
+            const rows = parseResult.data;
+            if (rows.length < 2) return;
+
+            dates = rows[0].slice(2).map(date => (typeof date === 'string' ? date : ''));
+            const tempData = {};
+            dates.forEach(date => { if (date) tempData[date] = {}; });
+
+            parameters = [];
+            for (let i = 1; i < rows.length; i++) {
+                const paramName = rows[i][0];
+                const rangeStr = rows[i][1];
+                if (paramName && paramName !== '-') {
+                    if (!parameters.includes(paramName)) parameters.push(paramName);
+                    
+                    // Parse CSV Range
+                    let parsedRange = null;
+                    if (rangeStr) {
+                        const match = rangeStr.match(/\[?\s*(\d+[.,]?\d*)\s*-\s*(\d+[.,]?\d*)\s*\]?/);
+                        if (match) {
+                            parsedRange = { min: parseFloat(match[1].replace(',', '.')), max: parseFloat(match[2].replace(',', '.')) };
+                        } else if (rangeStr.toLowerCase().includes('negativo')) {
+                            parsedRange = { min: 'Negativo', max: 'Negativo' };
+                        } else if (rangeStr.includes('≤')) {
+                            const val = parseFloat(rangeStr.replace('≤', '').trim().replace(',', '.'));
+                            if (!isNaN(val)) parsedRange = { min: 0, max: val };
+                        } else if (rangeStr.includes('≥') || rangeStr.includes('>=')) {
+                            const val = parseFloat(rangeStr.replace(/[≥>=]/g, '').trim().replace(',', '.'));
+                            if (!isNaN(val)) parsedRange = { min: val, max: Infinity };
+                        }
+                    }
+
+                    if (parsedRange) {
+                        // Prioritize range from row that has the most recent value
+                        const hasValueNow = rows[i][rows[i].length - 1] !== null && rows[i][rows[i].length - 1] !== undefined && rows[i][rows[i].length - 1] !== '';
+                        if (!csvReferenceRanges[paramName] || hasValueNow) {
+                            csvReferenceRanges[paramName] = parsedRange;
+                        }
+                    }
+
+                    for (let j = 2; j < rows[i].length; j++) {
+                        const value = rows[i][j];
+                        const date = dates[j - 2];
+                        if (date && value !== null && value !== undefined && value !== '') {
+                            tempData[date][paramName] = value;
+                        }
+                    }
+                }
+            }
+
+            medicalData = Object.keys(tempData).map(date => {
+                const obj = { date };
+                Object.keys(tempData[date]).forEach(param => { obj[param] = tempData[date][param]; });
+                return obj;
+            });
+
+            medicalData.sort((a, b) => new Date(a.date) - new Date(b.date));
+            setupParameterButtons(); updateAlerts();
+        }
+
+        function normalizeParam(param) {
+            return param.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+        }
+
+        function hasEnoughData(param) {
+            let count = 0;
+            const normalizedParam = normalizeParam(param);
+            for (const item of medicalData) {
+                for (const key in item) {
+                    if (normalizeParam(key) === normalizedParam && item[key] !== undefined) {
+                        count++; break;
+                    }
+                }
+            }
+            return count >= 1;
+        }
+
+        function setupParameterButtons() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+            
+            const term = document.getElementById('biomarkerSearch').value.toLowerCase();
+
+            Object.entries(paramCategories).forEach(([category, params]) => {
+                const availableParams = params.filter(param => {
+                    const actualParam = parameters.find(p => normalizeParam(p) === normalizeParam(param));
+                    if (!actualParam || !hasEnoughData(actualParam)) return false;
+                    if (term && !actualParam.toLowerCase().includes(term)) return false;
+                    return true;
+                });
+
+                if (availableParams.length === 0) return;
+
+                const categoryDiv = document.createElement('div'); categoryDiv.className = 'category-group';
+                const title = document.createElement('h3');
+                title.className = 'text-xs font-bold uppercase tracking-widest text-zinc-400 mb-4';
+                title.textContent = getTranslatedCategory(category);
+                categoryDiv.appendChild(title);
+
+                const buttonsDiv = document.createElement('div');
+                buttonsDiv.className = 'flex flex-wrap gap-2';
+
+                availableParams.forEach(param => {
+                    const actualParam = parameters.find(p => normalizeParam(p) === normalizeParam(param));
+                    const button = document.createElement('button');
+                    button.textContent = actualParam;
+                    button.className = `px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 ${
+                        selectedParams.includes(actualParam) 
+                            ? 'bg-zinc-900 text-white shadow-md shadow-zinc-200' 
+                            : 'bg-white text-zinc-500 border border-zinc-100 hover:border-accent/30 hover:text-zinc-900 shadow-sm'
+                    }`;
+                    
+                    button.onclick = () => toggleParameter(actualParam);
+                    buttonsDiv.appendChild(button);
+                });
+
+                categoryDiv.appendChild(buttonsDiv);
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        function toggleParameter(param) {
+            const index = selectedParams.indexOf(param);
+            if (index === -1) {
+                if(selectedParams.length >= 6) selectedParams.shift();
+                selectedParams.push(param);
+            } else {
+                selectedParams.splice(index, 1);
+            }
+            updateClearFiltersBtn();
+            setupParameterButtons();
+            updateAlerts();
+            updateViews();
+        }
+
+        function updateClearFiltersBtn() {
+            const btn = document.getElementById('clearFiltersBtn');
+            const btnAlerts = document.getElementById('clearFiltersBtnAlerts');
+            const isHidden = selectedParams.length === 0;
+            if (btn) btn.classList.toggle('hidden', isHidden);
+            if (btnAlerts) btnAlerts.classList.toggle('hidden', isHidden);
+        }
+
+        function clearFilters() {
+            selectedParams = [];
+            updateClearFiltersBtn(); setupParameterButtons(); updateAlerts(); updateViews();
+        }
+
+        function updateViews() {
+            const views = ['emptyState', 'chartSection', 'tableSection', 'timelineSection'];
+            const showData = selectedParams.length > 0;
+            
+            document.getElementById('emptyState').style.display = showData ? 'none' : 'flex';
+            document.getElementById('chartSection').style.display = showData ? 'block' : 'none';
+            document.getElementById('tableSection').style.display = showData ? 'block' : 'none';
+            document.getElementById('timelineSection').style.display = showData ? 'block' : 'none';
+
+            if (showData) { updateChart(); updateTable(); updateTimeline(); }
+        }
+
+        function parseRangeValue(val) {
+            const s = String(val).trim();
+            const aMatch = s.match(/^(\d+[.,]?\d*)\s+[Aa]\s+(\d+[.,]?\d*)/);
+            if (aMatch) return [parseFloat(aMatch[1].replace(',','.')), parseFloat(aMatch[2].replace(',','.'))];
+            const rangeMatch = s.match(/^(\d+[.,]?\d*)\s*[-–]\s*(\d+[.,]?\d*)/);
+            if (rangeMatch) return [parseFloat(rangeMatch[1].replace(',','.')), parseFloat(rangeMatch[2].replace(',','.'))];
+            const n = parseFloat(s.replace(',','.'));
+            return isNaN(n) ? null : [n, n];
+        }
+
+        function getStatus(param, value) {
+            if (value === null || value === undefined || value === '') return 'normal';
+            
+            // 1. Direct CSV Match (Case Insensitive)
+            const csvKey = Object.keys(csvReferenceRanges).find(k => k.toLowerCase() === param.toLowerCase());
+            let range = csvKey ? csvReferenceRanges[csvKey] : null;
+            
+            if (!range) {
+                // 2. Clean and Normalize
+                const clean = param.toLowerCase()
+                    .replace(/recuento de /g, '')
+                    .replace(/\(.*\)/g, '')
+                    .replace(/[#%]/g, '')
+                    .replace(/ basica/g, '')
+                    .replace(/ total/g, '')
+                    .replace(/ basal/g, '')
+                    .trim();
+
+                // 3. Re-check CSV with cleaned name
+                const csvKeyNorm = Object.keys(csvReferenceRanges).find(k => {
+                    const kn = k.toLowerCase().replace(/recuento de /g, '').replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim();
+                    return kn === clean;
+                });
+
+                if (csvKeyNorm) {
+                    range = csvReferenceRanges[csvKeyNorm];
+                } else {
+                    const keys = Object.keys(referenceRanges);
+                    let lookup = keys.find(k => k.toLowerCase().replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim() === clean);
+
+                    if (!lookup) {
+                        const matches = keys.filter(k => {
+                            const kn = k.toLowerCase().replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim();
+                            return kn === clean || (kn.length > 3 && clean.includes(kn) && kn.length / clean.length >= 0.8);
+                        });
+                        if (matches.length > 0) {
+                            matches.sort((a, b) => a.length - b.length);
+                            lookup = matches[0];
+                        }
+                    }
+                    range = referenceRanges[lookup || param];
+                }
+            }
+
+            if (!range) return 'normal';
+            
+            // Handle numeric ranges
+            const bounds = parseRangeValue(value);
+            if (bounds !== null && typeof range.max === 'number') {
+                const [, valMax] = bounds;
+                if (range.min !== undefined && valMax < range.min) return 'low';
+                if (range.max !== undefined && valMax > range.max) return 'high';
+            } else {
+                const v = String(value).toLowerCase();
+                const rMax = String(range.max).toLowerCase();
+                if (rMax === 'negativo') {
+                    const numVal = parseFloat(String(value).replace(',', '.'));
+                    if (v.includes('pos') || v.includes('presencia') || (!isNaN(numVal) && numVal > 0)) return 'high';
+                }
+            }
+            return 'normal';
+        }
+
+        function updateAlerts() {
+            const container = document.getElementById('alertContainer');
+            container.innerHTML = '';
+            if (medicalData.length === 0) return;
+
+            const today = new Date();
+            const sevenMonthsAgo = new Date();
+            sevenMonthsAgo.setMonth(today.getMonth() - 7);
+
+            // First pass: find the most recent value per param within the 7-month window
+            const latestValues = new Map();
+            medicalData.forEach(entry => {
+                const examDate = new Date(entry.date);
+                if (examDate < sevenMonthsAgo) return;
+
+                Object.entries(entry).forEach(([param, val]) => {
+                    if (param === 'date' || param.includes('(Método)') || param.includes('(Muestras)') || param.includes('(Tipo de muestra)')) return;
+                    if (val !== null && val !== undefined && val !== '') {
+                        latestValues.set(param, { val, date: entry.date });
+                    }
+                });
+            });
+
+            // Second pass: alert only if the most recent value is out of range
+            const alertsFound = new Map();
+            latestValues.forEach(({ val, date }, param) => {
+                const status = getStatus(param, val);
+                if (status !== 'normal') {
+                    alertsFound.set(param, { val, status, date });
+                }
+            });
+
+            if (alertsFound.size === 0) {
+                document.getElementById('alertSection').style.display = 'none';
+                return;
+            }
+
+            alertsFound.forEach((data, param) => {
+                // Use the same logic as getStatus to get the range for display
+                const csvKey = Object.keys(csvReferenceRanges).find(k => k.toLowerCase() === param.toLowerCase());
+                let range = csvKey ? csvReferenceRanges[csvKey] : null;
+                
+                if (!range) {
+                    const clean = param.toLowerCase().replace(/recuento de /g, '').replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim();
+                    const csvKeyNorm = Object.keys(csvReferenceRanges).find(k => k.toLowerCase().replace(/recuento de /g, '').replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim() === clean);
+                    if (csvKeyNorm) {
+                        range = csvReferenceRanges[csvKeyNorm];
+                    } else {
+                        const keys = Object.keys(referenceRanges);
+                        let lookup = keys.find(k => k.toLowerCase().replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim() === clean);
+                        if (!lookup) {
+                            const matches = keys.filter(k => k.toLowerCase().replace(/\(.*\)/g, '').replace(/[#%]/g, '').trim() === clean || (k.length > 3 && clean.includes(k.toLowerCase())));
+                            if (matches.length > 0) {
+                                matches.sort((a, b) => a.length - b.length);
+                                lookup = matches[0];
+                            }
+                        }
+                        range = referenceRanges[lookup || param] || { min: '—', max: '—', unit: '' };
+                    }
+                }
+
+                const card = document.createElement('div');
+                card.className = "bg-white border border-zinc-100 border-l-4 border-l-rose-500 rounded-2xl p-4 shadow-sm flex justify-between items-center cursor-pointer hover:shadow-md transition-all";
+                card.innerHTML = `
+                    <div>
+                        <div class="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">${param} <span class="text-zinc-300 ml-1">(${data.date})</span></div>
+                        <div class="text-lg font-mono font-bold text-rose-600">${data.val} <span class="text-[10px] font-normal text-zinc-300">${range.unit || ''}</span></div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-[9px] text-zinc-400 uppercase font-bold tracking-tighter">Referencia</div>
+                        <div class="text-[11px] font-mono text-zinc-500">${range.min || '0'} - ${range.max === Infinity ? '∞' : (range.max || '∞')}</div>
+                    </div>
+                `;
+                card.onclick = () => { toggleParameter(param); };
+                container.appendChild(card);
+            });
+
+            document.getElementById('alertSection').style.display = 'block';
+        }
+
+        function updateChart() {
+            const ctx = document.getElementById('medicalChart').getContext('2d');
+            const datasets = selectedParams.map((param, index) => ({
+                label: param,
+                data: medicalData.map(item => {
+                    const val = item[param];
+                    if (val === undefined || val === null || val === '' || isNaN(parseFloat(val))) return null;
+                    return parseFloat(val);
+                }),
+                borderColor: lineColors[index % lineColors.length],
+                backgroundColor: lineColors[index % lineColors.length] + '1A',
+                borderWidth: 3,
+                pointBackgroundColor: '#fff',
+                pointBorderColor: lineColors[index % lineColors.length],
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                tension: 0.4,
+                fill: true,
+                spanGaps: true
+            }));
+
+            if (chart) {
+                chart.data.datasets = datasets;
+                chart.data.labels = medicalData.map(item => item.date);
+                chart.update();
+            } else {
+                chart = new Chart(ctx, {
+                    type: 'line',
+                    data: { labels: medicalData.map(item => item.date), datasets },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        spanGaps: true,
+                        plugins: { legend: { position: 'top', align: 'end', labels: { usePointStyle: true, font: { family: 'Outfit', size: 12 } } } },
+                        scales: { 
+                            x: { grid: { display: false } },
+                            y: { grid: { color: '#f8f8f8' }, border: { dash: [5, 5] } }
+                        }
+                    }
+                });
+            }
+        }
+
+        function updateTimeline() {
+            const container = document.getElementById('timelineContent');
+            container.innerHTML = '';
+            
+            selectedParams.forEach((param, idx) => {
+                const range = referenceRanges[param];
+                const rangeText = range ? `${range.min ?? '—'} – ${range.max ?? '—'} ${range.unit ?? ''}` : '';
+                
+                const section = document.createElement('div');
+                section.className = "mb-10";
+                section.innerHTML = `
+                    <div class="flex items-baseline justify-between mb-6 pb-2 border-b border-zinc-100">
+                        <h4 class="flex items-center gap-2 text-sm font-bold text-zinc-900">
+                            <span class="w-3 h-3 rounded-full" style="background-color: ${lineColors[idx % lineColors.length]}"></span> ${param}
+                        </h4>
+                        <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest bg-zinc-50 px-2 py-1 rounded-md">REF: ${rangeText}</span>
+                    </div>
+                `;
+
+                const list = document.createElement('div'); 
+                list.className = "space-y-1 pl-6 border-l-2 border-zinc-100 ml-1.5";
+                
+                // Get data for this param, sorted chronological (newest first for slice, then reverse for display)
+                const paramEntries = medicalData
+                    .filter(d => d[param] !== undefined)
+                    .reverse();
+
+                paramEntries.forEach((item, pIdx) => {
+                    const val = item[param];
+                    const prevItem = paramEntries[pIdx + 1]; 
+                    const prevVal = prevItem ? prevItem[param] : null;
+                    
+                    const status = getStatus(param, val);
+                    const dotColor = status === 'normal' ? 'bg-emerald-500' : 'bg-rose-500';
+                    const entry = document.createElement('div');
+                    entry.className = "relative flex justify-between items-center py-3 group hover:bg-zinc-50/30 px-3 -ml-3 rounded-xl transition-all border-b border-zinc-100 last:border-0";
+                    
+                    // Discover metadata for this entry
+                    let metaHtml = '';
+                    const method = item[`${param} (Método)`];
+                    if (method) metaHtml += `<div class="text-[9px] text-zinc-400 font-medium leading-none mt-1">Método: ${method}</div>`;
+                    
+                    if (param === "Hemorragia Oculta") {
+                        const samples = item["Hemorragia Oculta (Muestras)"];
+                        const type = item["Hemorragia Oculta (Tipo de muestra)"];
+                        if (samples) metaHtml += `<div class="text-[9px] text-zinc-400 font-medium leading-none mt-1">Muestras: ${samples}</div>`;
+                        if (type) metaHtml += `<div class="text-[9px] text-zinc-400 font-medium leading-none mt-1">Tipo: ${type}</div>`;
+                    }
+
+                    let trendHtml = '<div class="w-6"></div>'; 
+                    if (prevVal !== null && !isNaN(parseFloat(val)) && !isNaN(parseFloat(prevVal))) {
+                        const diff = parseFloat(val) - parseFloat(prevVal);
+                        if (diff > 0) trendHtml = '<div class="w-6 flex justify-center"><i class="ph ph-trend-up text-rose-400"></i></div>';
+                        else if (diff < 0) trendHtml = '<div class="w-6 flex justify-center"><i class="ph ph-trend-down text-emerald-400"></i></div>';
+                    }
+
+                    entry.innerHTML = `
+                        <div class="absolute -left-[19px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full ${dotColor} border-4 border-white shadow-sm z-10"></div>
+                        <div>
+                            <span class="text-xs font-medium text-zinc-400 group-hover:text-zinc-900 transition-colors">${item.date}</span>
+                            ${metaHtml}
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="text-base font-mono font-bold ${status !== 'normal' ? 'text-rose-600' : 'text-zinc-600'}">${val}</span>
+                            ${trendHtml}
+                        </div>
+                    `;
+                    list.appendChild(entry);
+                });
+                section.appendChild(list); 
+                container.appendChild(section);
+            });
+        }
+
+        function updateTable() {
+            const table = document.getElementById('dataTable');
+            table.innerHTML = '';
+
+            const thead = document.createElement('thead');
+            const headerRow = document.createElement('tr');
+            
+            const thParam = document.createElement('th');
+            thParam.textContent = translations[currentLang].parameter;
+            thParam.className = "text-left py-4 px-6 text-zinc-400 uppercase text-[10px] tracking-widest font-bold border-b border-zinc-50 sticky left-0 bg-white z-20";
+            headerRow.appendChild(thParam);
+
+            medicalData.forEach(d => {
+                const th = document.createElement('th');
+                th.textContent = d.date;
+                th.className = "py-4 px-6 text-zinc-400 uppercase text-[10px] tracking-widest font-bold border-b border-zinc-50 text-center";
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            const tbody = document.createElement('tbody');
+            selectedParams.forEach((param, idx) => {
+                const row = document.createElement('tr');
+                row.className = "hover:bg-zinc-50/50 transition-colors border-b border-zinc-50/50";
+                
+                const range = referenceRanges[param];
+                const rangeText = range ? `${range.min ?? '—'} – ${range.max ?? '—'}` : '';
+                const unitText = range ? range.unit : '';
+
+                // First Column: Name + Range
+                const tdParam = document.createElement('td');
+                tdParam.className = "py-4 px-6 sticky left-0 bg-white z-10 border-r border-zinc-50";
+                tdParam.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background-color: ${lineColors[idx % lineColors.length]}"></span>
+                        <div>
+                            <div class="font-bold text-zinc-900 text-xs">${param}</div>
+                            <div class="text-[10px] text-zinc-400 font-medium">${rangeText} ${unitText}</div>
+                        </div>
+                    </div>
+                `;
+                row.appendChild(tdParam);
+                
+                medicalData.forEach(d => {
+                    const td = document.createElement('td');
+                    td.className = "py-4 px-6 text-center";
+                    const val = d[param];
+                    
+                    if(val !== undefined && val !== null && val !== '') {
+                        const status = getStatus(param, val);
+                        const colorClass = status === 'normal' ? 'text-zinc-500' : 'text-rose-600 font-bold';
+                        td.innerHTML = `<span class="font-mono text-xs ${colorClass}">${val}</span>`;
+                    } else {
+                        td.innerHTML = `<span class="text-zinc-200">—</span>`;
+                    }
+                    row.appendChild(td);
+                });
+                tbody.appendChild(row);
+            });
+            table.appendChild(tbody);
+        }
+
+        document.getElementById('biomarkerSearch').addEventListener('input', setupParameterButtons);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (_v()) {
+                document.getElementById('passwordGate').classList.add('hidden');
+            } else {
+                document.getElementById('passwordGate').classList.remove('hidden');
+            }
+            processCsvString(embeddedCsvData);
+            setLanguage(currentLang);
+            renderClinicalNotes();
+        });
+    </script>
+</body>
+</html>
