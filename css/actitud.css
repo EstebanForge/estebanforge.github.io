@@ -426,4 +426,13 @@ a:hover {
   .facts {
     grid-template-columns: 1fr 1fr;
   }
+
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .contact-links .btn {
+    display: block;
+    text-align: center;
+  }
 }
