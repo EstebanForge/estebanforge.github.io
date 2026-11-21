@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pylons — Esteban Cuevas</title>
-    <meta name="description" content="Plain-text ledger, map and rule enforcer for your platform, checked against the code.">
+    <meta name="description" content="Plain-text ledger, map, and rule enforcer for your platform, checked against the code.">
     <link rel="stylesheet" href="/project.css">
+    <link rel="stylesheet" href="/pylons.css">
     <link rel="icon" href="/images/favicon.png">
 </head>
 <body class="proj accent-pylons">
@@ -14,33 +15,85 @@
         <span class="proj-wordmark">EstebanForge</span>
     </header>
 
-    <main class="proj-main">
-        <p class="proj-kind">Tool · Go · CLI</p>
-        <h1 class="proj-name">Pylons</h1>
-        <p class="proj-tagline">Power over your platform, in plain text.</p>
+    <main>
+        <section class="pl-hero">
+            <p class="pl-kicker">Tool · Go · CLI</p>
+            <h1>Your standards,<br><span class="dim">checking themselves.</span></h1>
+            <p class="pl-lede">Pylons is a plain-text ledger and map of your platform, and an enforcer of the rules you lay down, checked against the code so the map cannot quietly rot into fiction.</p>
+            <div class="pl-cmd"><span>curl -fsSL https://raw.githubusercontent.com/EstebanForge/Pylons/main/install.sh | bash</span></div>
+        </section>
 
-        <div class="proj-body">
-            <p>Pylons is two halves. A library of plain-text files that maps your platform: what every package does, what depends on what, which interfaces are safe to build on, which decisions were made and why, and which bugs nearly ate a weekend. And a checker that reads that map and compares it against the actual code, so the documentation cannot quietly rot.</p>
-<p>Everything lives under version control beside the code it describes. The ledger is grep-able, diffable and owned by the team, not by a wiki nobody updates.</p>
-
-
-            <ul class="proj-features">
-                
-                <li>A map of your platform in Markdown with structured front matter, versioned beside the code</li>
-                
-                <li>Records what every package does, what depends on what, and which interfaces are safe to build on</li>
-                
-                <li>Decision records and post-mortems live next to the systems they describe</li>
-                
-                <li>The pylon checker validates the map against the actual code, so the map stays honest</li>
-                
-            </ul>
-
-            <div class="proj-links">
-                
-                <a class="proj-btn" href="https://github.com/EstebanForge/Pylons">GitHub</a>
+        <section class="pl-section">
+            <h2>Two halves</h2>
+            <p class="pl-sub">That is the whole idea. Everything else is detail.</p>
+            <div class="pl-halves">
+                <div class="pl-half">
+                    <span class="pl-tag">The map</span>
+                    <h3>A library of plain text</h3>
+                    <p>Markdown with structured front matter, versioned beside the code it describes. What every package does, what depends on what, which interfaces are safe to build on, which decisions were made and why, and which bugs nearly ate someone's weekend.</p>
+                </div>
+                <div class="pl-half">
+                    <span class="pl-tag">The checker</span>
+                    <h3>A deterministic lie detector</h3>
+                    <p>The <code>pylon</code> binary reads the map and compares it against the actual code on every commit. If the map claims a symbol, route, or file exists and it is gone, the check fails.</p>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="pl-section">
+            <h2>The problem it exists for</h2>
+            <p class="pl-sub">Four failures come back again and again. Every one of them is older than AI.</p>
+            <div class="pl-fails">
+                <div class="pl-fail"><h3>Architectural drift</h3><p>Someone improvises a pattern, the code stops matching the agreed design, and the divergence ships as permanent debt.</p></div>
+                <div class="pl-fail"><h3>Branch collisions</h3><p>Two teams build on the same surface in parallel. Nobody notices until staging breaks, at the worst possible hour.</p></div>
+                <div class="pl-fail"><h3>Opaque boundaries</h3><p>A developer guesses which interface is safe to build on. The guess is wrong, a refactor breaks it, and the fix crosses three repositories.</p></div>
+                <div class="pl-fail"><h3>Lessons paid twice</h3><p>A nasty bug gets fixed, nobody writes down why, and a fresh pair of hands reintroduces it six months later.</p></div>
+            </div>
+            <p>AI coding agents poured gas on all four. An agent writes in minutes what a human writes in days, and it wakes up knowing nothing about your system. Left to guess, it invents a pattern that already exists three files over.</p>
+        </section>
+
+        <section class="pl-section">
+            <h2>Contracts</h2>
+            <p class="pl-sub">A written promise about a piece of code. The status is the whole game.</p>
+            <div class="pl-statuses">
+                <div class="pl-status ok"><b>stable</b><span>Safe to build on. Checked against the code.</span></div>
+                <div class="pl-status warn"><b>unstable</b><span>The surface is about to move. Coordinate first.</span></div>
+                <div class="pl-status hot"><b>editing</b><span>Somebody is in there right now. Resolve before you type.</span></div>
+            </div>
+            <p>Contracts are typed, so promises about routes, commands, events, or schemas carry the same checkable form as symbols:</p>
+            <p class="pl-kinds"><em>file</em> · <em>glob</em> · <em>symbol</em> · <em>route</em> · <em>cli</em> · <em>event</em> · <em>schema</em> &nbsp;+ language extensions (go, rust, typescript, python, php) via <em>pylon-ext-*</em></p>
+        </section>
+
+        <section class="pl-section">
+            <h2>The loop</h2>
+            <p class="pl-sub">Every session, the same four moves. The map stays honest because the loop never skips the gate.</p>
+            <div class="pl-loop">
+                <div class="pl-step"><h3>Orient</h3><p>Read the map instead of reverse-engineering the platform.</p><code>pylon brief</code></div>
+                <div class="pl-step"><h3>Check</h3><p>Name every active plan on the ground you are about to touch.</p><code>pylon check</code></div>
+                <div class="pl-step"><h3>Write back</h3><p>Record quirks, conventions, and contracts as they surface.</p><code>quirks/ · plans/</code></div>
+                <div class="pl-step"><h3>Gate</h3><p>A documented surface that does not exist in code fails.</p><code>pylon lint --ci</code></div>
+            </div>
+        </section>
+
+        <section class="pl-section">
+            <h2>Verification</h2>
+            <p class="pl-sub">Zero model calls. Same input, same verdict, offline and in CI.</p>
+            <div class="pl-principles">
+                <div class="pl-principle"><h3>Code is truth</h3><p>When code and docs disagree, the checker fails until they match. Documentation you cannot verify is a rumor with formatting.</p></div>
+                <div class="pl-principle"><h3>Two grades only</h3><p>FORCED failures exit 1: broken contracts, active collisions, protected paths. ADVISORY notes exit 0 and inform without crying wolf.</p></div>
+                <div class="pl-principle"><h3>Controlled language</h3><p>ASD-STE100 keeps every doc short, active-voice, and unambiguous &mdash; identical to read for a human and for a model.</p></div>
+                <div class="pl-principle"><h3>Excluded archives</h3><p>Retired and shipped records leave active context, search, and collision checks unless asked for explicitly.</p></div>
+            </div>
+        </section>
+
+        <section class="pl-cta">
+            <h2>Start with one pylon</h2>
+            <div class="pl-cmd"><span>curl -fsSL https://raw.githubusercontent.com/EstebanForge/Pylons/main/install.sh | bash</span></div>
+            <div class="pl-cta-links">
+                <a class="proj-btn primary" href="https://github.com/EstebanForge/Pylons">GitHub</a>
+                <a class="proj-btn" href="https://github.com/EstebanForge/Pylons/blob/main/meta/MANIFESTO.md">The manifesto</a>
+            </div>
+        </section>
     </main>
 
     <footer class="proj-foot">
