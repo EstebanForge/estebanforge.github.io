@@ -4,7 +4,7 @@
   <circle cx="760" cy="270" r="300" fill="none" stroke="#a78bfa" stroke-opacity="0.10" stroke-width="1.5"/>
   <circle cx="760" cy="270" r="210" fill="none" stroke="#a78bfa" stroke-opacity="0.14" stroke-width="1.5"/>
   <text x="700" y="360" font-family="system-ui, sans-serif" font-size="220" font-weight="800" fill="#a78bfa" fill-opacity="0.16" letter-spacing="-10">HP</text>
-  <text x="72" y="330" font-family="system-ui, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">Hyperpress</text>
+  <text x="72" y="330" font-family="system-ui, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">HyperPress</text>
   <text x="74" y="378" font-family="system-ui, sans-serif" font-size="20" font-weight="600" fill="#a78bfa" letter-spacing="4">ESTEBANFORGE</text>
   <rect x="0" y="536" width="960" height="4" fill="#a78bfa" opacity="0.85"/>
 </svg>

@@ -35,6 +35,8 @@
 .accent-mcp        { --proj-accent: #a3e635; }
 .accent-liteserve  { --proj-accent: #38bdf8; }
 .accent-piext      { --proj-accent: #fb7185; }
+.accent-fuerte     { --proj-accent: #f87171; }
+.accent-quotagauge { --proj-accent: #818cf8; }
 
 * {
     margin: 0;
