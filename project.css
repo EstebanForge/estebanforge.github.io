@@ -86,6 +86,7 @@ body {
 .proj-main {
     width: 100%;
     max-width: 880px;
+    margin: 0 auto;
     padding: 80px 40px 96px;
 }
 
