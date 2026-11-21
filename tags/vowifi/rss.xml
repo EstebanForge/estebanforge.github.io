@@ -3,7 +3,7 @@
     <channel>
       <title>Esteban Cuevas - vowifi</title>
       <link>https://actitud.xyz</link>
-      <description>Security engineer and vulnerability researcher. Twenty years building for the web.</description>
+      <description>Senior software and security engineer. Twenty years building for the web.</description>
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://actitud.xyz/tags/vowifi/rss.xml" rel="self" type="application/rss+xml"/>
