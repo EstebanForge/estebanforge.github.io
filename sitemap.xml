@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="https://actitud.xyz/sitemap_style.xsl" type="text/xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://actitud.xyz/</loc>
@@ -445,13 +444,28 @@
         <loc>https://actitud.xyz/blog/page/9/</loc>
     </url>
     <url>
+        <loc>https://actitud.xyz/search/</loc>
+    </url>
+    <url>
         <loc>https://actitud.xyz/tags/</loc>
     </url>
     <url>
         <loc>https://actitud.xyz/tags/5g/</loc>
     </url>
     <url>
+        <loc>https://actitud.xyz/tags/ai-agents/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/tags/architecture/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/tags/atlas/</loc>
+    </url>
+    <url>
         <loc>https://actitud.xyz/tags/chile/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/tags/engineering-culture/</loc>
     </url>
     <url>
         <loc>https://actitud.xyz/tags/pixel/</loc>
@@ -461,5 +475,8 @@
     </url>
     <url>
         <loc>https://actitud.xyz/tags/vowifi/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/tags/wordpress/</loc>
     </url>
 </urlset>

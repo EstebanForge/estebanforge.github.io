@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Esteban Cuevas - engineering-culture</title>
+    <subtitle>Security engineer and vulnerability researcher. Twenty years building for the web.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://actitud.xyz/tags/engineering-culture/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://actitud.xyz"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-10-15T20:30:00-03:00</updated>
+    <id>https://actitud.xyz/tags/engineering-culture/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Atlas: Accountable Agentic Engineering</title>
+        <published>2026-10-15T20:30:00-03:00</published>
+        <updated>2026-10-15T20:30:00-03:00</updated>
+        
+        <author>
+          <name>
+            esteban
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://actitud.xyz/blog/2026/atlas-accountable-agentic-engineering/"/>
+        <id>https://actitud.xyz/blog/2026/atlas-accountable-agentic-engineering/</id>
+        
+        <content type="html" xml:base="https://actitud.xyz/blog/2026/atlas-accountable-agentic-engineering/">&lt;p&gt;&lt;img src=&quot;/media/2026/atlas-agentic-engineers-handshake.jpg?w=768&quot; alt=&quot;Meme of the Predator handshake: agents on one arm, engineers on the other, Atlas written across the clasped hands&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In August I published &lt;a href=&quot;/blog/2026/turns-out-im-not-that-incompetent-atlas-validation-of-the-design/&quot;&gt;the story of how Atlas was born&lt;/a&gt;, the system I engineered and built to keep LLM agents from wrecking a multi-package stack. That post ended with a wish list. Context injection at the point of work. A staleness engine. An auto write-back for public surfaces. A review bot.&lt;/p&gt;
+&lt;p&gt;I tend to not keep calm with things, the things that passion me. Atlas did passion me. A little.&lt;/p&gt;
+&lt;p&gt;Two months later, the receipts are in. Every item on that list exists now. Most shipped exactly as imagined. One grew into something better.&lt;/p&gt;
+&lt;p&gt;But the wish list is the small story. The big one: Atlas grew senses, judgment, memory, and proof. It went from &quot;a linter with a map attached&quot; to the layer where the team&#39;s boundaries, traps, and decisions live. With a full-time auditor making sure none of it rots.&lt;/p&gt;
+&lt;p&gt;Before the tour, though, the scoreboard. Growth deserves numbers.&lt;/p&gt;
+&lt;h2 id=&quot;the-scoreboard&quot;&gt;The scoreboard&lt;/h2&gt;
+&lt;p&gt;7+ months ago, Atlas was a folder of notes on my machine. Today it is 250+ documents of living architecture, and every one of them is linted, written in controlled English, and resolvable against real code.&lt;/p&gt;
+&lt;p&gt;The breakdown:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;50+ package maps. One per package in the stack: every public surface declared, every internal marked off-limits.&lt;/li&gt;
+&lt;li&gt;20+ quirks, the stack&#39;s recorded traps. 20 of them carry a verified guard: a test in Warden, our QA suite, or a convention the linter enforces.&lt;/li&gt;
+&lt;li&gt;10+ immutable decision records. Settled questions stay settled.&lt;/li&gt;
+&lt;li&gt;20+ conventions, transaction flows and plans in flight.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And the number I&#39;m watching the closest now is the newest: plans that ship get their delivered PR stamped into the archive, dated and permanent. The receipt happens at merge time, not audit time. The map grows because the work grows. Everything below exists to keep it honest.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Un manjarsh...&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-receipts&quot;&gt;The receipts&lt;/h2&gt;
+&lt;p&gt;Promised in August. Shipped since:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Context at the point of work became &lt;code&gt;atlas context&lt;/code&gt;. You point it at the files you&#39;re about to touch, and it returns the contracts, collisions, quirks, and conventions that apply to exactly those files. Nothing else. Prompts shrink by up to 90% while the constraints get sharper.&lt;/li&gt;
+&lt;li&gt;The staleness engine became &lt;code&gt;atlas review staleness&lt;/code&gt;. Each package document carries an updated date, and the CLI compares it against release tags and git history. Docs lagging behind code become a named finding instead of a slow surprise.&lt;/li&gt;
+&lt;li&gt;The auto write-back became &lt;code&gt;atlas review release-surface&lt;/code&gt;. It reads the git diff, extracts every new public interface, and flags the undeclared ones. With &lt;code&gt;--fix&lt;/code&gt;, it writes the code annotations for you.&lt;/li&gt;
+&lt;li&gt;The review bot evolved. For any plan it now assembles a self-contained review packet instead of spraying comments across the diff: contracts with &lt;code&gt;file:line&lt;/code&gt; anchors, per-repo diff stats, a coverage grid. Two validation gates then prove the reviewer evaluated every row and resolved every finding before merge.&lt;/li&gt;
+&lt;li&gt;The living map arrived as two pieces: &lt;code&gt;atlas map&lt;/code&gt;, one filterable line per document, and JSON manifests compiled from the docs, which CI checks for drift.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Five for five. The fine print: the review bot came back upgraded.&lt;/p&gt;
+&lt;p&gt;The impostor who lives on my shoulder read my own wish list back to me and waited for the part where I stopped delivering. He&#39;s still waiting. He says &quot;hi!&quot;.&lt;/p&gt;
+&lt;h2 id=&quot;from-tool-to-system&quot;&gt;From tool to system&lt;/h2&gt;
+&lt;p&gt;Four systems grew around the original core of map plus lint.&lt;/p&gt;
+&lt;p&gt;Senses: &lt;code&gt;brief&lt;/code&gt;, &lt;code&gt;context&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;check&lt;/code&gt;. The agent stopped needing to read Atlas, because Atlas pushes the exact slice at the moment of work.&lt;/p&gt;
+&lt;p&gt;Judgment: delegation tiers. A written answer to &quot;how much may this agent do without asking?&quot;&lt;/p&gt;
+&lt;p&gt;Memory: quirks, investigations, immutable decision records. The team&#39;s scar tissue, queryable.&lt;/p&gt;
+&lt;p&gt;Proof: falsifiable contracts, AST resolution, two verdict grades. Every claim checkable, deterministically.&lt;/p&gt;
+&lt;p&gt;What follows is what that buys in practice. One section per wound.&lt;/p&gt;
+&lt;h2 id=&quot;it-prevents-building-on-sand&quot;&gt;It prevents building on sand&lt;/h2&gt;
+&lt;p&gt;Every package in the stack gets a one-file map: its role, its dependencies, its public surfaces, its protected paths, its internals. Both humans and agents now know exactly what is in bounds before the first line of code.&lt;/p&gt;
+&lt;p&gt;The pain it kills is old. Nothing marked the line between public API and internal detail, so code called another plugin&#39;s private class, a refactor broke it, and the fix crossed 3 repositories. Now that line is declared, and the linter proves the declared surfaces still exist in live code, with real AST parsing. A documented symbol that disappears fails the build. That is a strictly stronger promise than &quot;we have docs&quot;.&lt;/p&gt;
+&lt;p&gt;On top of the maps sit contracts. A contract is a written promise about a piece of code: its name, what it does, who may depend on it. Status makes it operational: &lt;code&gt;stable&lt;/code&gt; means build away, &lt;code&gt;unstable&lt;/code&gt; means moving soon, ask first, &lt;code&gt;editing&lt;/code&gt; means somebody is in there right now.&lt;/p&gt;
+&lt;p&gt;Contracts come in several kinds, because a WordPress stack lives on strings as much as classes: PHP symbols, hooks, REST routes, block names, JS exports, DB models, template globs. A hooks-and-REST system can&#39;t be mapped with class names alone.&lt;/p&gt;
+&lt;p&gt;And my favorite bit of stubbornness in the whole design: every stable contract carries a &lt;code&gt;wrong_if&lt;/code&gt;. A concrete statement of what change would break the promise. A contract you cannot falsify is a wish. Wishes don&#39;t pass review.&lt;/p&gt;
+&lt;h2 id=&quot;it-prevents-relearning-the-same-lesson&quot;&gt;It prevents relearning the same lesson&lt;/h2&gt;
+&lt;p&gt;Every incident has 2 costs: the outage and the relearning. This part of Atlas deletes the second cost.&lt;/p&gt;
+&lt;p&gt;Verified incidents become quirks. Each quirk carries mandatory sections, symptom, cause, resolution, anchored to the exact files involved, plus a guard field proving the fix stays fixed. The guard is either a test in Warden, our QA suite, or a convention the linter checks.&lt;/p&gt;
+&lt;p&gt;The magic is injection. Touch a file listed in a quirk&#39;s sources, and &lt;code&gt;atlas context&lt;/code&gt; inserts the guardrail into your session automatically. You don&#39;t have to know the trap exists. The trap costs one write-up, then it defends itself.&lt;/p&gt;
+&lt;p&gt;Hard, multi-package bugs get investigations: structured records with reproduction steps, a fail-first test, root cause, blast radius, resolution evidence. When a finding repeats across investigations, it promotes into a quirk. Knowledge compounds instead of evaporating in Slack threads.&lt;/p&gt;
+&lt;p&gt;Decisions get the same treatment. An accepted architecture decision is immutable. A change of direction means a new decision that supersedes the old one, dated and archived. The seniors can stop re-litigating settled questions, because the ledger answers with a link. So do the agents, who used to re-argue everything with fresh confidence on every run.&lt;/p&gt;
+&lt;p&gt;Just like my...&lt;/p&gt;
+&lt;h2 id=&quot;it-prevents-agents-from-wandering&quot;&gt;It prevents agents from wandering&lt;/h2&gt;
+&lt;p&gt;Session boot starts with &lt;code&gt;atlas brief&lt;/code&gt;. Active plans near your packages, debt counts, whether your clone of the knowledge base is stale. And one line I&#39;m proud of: the delegation tier. T0 through T3, how much autonomy this task allows. T0 is read-only. T3 is full send, with review. A number for how much rope the agent gets, written down before the work starts.&lt;/p&gt;
+&lt;p&gt;Before editing anything: &lt;code&gt;atlas check&lt;/code&gt; on your paths. It intersects them with every active plan&#39;s contracts and the protected paths from the package maps. Crossing something somebody is editing right now? The CLI emits a structured stop block and the agent halts, instead of writing code on contested ground. Humans run it too. It answers the oldest question in parallel development: is anyone else in here right now?&lt;/p&gt;
+&lt;p&gt;Discovery runs through &lt;code&gt;atlas map&lt;/code&gt;. One line per document, filterable by type, package, tag, status. Map first, read only what matches. A corpus of hundreds of documents is useless without discovery; people re-ask answered questions and re-write conventions that already exist. Agents do both, faster.&lt;/p&gt;
+&lt;h2 id=&quot;it-prevents-lying-maps&quot;&gt;It prevents lying maps&lt;/h2&gt;
+&lt;p&gt;Documentation you cannot verify is a rumor with nice formatting.&lt;/p&gt;
+&lt;p&gt;So the engine never calls a model. The whole thing is a Go binary. Every check is AST parsing, YAML schemas, git inspection, or set intersections. Same input, same verdict on your laptop and in CI. Determinism is the point: an agent cannot charm an AST resolver.&lt;/p&gt;
+&lt;p&gt;Findings carry exactly 2 grades: &lt;code&gt;FORCED&lt;/code&gt; and &lt;code&gt;ADVISORY&lt;/code&gt;. FORCED exits 1: broken contract, active collision, protected path. ADVISORY exits 0: context and style. Linters that cry wolf get ignored by humans and halt agents on trivia. Warning fatigue is dead, and CI fails only on the real ones. The stopping rule is mechanical: halt on FORCED, read and proceed on ADVISORY.&lt;/p&gt;
+&lt;p&gt;The review packet closes the human side of that loop. Reviewers with partial context approve partial work, so the packet assembles everything a fresh reviewer needs and the validation gates prove nothing was skipped. A fresh-context agent can run the same gate. Review became a reproducible procedure instead of an act of faith.&lt;/p&gt;
+&lt;p&gt;And the corpus itself is written in ASD-STE100, the aerospace controlled-English standard. Short sentences, active voice, closed vocabulary, hard size caps per document. It reads identically to a human and to a model, and no document grows into an encyclopedia nobody maintains. Yes, NASA-grade English for a CRUD stack. Two articles in a row, and it still works.&lt;/p&gt;
+&lt;p&gt;Mic-drop.&lt;/p&gt;
+&lt;h2 id=&quot;one-feature-s-week&quot;&gt;One feature&#39;s week&lt;/h2&gt;
+&lt;p&gt;Here&#39;s the loop on a real task.&lt;/p&gt;
+&lt;p&gt;Morning: &lt;code&gt;brief&lt;/code&gt;. The tier says T2. Two active plans run near my target files. One quirk anchors to code I&#39;m about to touch, guardrail loaded before I knew I needed it.&lt;/p&gt;
+&lt;p&gt;The plan gets written first, contracts declared, statuses set. And you actually read the plan. And polish it. Get grilled on it. Amend it. And go back and read it all. And actually understand it. That part no agent can do for you. No osmosis for us humans.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;check&lt;/code&gt; runs against my paths: green. &lt;code&gt;context&lt;/code&gt; assembles the slice: the contracts on those surfaces, the quirk, the convention for this kind of work.&lt;/p&gt;
+&lt;p&gt;Keystrokes from me so far: zero. The agent runs &lt;code&gt;brief&lt;/code&gt;, &lt;code&gt;check&lt;/code&gt;, &lt;code&gt;context&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, the linters. Agents can and will serve themselves. My hands touch two things: the plan and the code reviews.&lt;/p&gt;
+&lt;p&gt;Now code and tests. Warden builds the stack from scratch and runs the suites, so nothing ships on a machine that happens to work.&lt;/p&gt;
+&lt;p&gt;Once the work is ready, comes the pull request. &lt;code&gt;review release-surface --diff&lt;/code&gt; proves every new public interface is declared. The review packet assembles itself for whoever reviews, human or fresh-context agent.&lt;/p&gt;
+&lt;p&gt;Merge: the archive command stamps the PR into the plan, the plan&#39;s rationale becomes an immutable decision, and the plan itself moves to the archive, when everything actually shipped.&lt;/p&gt;
+&lt;p&gt;Nothing wrote to the map unchecked at any point in that week. That&#39;s the whole trick.&lt;/p&gt;
+&lt;h2 id=&quot;what-it-adds-up-to&quot;&gt;What it adds up to&lt;/h2&gt;
+&lt;p&gt;For the tech-curious, the bill of materials: a Go binary (you can also do Rust if you want, nerd), 25+ commands, PHP and JavaScript (and any language) AST traversal, SARIF output that GitHub renders as inline annotations, a pre-commit lint under 2 seconds, a dozen zones of documented knowledge, determinism everywhere. A stack that knows itself, in a language a machine can read without guessing.&lt;/p&gt;
+&lt;p&gt;Determinism. This is the key. To fight the stochastic madness of LLMs.&lt;/p&gt;
+&lt;p&gt;The interesting problem now looks a lot more like &quot;make 10 moving pieces and a fleet of agents provably coherent&quot;. &quot;Write the feature&quot; is the easy part. I ended up building the system that answers that. I&#39;m open to chat on Fridays.&lt;/p&gt;
+&lt;p&gt;Agents do the typing. Atlas decides where the typing is allowed to land. Humans decide how the system should work, review everything and stay the authors of the grand design. &lt;em&gt;For a fistful of tokens.&lt;/em&gt;&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Turns out I&#39;m Not That Incompetent: Atlas &amp; Validation of the Design</title>
+        <published>2026-08-15T10:00:00-03:00</published>
+        <updated>2026-08-15T10:00:00-03:00</updated>
+        
+        <author>
+          <name>
+            Esteban
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://actitud.xyz/blog/2026/turns-out-im-not-that-incompetent-atlas-validation-of-the-design/"/>
+        <id>https://actitud.xyz/blog/2026/turns-out-im-not-that-incompetent-atlas-validation-of-the-design/</id>
+        
+        <content type="html" xml:base="https://actitud.xyz/blog/2026/turns-out-im-not-that-incompetent-atlas-validation-of-the-design/">&lt;p&gt;&lt;img src=&quot;/images/social-media/2026/blog_2026_turns_out_im_not_that_incompetent_atlas_validation_of_the_design.jpg?w=768&quot; alt=&quot;Social media card for this post: Atlas &amp;amp; Validation of the Design&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I make a living writing software. Lately I&#39;ve also been speaking with machines to make them write code, which is a different sport entirely. And these LLM agents altered the rules of this sport in a big way.&lt;/p&gt;
+&lt;p&gt;The company I work for runs on a vast stack of code. A pile of internal packages. The libraries they share. The tests that cover them. Each package moves on its own clock. Each ships on its own schedule. And every one of them depends on the others.&lt;/p&gt;
+&lt;p&gt;That setup is normal for a platform our size. Then you add LLM agents to it.&lt;/p&gt;
+&lt;p&gt;An agent is fast. Genuinely fast. It also wakes up knowing nothing about your system, and it will happily invent a pattern that already exists three files over, or lean on an interface somebody is halfway through rewriting. With total confidence. Confidence is free for them.&lt;/p&gt;
+&lt;p&gt;Every session is a new Project Hail Mary for them. Amnesia, alone, reverse-engineering the world from scratch.&lt;/p&gt;
+&lt;p&gt;Left to guess, it fills in the blanks. Sometimes the blank is harmless and you ship a duplicate. Sometimes the blank was load-bearing and you find out at 5pm. On a Friday.&lt;/p&gt;
+&lt;p&gt;I got tired of that. So I built Atlas.&lt;/p&gt;
+&lt;h2 id=&quot;the-problem-is-older-than-the-agents&quot;&gt;The problem is older than the agents&lt;/h2&gt;
+&lt;p&gt;It&#39;s a parallel-work problem. It has been around since 2 developers first touched the same codebase at the same time. Agents just turned the volume all the way up.&lt;/p&gt;
+&lt;p&gt;The failures are old. Architectural drift, when the code stops following the patterns everyone agreed on because someone improvised. Branch collisions, when parallel work overwrites a dependency. Opaque dependencies, when a developer guesses which interface is safe to build on. Undocumented features, when code ships with no promise behind it.&lt;/p&gt;
+&lt;p&gt;LLM agents poured gas on all of it. They write code faster than any human can review, and they wake up knowing nothing about your systems until you feed them context.&lt;/p&gt;
+&lt;h2 id=&quot;4-months-on-my-own-machine&quot;&gt;4 months on my own machine&lt;/h2&gt;
+&lt;p&gt;I didn&#39;t see the whole shape on day one. But I saw enough of it to start. I ran a local version of this system on my own machine for 4 months, just to survive the problem. Duplicated work, broken dependencies, the works. I got tired of it before I got clever about it.&lt;/p&gt;
+&lt;p&gt;Then a colleague of mine (really sharp developer, eager to learn) and I ended up working on features that touched each other&#39;s territory. You can&#39;t scale agents across multiple packages when work in one repo quietly breaks another; LLM agents love to be creative to the point of leaving Barney with its mouth open in disbelief at the things they dare to invent. So I showed him what I had built for myself locally. It clicked for him immediately (I want to believe that). He took it for a spin, found a few blind spots I missed when flying solo, and gave me feedback to polish the system for a team environment. With those missing pieces dialed in, Atlas was ready.&lt;/p&gt;
+&lt;h2 id=&quot;then-cloudflare-published-codex&quot;&gt;Then Cloudflare published Codex&lt;/h2&gt;
+&lt;p&gt;About a month into running Atlas across the team, Cloudflare published Codex. Same bones: governed standards, agent-consumed context at the point of work, a fixed status for every rule.&lt;/p&gt;
+&lt;p&gt;I had arrived at the exact same architecture, solo and on my own time, without the engineering budget of a 3000-person company.&lt;/p&gt;
+&lt;p&gt;When a solo developer and a giant infrastructure company arrive at the same design on their own, the problem only has one shape. Reading their post felt like validation. I&#39;ve written before about the impostor that never leaves my side. This time he had to sit down and watch in silence. Turns out I&#39;m not that incompetent. Some days. This was one of them.&lt;/p&gt;
+&lt;h2 id=&quot;what-atlas-actually-is&quot;&gt;What Atlas actually is&lt;/h2&gt;
+&lt;p&gt;Atlas is a ledger and a constraint layer. It&#39;s a machine-readable model of the architecture, and the tooling checks it against the actual code, locally and in CI.&lt;/p&gt;
+&lt;p&gt;The core unit is a contract: a written promise about a piece of code. Its name. What it does. Whether other code is allowed to depend on it. Every contract carries a status, and the status is the whole game.&lt;/p&gt;
+&lt;p&gt;A contract is &lt;code&gt;stable&lt;/code&gt; when it&#39;s safe to build on. It&#39;s &lt;code&gt;unstable&lt;/code&gt; when it&#39;s about to change, so you ask first. It&#39;s &lt;code&gt;editing&lt;/code&gt; when somebody is in there right now. That status is the difference between &quot;build away&quot; and &quot;hold on, this is moving.&quot;&lt;/p&gt;
+&lt;p&gt;I typed every contract. 7 kinds (at this moment): &lt;code&gt;php-symbol&lt;/code&gt;, &lt;code&gt;wp-hook&lt;/code&gt;, &lt;code&gt;block-name&lt;/code&gt;, &lt;code&gt;rest-route&lt;/code&gt;, &lt;code&gt;js-export&lt;/code&gt;, &lt;code&gt;db-model&lt;/code&gt;, &lt;code&gt;template-glob&lt;/code&gt;. A PHP-symbol-only system could never work for our setup, because the stack lives on hooks and REST routes, and those are strings. So I typed all of them.&lt;/p&gt;
+&lt;p&gt;It also has extra goodies, all related to the general workflow modeled inside Atlas: conventions, decisions (that happen in an RFC fashion), flows, manifests, packages, plans, prompts, quirks, skills, templates, references. You can imagine what each one does.&lt;/p&gt;
+&lt;h2 id=&quot;2-places-i-went-my-own-way&quot;&gt;2 places I went my own way&lt;/h2&gt;
+&lt;p&gt;First, I made ASD-STE100 the documentation language. That&#39;s the aerospace controlled-vocabulary standard: short sentences, active voice, a closed set of approved words. Yes, NASA-grade documentation for CRUD systems. I hear how that sounds. It works.&lt;/p&gt;
+&lt;p&gt;Standards need a language, not just a schema. Ambiguous prose burns tokens and makes an agent behave differently on every run. Written in STE100, a document reads identically to a human and to a model. It&#39;s cheap to load and hard to misread.&lt;/p&gt;
+&lt;p&gt;And it sets hard limits. Sentence length is capped, and so is the text and YAML in every document. No document in Atlas ever grows into an encyclopedia nobody will read or maintain.&lt;/p&gt;
+&lt;p&gt;Second, I designed Atlas to resolve typed contracts against the actual code. Most setups extract a prose statement and check the prose. Atlas takes a typed identifier, a &lt;code&gt;php-symbol&lt;/code&gt; or a &lt;code&gt;rest-route&lt;/code&gt;, and resolves it against the codebase. The tooling tells you whether the documented surface still exists. That&#39;s a strictly stronger check.&lt;/p&gt;
+&lt;h2 id=&quot;how-it-runs&quot;&gt;How it runs&lt;/h2&gt;
+&lt;p&gt;The rule is simple. You write the plan before the code. Agents use predefined templates (as schemas) depending on what you&#39;re working on, fill in the contracts, and set the status. Before touching a path, you run the collision check. If your path crosses a contract someone else is editing, the check tells you before you write a single line.&lt;/p&gt;
+&lt;p&gt;When the work ships, the plan&#39;s rationale moves into an immutable Architecture Decision Record. The plan itself goes to the archive. The decision stays locked, dated, and signed. No more relitigating it.&lt;/p&gt;
+&lt;p&gt;Enforcement comes from &lt;code&gt;atlas lint&lt;/code&gt;, a standalone CLI binary. It walks every documented surface and resolves it against the real codebase with real PHP 8.2+ AST traversal. Document a hook that no longer exists, and CI fails. List a dependency that has no package doc, and CI fails. It has a &lt;code&gt;--fix&lt;/code&gt; mode that moves each document into the folder its status requires, rebases the links, and repoints everything that pointed at the old path.&lt;/p&gt;
+&lt;p&gt;Output is SARIF, the standard format GitHub renders as inline annotations.&lt;/p&gt;
+&lt;p&gt;The binary does a handful of jobs, and each one is a command you can run. &lt;code&gt;lint&lt;/code&gt; scans the knowledge base for drift, broken links, orphaned docs, dependency cycles, and style. &lt;code&gt;contract&lt;/code&gt; takes a single plan and resolves every surface it promises against the code. &lt;code&gt;check&lt;/code&gt; is the collision detector: point it at the files you&#39;re about to touch, and it names the active plans editing or destabilizing the same surface. &lt;code&gt;review&lt;/code&gt; runs the same checks over one plan, one postmortem, or one package&#39;s public surface. &lt;code&gt;explain&lt;/code&gt; tells you, in plain English, what a rule wants and how to fix it. Run any of them locally, in a pre-commit hook, or in CI.&lt;/p&gt;
+&lt;p&gt;One rule holds the engine together: it never calls a model. Every check is AST parsing, YAML schemas, git timestamps, and exact set intersections. The same input gives the same verdict in a pre-commit hook on your laptop and in CI on GitHub. Determinism is the whole point, so the probabilistic heuristics stay out.&lt;/p&gt;
+&lt;h2 id=&quot;the-agent-loop&quot;&gt;The agent loop&lt;/h2&gt;
+&lt;p&gt;The agents don&#39;t wait to be told. Two things make them proactive. Another internal CLI tool assembles the dev stack the exact same way every time, so every agent session starts in an identical environment. One shared &lt;code&gt;AGENTS.md&lt;/code&gt;, an instructions file each agent reads on startup, tells every session where to start: Atlas first, before the first keystroke.&lt;/p&gt;
+&lt;p&gt;Then the agents use &lt;code&gt;atlas lint&lt;/code&gt; themselves. They run it to validate their own work, and they write back to Atlas as they go: new quirks, data maps, contracts, relationships, plans, and the rest.&lt;/p&gt;
+&lt;p&gt;Every one of those writes gets auto-linted. A broken reference fails. A documented surface that doesn&#39;t exist in the code fails.&lt;/p&gt;
+&lt;p&gt;The agents can&#39;t ship imagination-land content, because the resolver checks every symbol, hook, and route against the real codebase. They will still try. It just doesn&#39;t get through.&lt;/p&gt;
+&lt;p&gt;That closes the loop. Humans and agents read Atlas. Agents update Atlas. Atlas gates those updates with the same static checks. The map stays honest because nothing writes to it unchecked.&lt;/p&gt;
+&lt;h2 id=&quot;what-it-changed&quot;&gt;What it changed&lt;/h2&gt;
+&lt;p&gt;Exploring a new feature went from days to hours, once agents read Atlas first. Bug fixes went from days of guessing to inside a day, with real confidence the fix holds, because the map shows every part the change touches. And the hallucinations, the invented hooks and symbols agents love to ship, &lt;code&gt;atlas lint&lt;/code&gt; stops at the gate.&lt;/p&gt;
+&lt;h2 id=&quot;what-s-next&quot;&gt;What&#39;s next&lt;/h2&gt;
+&lt;p&gt;Atlas already proves every documented surface against the code. But I still have ideas to improve it.&lt;/p&gt;
+&lt;p&gt;I want it to hand the agent exactly the context it needs at the point of work: the rules, the contracts on the surfaces being touched, the active collisions, and the historic footguns tied to those files.&lt;/p&gt;
+&lt;p&gt;Beyond that I can imagine: a staleness engine for docs lagging behind code, an auto write-back that proposes new public surfaces from a diff, a living package map that regenerates itself, a PR review bot with inline annotations.&lt;/p&gt;
+&lt;h2 id=&quot;the-rails&quot;&gt;The rails&lt;/h2&gt;
+&lt;p&gt;Writing a plan before the code is real overhead. The trade is one plan now to skip a week of merge hell later. It pays off every time.&lt;/p&gt;
+&lt;p&gt;Nobody is special just for using LLMs and AI agents anymore. The use of agents stopped being a differentiator the week they saw the light of day. The real work is the rails. I built them before letting agents drive: a stack that knows itself, in a language a machine can read without guessing, with tooling that proves the map still matches the territory on every commit.&lt;/p&gt;
+&lt;p&gt;Agents do the heavy lifting. Humans review and approve every change. Atlas leaves the coding to humans and agents. Its job is keeping that code aligned with the architecture locked into the contracts.&lt;/p&gt;
+&lt;p&gt;Fewer collisions. Less drift. A stack that stays coherent as it grows.&lt;/p&gt;
+&lt;p&gt;Turns out I knew what I was doing.&lt;/p&gt;
+</content>
+        
+    </entry>
+</feed>

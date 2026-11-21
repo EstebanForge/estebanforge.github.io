@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-      <title>It&#39;s about attitude</title>
+      <title>Esteban Cuevas</title>
       <link>https://actitud.xyz</link>
-      <description>Personal blog about technology, life, and everything in between.</description>
+      <description>Security engineer and vulnerability researcher. Twenty years building for the web.</description>
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://actitud.xyz/rss.xml" rel="self" type="application/rss+xml"/>
