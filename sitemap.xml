@@ -444,6 +444,33 @@
         <loc>https://actitud.xyz/blog/page/9/</loc>
     </url>
     <url>
+        <loc>https://actitud.xyz/projects/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/baluard/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/construct-cli/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/hyperpress/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/lite-serve/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/mcp-cli-ent/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/pi-couch/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/pi-extensions/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/projects/pylons/</loc>
+    </url>
+    <url>
         <loc>https://actitud.xyz/search/</loc>
     </url>
     <url>

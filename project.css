@@ -1,0 +1,204 @@
+/* actitud-2027 project pages: standalone shell, distinct from the site.
+   Left-aligned asymmetric layout; each project carries its own accent. */
+
+@font-face {
+    font-family: "Inter Tight";
+    src: url("/fonts/intertight-var-latin.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter-var-latin.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --proj-accent: #f59e0b;
+    --bg: #000000;
+    --surface: #141414;
+    --text: rgba(255, 255, 255, 0.92);
+    --text-dim: rgba(255, 255, 255, 0.65);
+    --text-faint: rgba(255, 255, 255, 0.45);
+    --hairline: rgba(255, 255, 255, 0.12);
+    --font-display: "Inter Tight", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+}
+
+.accent-baluard    { --proj-accent: #34d399; }
+.accent-hyperpress { --proj-accent: #a78bfa; }
+.accent-pylons     { --proj-accent: #e5e5e5; }
+.accent-picouch    { --proj-accent: #22d3ee; }
+.accent-construct  { --proj-accent: #fb923c; }
+.accent-mcp        { --proj-accent: #a3e635; }
+.accent-liteserve  { --proj-accent: #38bdf8; }
+.accent-piext      { --proj-accent: #fb7185; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* top bar */
+.proj-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.proj-home {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.proj-home:hover { color: var(--proj-accent); }
+
+.proj-wordmark {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+/* hero: left-aligned, site-scale type */
+.proj-main {
+    width: 100%;
+    max-width: 880px;
+    padding: 80px 40px 96px;
+}
+
+.proj-kind {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--proj-accent);
+    margin-bottom: 20px;
+}
+
+.proj-name {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 9vw, 96px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.proj-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 500;
+    color: var(--proj-accent);
+    margin-top: 18px;
+}
+
+.proj-body {
+    margin-top: 48px;
+    max-width: 680px;
+}
+
+.proj-body p {
+    color: var(--text-dim);
+    margin-bottom: 20px;
+}
+
+.proj-body a {
+    color: var(--proj-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--proj-accent);
+}
+
+/* feature list */
+.proj-features {
+    list-style: none;
+    margin: 36px 0 8px;
+    border-top: 1px solid var(--hairline);
+}
+
+.proj-features li {
+    padding: 14px 0 14px 28px;
+    border-bottom: 1px solid var(--hairline);
+    color: var(--text);
+    position: relative;
+}
+
+.proj-features li::before {
+    content: "\203A";
+    position: absolute;
+    left: 4px;
+    color: var(--proj-accent);
+    font-weight: 700;
+}
+
+/* links */
+.proj-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.proj-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--hairline);
+    background: transparent;
+}
+
+.proj-btn.primary {
+    background: var(--proj-accent);
+    border-color: var(--proj-accent);
+    color: #000;
+}
+
+.proj-btn:hover { opacity: 0.85; }
+
+/* footer */
+.proj-foot {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 40px;
+    border-top: 1px solid var(--hairline);
+    font-size: 14px;
+    color: var(--text-faint);
+}
+
+.proj-foot a {
+    color: var(--text-dim);
+    text-decoration: none;
+}
+
+.proj-foot a:hover { color: var(--proj-accent); }
+
+@media (max-width: 720px) {
+    .proj-top { padding: 20px 20px; }
+    .proj-main { padding: 56px 20px 72px; }
+    .proj-foot { padding: 22px 20px; flex-direction: column; gap: 8px; text-align: center; }
+}

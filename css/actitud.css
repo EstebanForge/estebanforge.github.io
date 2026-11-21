@@ -436,3 +436,66 @@ a:hover {
     text-align: center;
   }
 }
+
+/* Projects index cards */
+.proj-cards { gap: 32px; }
+
+.proj-card {
+    display: block;
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid transparent;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.proj-card:hover {
+    border-color: var(--accent);
+}
+
+.proj-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.proj-card-body {
+    padding: 24px;
+}
+
+.proj-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.proj-card h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    margin: 0;
+    color: var(--text);
+}
+
+.proj-kind {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.proj-card-body p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 15px;
+    margin: 10px 0 14px;
+}
+
+.proj-stack {
+    font-size: 13px;
+    color: var(--text-faint);
+}

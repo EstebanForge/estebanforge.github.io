@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baluard — Esteban Cuevas</title>
+    <meta name="description" content="Git-native, P2P password manager with padded-bucket encrypted storage and multi-platform clients.">
+    <link rel="stylesheet" href="/project.css">
+    <link rel="icon" href="/images/favicon.png">
+</head>
+<body class="proj accent-baluard">
+    <header class="proj-top">
+        <a class="proj-home" href="/projects/">&larr; Projects</a>
+        <span class="proj-wordmark">Esteban Cuevas</span>
+    </header>
+
+    <main class="proj-main">
+        <p class="proj-kind">App · Rust · Linux, macOS, Windows, mobile</p>
+        <h1 class="proj-name">Baluard</h1>
+        <p class="proj-tagline">Your passwords, versioned like code.</p>
+
+        <div class="proj-body">
+            <p>Baluard is a password manager built on a different storage model: the vault is a git repository. Every change is a commit, sync is push and pull, and conflict resolution is the same merge machinery developers already trust with source code.</p>
+<p>The core is pure Rust with no runtime dependencies: modern AEAD encryption, memory-hard key derivation, and an encrypted container format designed so the vault does not leak its own size or structure. On top of it, UI clients for desktop and mobile share one orchestration runtime.</p>
+<p>Its real home is <a class="external" rel="noopener external" target="_blank" href="https://baluard.app">baluard.app</a>. This page is the index entry; the site carries the downloads and the docs.</p>
+
+
+            <ul class="proj-features">
+                
+                <li>Git-native sync: your vault is a repository, history and conflict resolution come free</li>
+                
+                <li>Padded-bucket encrypted storage that hides vault size and structure</li>
+                
+                <li>AES-256-GCM, Argon2id, HPKE, Ed25519 and TOTP under a pure-Rust core</li>
+                
+                <li>Device-identity bootstrapping without a central server</li>
+                
+                <li>Multi-platform UI clients over one shared runtime</li>
+                
+            </ul>
+
+            <div class="proj-links">
+                <a class="proj-btn primary" href="https://baluard.app">Visit site</a>
+                <a class="proj-btn" href="https://github.com/EstebanForge/Baluard">GitHub</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="proj-foot">
+        <span>&copy; 1999&ndash;2026 Esteban Cuevas</span>
+        <a href="/">actitud.xyz</a>
+    </footer>
+</body>
+</html>
