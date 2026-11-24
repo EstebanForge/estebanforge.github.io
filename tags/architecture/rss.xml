@@ -3,7 +3,7 @@
     <channel>
       <title>Esteban Cuevas - architecture</title>
       <link>https://actitud.xyz</link>
-      <description>Senior software and security engineer. Twenty years building for the web.</description>
+      <description>Senior software engineer and security researcher. Twenty years building for the web.</description>
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://actitud.xyz/tags/architecture/rss.xml" rel="self" type="application/rss+xml"/>
