@@ -5,8 +5,49 @@
     <link rel="self" type="application/atom+xml" href="https://actitud.xyz/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://actitud.xyz"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-10-15T20:30:00-03:00</updated>
+    <updated>2026-11-26T00:00:00+00:00</updated>
     <id>https://actitud.xyz/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Privacy Policy</title>
+        <published>2026-11-26T00:00:00+00:00</published>
+        <updated>2026-11-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Esteban</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://actitud.xyz/privacy/"/>
+        <id>https://actitud.xyz/privacy/</id>
+        
+        <content type="html" xml:base="https://actitud.xyz/privacy/">&lt;p&gt;This policy covers actitud.xyz and the personal tools I operate on my own hardware, including Whitebox, a backup service that mirrors files to Google Drive.&lt;/p&gt;
+&lt;p&gt;This site sets no cookies, runs no analytics, and shows no ads. My web server keeps standard access logs for security, and I delete them on a routine schedule. Comments on blog posts load through Giscus, a widget backed by GitHub Discussions. If you leave a comment there, GitHub handles that data under its own privacy policy.&lt;/p&gt;
+&lt;p&gt;Whitebox asks Google for permission through OAuth and receives a per-file token (scope drive.file). The tool can only see and manage the files it created in the connected Google account. It cannot read, change, or delete anything else in the Drive. The token lives on my server and stays there. I share your data with nobody. I do not sell data, I never have, and there are no ads or trackers anywhere in this setup. Your files remain in your own Google account, under your control. Ask me to remove them and I will.&lt;/p&gt;
+&lt;p&gt;Questions about this policy, please write to esteban@actitud.xyz.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Terms of Service</title>
+        <published>2026-11-26T00:00:00+00:00</published>
+        <updated>2026-11-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Esteban</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://actitud.xyz/tos/"/>
+        <id>https://actitud.xyz/tos/</id>
+        
+        <content type="html" xml:base="https://actitud.xyz/tos/">&lt;p&gt;These terms cover actitud.xyz and the personal services I run on my own hardware, including Whitebox, a backup service that mirrors files to Google Drive. This is a personal project on a homelab, not a company product.&lt;/p&gt;
+&lt;p&gt;The services are provided as is. I give no warranty of any kind, and I do not promise availability, uptime, or fitness for a particular purpose. Backups can fail like any other software, so please keep more than one copy of anything you cannot lose.&lt;/p&gt;
+&lt;p&gt;You keep every right to your files, always. Whitebox mirrors your files to your own Google account, and the service stores nothing beyond what is needed to run the sync. You are responsible for the content you sync and for keeping your own accounts secure.&lt;/p&gt;
+&lt;p&gt;Personal use only. Do not use the services to break the law, abuse Google&#39;s terms, or attack my infrastructure.&lt;/p&gt;
+&lt;p&gt;To the extent the law allows, I am not liable for data loss, downtime, or any damages that come from using these services.&lt;/p&gt;
+&lt;p&gt;I may update these terms, and this page is the current record. Continuing to use the services after a change means you accept it.&lt;/p&gt;
+&lt;p&gt;Questions, please write to esteban@actitud.xyz.&lt;/p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Atlas: Accountable Agentic Engineering</title>
         <published>2026-10-15T20:30:00-03:00</published>

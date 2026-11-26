@@ -444,6 +444,10 @@
         <loc>https://actitud.xyz/blog/page/9/</loc>
     </url>
     <url>
+        <loc>https://actitud.xyz/privacy/</loc>
+        <lastmod>2026-11-26</lastmod>
+    </url>
+    <url>
         <loc>https://actitud.xyz/projects/</loc>
     </url>
     <url>
@@ -511,5 +515,9 @@
     </url>
     <url>
         <loc>https://actitud.xyz/tags/wordpress/</loc>
+    </url>
+    <url>
+        <loc>https://actitud.xyz/tos/</loc>
+        <lastmod>2026-11-26</lastmod>
     </url>
 </urlset>
